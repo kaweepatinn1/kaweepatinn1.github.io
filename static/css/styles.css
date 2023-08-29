@@ -51,21 +51,22 @@
 }
 
 .block {
-  display: block;
-  width: 140px;
-  height: 80px;
-  line-height: 20px;
-  border: none;
-  background-color: #333;
-  padding: 28px 0px 28px 0px;
-  font-size: 17px;
-  cursor: pointer;
-  color: #FFF;
-  font-family: Roboto, sans-serif;
-  text-decoration: none;
-  transition-property: all;
-  transition-duration: 1s;
-  transition-timing: ease-in-out;
+    display: block;
+    width: 140px;
+    height: 80px;
+    line-height: 20px;
+    border: none;
+    background-color: #333;
+    padding: 28px 0px 28px 0px;
+    font-size: 17px;
+    cursor: pointer;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing: ease-in-out;
+	font-weight: bold;
 	
 }
 
