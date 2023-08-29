@@ -24,14 +24,13 @@ body {
 
 .light-mode {
 	background-color: #FFF;
-	color: #111;
+	color: #333;
 	transition-property: all;
     transition-duration: 0.5s;
     transition-timing: ease-in-out;
 }
 
 .title {
-  color: #333;
   text-align: center;
   font-size: 3.6vw;
   font-family: Roboto, sans-serif;
