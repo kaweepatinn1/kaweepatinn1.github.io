@@ -85,7 +85,7 @@
   width: 5.6vw;
   border: none;
   background-color: #333;
-  padding: 1.45vw 0vw;
+  padding: 1.55vw 0vw 1.35vw 0vw;
   font-size: 1.275vw;
   cursor: pointer;
   text-align: center;
@@ -98,7 +98,7 @@
 }
 
 .icon:hover{
-  padding: 1.85vw 0vw 1.05vw 0vw;
+  padding: 2.05vw 0vw 0.85vw 0vw;
 }
 .mail:hover{
 	background-color:#008EFF;
@@ -113,7 +113,7 @@
 }
 
 .instagram:hover{
-	background-color:#fb09be;
+	background-color:#8134AF;
 }
 
 a:link { text-decoration: none; }
