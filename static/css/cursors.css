@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+    cursor: url("../cursors/defaultcursor.png") 10 11, auto;
+}
+
+a:link {
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
+a:visited {
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
+a:active {
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
+.link{
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
+.default{
+    cursor: url("../cursors/defaultcursor.png") 10 11, auto;
+}
+
+.youtube{
+    cursor: url("../cursors/youtubecursor.png") 10 13, auto;
+}
+
+.mail{
+    cursor: url("../cursors/mailcursor.png") 10 13, auto;
+}
+
+.instagram{
+    cursor: url("../cursors/instagramcursor.png") 9 12, auto;
+}
+
+.linkedin{
+    cursor: url("../cursors/linkedincursor.png") 9 12, auto;
+}
