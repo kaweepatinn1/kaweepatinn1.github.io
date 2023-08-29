@@ -3,21 +3,21 @@
 :root {
   --blue: #1e90ff;
   --white: #ffffff;
-  --topbarsize: 80px;
-  --topbarfontsize: 24px;
+  --topbarsize: 6vw;
+  --topbarfontsize: 1.8vw;
 }
 
 .title {
   color: #333;
   text-align: center;
-  font-size: 48px;
+  font-size: 3.6vw;
   font-family: Roboto, sans-serif;
   font-weight: bold;
 }
 
 .top-bar {
   background-color: #222;
-  height: var(--topbarsize, 80px);
+  height: var(--topbarsize, 6vw);
   display: flex;
   justify-content: center;
 }
@@ -32,18 +32,21 @@
 }
 
 .gap {
-  display: block;
-  width: 180px;
-  border: none;
-  background-color: #333;
-  padding: 26px 5px;
-  font-size: 20px;
-  cursor: pointer;
-  text-align: center;
-  color: #FFF;
-  font-family: Roboto, sans-serif;
-  text-decoration: none;
-  font-weight: bold;
+    display: block;
+    width: 13.5vw;
+    border: none;
+    background-color: #333;
+    padding: 1.95vw 0.375vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    text-align: center;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing: ease-in-out;
 }
 
 .gap:hover{
@@ -52,13 +55,14 @@
 
 .block {
     display: block;
-    width: 140px;
-    height: 80px;
-    line-height: 20px;
+	position: relative; 
+    width: 10.6vw;
+    height: 6vw;
+    line-height: 1.5vw;
     border: none;
     background-color: #333;
-    padding: 28px 0px 28px 0px;
-    font-size: 17px;
+    padding: 2.1vw 0vw 2.1vw 0vw;
+    font-size: 1.275vw;
     cursor: pointer;
     color: #FFF;
     font-family: Roboto, sans-serif;
@@ -73,16 +77,16 @@
 .block:hover{
   background-color: #666;
   color: #FFF;
-  line-height: 40px;
+  line-height: 3vw;
 }
 
 .icon {
   display: block;
-  width: 61px;
+  width: 5.6vw;
   border: none;
   background-color: #333;
-  padding: 22px 0px;
-  font-size: 17px;
+  padding: 1.45vw 0vw;
+  font-size: 1.275vw;
   cursor: pointer;
   text-align: center;
   color: #FFF;
@@ -94,7 +98,7 @@
 }
 
 .icon:hover{
-  padding: 30px 0px 14px 0px;
+  padding: 1.85vw 0vw 1.05vw 0vw;
 }
 .mail:hover{
 	background-color:#008EFF;
