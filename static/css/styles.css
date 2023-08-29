@@ -7,6 +7,29 @@
   --topbarfontsize: 1.8vw;
 }
 
+body {
+	padding: 25px;
+	background-color: #111;
+	color: #FFF;
+	font-size: 25px;
+}
+
+.dark-mode {
+	background-color: #111;
+	color: #FFF;
+	transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing: ease-in-out;
+}
+
+.light-mode {
+	background-color: #FFF;
+	color: #111;
+	transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing: ease-in-out;
+}
+
 .title {
   color: #333;
   text-align: center;
@@ -16,27 +39,31 @@
 }
 
 .top-bar {
-  background-color: #222;
-  height: var(--topbarsize, 6vw);
-  display: flex;
-  justify-content: center;
+    background-color: #222;
+    height: var(--topbarsize, 6vw);
+    display: flex;
+    justify-content: center;
 }
 
 .nav-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	transition-property: all;
+    transition-duration: 1s;
+    transition-timing: ease-in-out;
 }
 
 .gap {
     display: block;
     width: 13.5vw;
+	height: 6vw;
     border: none;
     background-color: #333;
-    padding: 1.95vw 0.375vw;
+    padding: 1.95vw 1vw;
     font-size: 1.5vw;
     cursor: pointer;
     text-align: center;
@@ -81,20 +108,20 @@
 }
 
 .icon {
-  display: block;
-  width: 5.6vw;
-  border: none;
-  background-color: #333;
-  padding: 1.55vw 0vw 1.35vw 0vw;
-  font-size: 1.275vw;
-  cursor: pointer;
-  text-align: center;
-  color: #FFF;
-  font-family: Roboto, sans-serif;
-  text-decoration: none;
-  transition-property: all;
-  transition-duration: 1s;
-  transition-timing: ease-in-out;
+    display: block;
+    width: 5.6vw;
+    border: none;
+    background-color: #333;
+    padding: 1.55vw 0vw 1.35vw 0vw;
+    font-size: 1.275vw;
+    cursor: pointer;
+    text-align: center;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing: ease-in-out;
 }
 
 .icon:hover{
@@ -108,8 +135,46 @@
 	background-color:#F00;
 }
 
-.linkedin:hover{
-	background-color:#0C64C5;
+.lightOff{
+	background-color:#333;
+	display: block;
+    width: 5.6vw;
+    border: none;
+    padding: 1.55vw 0vw 1.35vw 0vw;
+    font-size: 1.275vw;
+    cursor: pointer;
+    text-align: center;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing: ease-in-out;
+}
+
+.lightOn{
+	background-color:#FFF;
+	display: block;
+    width: 5.6vw;
+    border: none;
+    padding: 1.55vw 0vw 1.35vw 0vw;
+    font-size: 1.275vw;
+    cursor: pointer;
+    text-align: center;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing: ease-in-out;
+}
+
+.lightOff:hover{
+	background-color:#666;
+}
+
+.lightOn:hover{
+	background-color:#CCC;
 }
 
 .instagram:hover{

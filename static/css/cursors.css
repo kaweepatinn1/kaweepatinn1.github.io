@@ -40,3 +40,11 @@ a:active {
 .linkedin{
     cursor: url("../cursors/linkedincursor.png") 9 12, auto;
 }
+
+.lightOff{
+	cursor: url("../cursors/suncursor.png") 11 11, auto;
+}
+
+.lightOn{
+	cursor: url("../cursors/mooncursor.png") 11 11, auto;
+}
