@@ -51,25 +51,31 @@
 .block {
   display: block;
   width: 140px;
+  height: 80px;
+  line-height: 20px;
   border: none;
   background-color: #333;
-  padding: 28px 0px;
+  padding: 28px 0px 28px 0px;
   font-size: 17px;
   cursor: pointer;
-  text-align: center;
   color: #FFF;
   font-family: Roboto, sans-serif;
   text-decoration: none;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing: ease-in-out;
+	
 }
 
 .block:hover{
   background-color: #666;
-  color: #FFF
+  color: #FFF;
+  line-height: 40px;
 }
 
 .icon {
   display: block;
-  width: 40px;
+  width: 60px;
   border: none;
   background-color: #333;
   padding: 22px 0px;
@@ -79,11 +85,28 @@
   color: #FFF;
   font-family: Roboto, sans-serif;
   text-decoration: none;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing: ease-in-out;
 }
 
 .icon:hover{
-  background-color: #666;
-  color: #FFF
+  padding: 30px 0px 14px 0px;
+}
+.mail:hover{
+	background-color:#008EFF;
+}
+
+.youtube:hover{
+	background-color:#F00;
+}
+
+.linkedin:hover{
+	background-color:#0C64C5;
+}
+
+.instagram:hover{
+	background-color:#fb09be;
 }
 
 a:link { text-decoration: none; }
