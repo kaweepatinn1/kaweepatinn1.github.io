@@ -143,7 +143,6 @@ body {
     font-size: 1.275vw;
     cursor: pointer;
     text-align: center;
-    color: #FFF;
     font-family: Roboto, sans-serif;
     text-decoration: none;
     transition-property: all;
@@ -152,7 +151,7 @@ body {
 }
 
 .lightOn{
-	background-color:#FFF;
+	background-color:#EEE;
 	display: block;
     width: 5.6vw;
     border: none;
@@ -160,7 +159,6 @@ body {
     font-size: 1.275vw;
     cursor: pointer;
     text-align: center;
-    color: #FFF;
     font-family: Roboto, sans-serif;
     text-decoration: none;
     transition-property: all;
