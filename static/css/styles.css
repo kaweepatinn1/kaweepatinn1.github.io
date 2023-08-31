@@ -8,10 +8,10 @@
 }
 
 body {
-	padding: 2vw;
 	background-color: #111;
 	color: #FFF;
 	font-size: 2vw;
+	margin: 0px;
 }
 
 .dark-mode {
@@ -55,6 +55,7 @@ body {
 	transition-property: all;
     transition-duration: 1s;
     transition-timing: ease-in-out;
+	width: 100vw;
 }
 
 .gap {
@@ -202,7 +203,6 @@ a:active { text-decoration: none; }
 	right: 40%;
     top: 10%;
 	bottom: 70%;
-	z-index: 100;
 
   /* Create the parallax scrolling effect */
     background-attachment: fixed;
