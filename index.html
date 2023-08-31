@@ -12,6 +12,7 @@
 </script>
 <link rel="stylesheet" type="text/css" href="static/css/styles.css">
 <link rel="stylesheet" , href="static/css/cursors.css">
+<script type="text/javascript" src="static/js/index.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -31,7 +32,7 @@
 </head>
 
 <body>
-<h1 class="title">🚧 Nanomotions Under Construction 🚧</h1>
+<div class="parallax"></div>
 <div class="top-bar">
   <ul class="nav-list">
     <a href="mailto:contact@nanomotions.org"><button type="button" class="icon mail">
@@ -63,28 +64,11 @@
 	<button id="lightButton" type="button" onclick="changeMode()" class="lightOff">
     <img id="changeModeA" src="./static/assets/lightswitchlight.png" alt="Light Switch" height="50%" width = "50%">
     </button>
-	  <script>
-        function changeMode() {
-            let element = document.body;
-			let button = document.getElementById("lightButton")
-            let content = document.getElementById("changeModeA");
-            if (content.src.includes("lightswitchlight.png")) {
-                content.src = "./static/assets/lightswitchdark.png";
-				element.className = "light-mode";
-				button.className = "lightOn";
-				document.title.color = "333";
-            } else {
-                content.src = "./static/assets/lightswitchlight.png";
-				element.className = "dark-mode";
-				button.className = "lightOff";
-				document.title.color = "FFF";
-            }
-        }
-    </script>
 	<a href="https://www.instagram.com/nanomotions/" target="_blank" rel="noopener noreferrer"><button type="button" class="icon instagram">
     <img src=".\static\assets\instagram.png" alt="Instagram Icon" height="50%" width = "50%">
     </button></a>
   </ul>
 </div>
+	<h1 class="title">🚧 Nanomotions Under Construction 🚧</h1>
 </body>
 </html>

@@ -188,3 +188,23 @@ a:hover { text-decoration: none; }
 
 
 a:active { text-decoration: none; }
+
+.parallax {
+  /* The image used */
+    background-image: url("../assets/logo4k.png");
+
+  /* Set a specific height */
+   	width: 20%;
+	height: 20%;
+	position: absolute;
+	left: 40%;
+	right: 40%;
+    top: 10%;
+	bottom: 70%;
+
+  /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: 43.25vw 2vw;
+    background-repeat: no-repeat;
+    background-size: 13.5vw 13.5vw;
+}
