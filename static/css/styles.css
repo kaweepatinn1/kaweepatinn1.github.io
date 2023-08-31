@@ -37,16 +37,10 @@ body {
   font-weight: bold;
 }
 
-.top-bar {
-    background-color: #222;
-    height: 6vw;
-	width: 100vw;
-	left: 0;
-    display: flex;
-}
-
 .nav-list {
+	background-color:#333;
     list-style-type: none;
+	height: 6vw;
     margin: 0;
     padding: 0;
     display: flex;
@@ -55,16 +49,16 @@ body {
 	transition-property: all;
     transition-duration: 1s;
     transition-timing: ease-in-out;
-	width: 100vw;
+	width: 100%;
 }
 
 .gap {
-    display: block;
+    display: flex;
     width: 12.6vw;
 	height: 6vw;
     border: none;
     background-color: #333;
-    padding: 1.95vw 1vw;
+	padding: 0px;
     font-size: 1.5vw;
     cursor: pointer;
     text-align: center;
@@ -75,10 +69,6 @@ body {
     transition-property: all;
     transition-duration: 1s;
     transition-timing: ease-in-out;
-}
-
-.gap:hover{
-  background-color: #333;
 }
 
 .block {
@@ -191,37 +181,19 @@ a:hover { text-decoration: none; }
 
 a:active { text-decoration: none; }
 
-.parallax {
-  /* The image used */
-    background-image: url("../assets/logo4k.png");
-
-  /* Set a specific height */
-   	width: 20%;
-	height: 20%;
-	position: absolute;
-	left: 40%;
-	right: 40%;
-    top: 10%;
-	bottom: 70%;
-
-  /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 43.25vw 2vw;
-    background-repeat: no-repeat;
-    background-size: 13.5vw 13.5vw;
+#mainlogo{
+	margin: 0vw 0vw 0vw 0vw;
 }
 
 .sticky {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  
+	position: fixed;
+	top: 0;
 }
 
 .content {
-  padding: 1vw;
+	padding: 1vw;
 }
 
-.sticky + .content {
-  padding-top: 7vw;
+.paddingtop {
+	padding-top: 7vw;
 }

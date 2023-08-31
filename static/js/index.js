@@ -25,14 +25,22 @@ $(window).scroll(function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  var navbar = document.getElementById("navbar");
-  var sticky = navbar ? navbar.offsetTop : 0;
+	var navbar = document.getElementById("navbar");
+	var sticky = navbar ? navbar.offsetTop : 0;
 
-  function stickyGiver() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky");
-    } else {
-      navbar.classList.remove("sticky");
+	function stickyGiver() {
+		var content = Array.from(document.getElementsByClassName("content"));
+		console.log(content);
+		if (window.pageYOffset >= sticky) {
+			navbar.classList.add("sticky");
+			content.forEach((el) => {
+				el.classList.add("paddingtop");
+			})
+		} else {
+			navbar.classList.remove("sticky");
+			content.forEach((el) => {
+				el.classList.remove("paddingtop");
+			})
     }
   }
 
