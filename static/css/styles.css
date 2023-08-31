@@ -43,7 +43,6 @@ body {
 	width: 100vw;
 	left: 0;
     display: flex;
-    justify-content: left;
 }
 
 .nav-list {
