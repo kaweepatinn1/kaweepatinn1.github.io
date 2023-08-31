@@ -14,14 +14,14 @@ function changeMode() {
 }
 
 $(window).scroll(function() {
-  var wScroll = $(this).scrollTop();
-  if ($(window).scrollTop() > 800) {
-    $(".parallax").css({ "transform": "translateY(0px)" });
-    $(".parallax").css("margin-top", wScroll - 600 + "px");
-  } else {
-    $(".parallax").css({ "transform": "translate(0px, " + wScroll / 12 + "%)" });
-    $(".parallax").css("margin-top", "0px");
-  }
+	var wScroll = $(this).scrollTop();
+	console.log($(window).scrollTop());
+	if ($(window).scrollTop() < 1900) {
+		$("#mainlogo").css({ "transform": "translateY(" + 0.02 * ($(window).scrollTop() - 1900) + "vw" + ")" });
+		console.log("translateY(" + -0.01 * $(window).scrollTop() + "vw" + ")")
+	} else {
+		$("#mainlogo").css({ "transform": "translateY(0px)" });
+	}
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	function stickyGiver() {
 		var content = Array.from(document.getElementsByClassName("content"));
-		console.log(content);
 		if (window.pageYOffset >= sticky) {
 			navbar.classList.add("sticky");
 			content.forEach((el) => {
