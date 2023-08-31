@@ -14,14 +14,20 @@ function changeMode() {
 }
 
 $(window).scroll(function() {
+	let width = screen.width;
 	var wScroll = $(this).scrollTop();
-	console.log($(window).scrollTop());
-	if ($(window).scrollTop() < 1900) {
-		$("#mainlogo").css({ "transform": "translateY(" + 0.02 * ($(window).scrollTop() - 1900) + "vw" + ")" });
-		console.log("translateY(" + -0.01 * $(window).scrollTop() + "vw" + ")")
-	} else {
-		$("#mainlogo").css({ "transform": "translateY(0px)" });
+
+  // Calculate the distance between the element and the top of the page
+	var distanceFromTop = $("#mainlogo").offset().top - $(window).scrollTop();
+	console.log(distanceFromTop);
+    // Calculate the translateY value based on the distance from the top
+	var translateYValue = -0.03 * (distanceFromTop);
+
+// Check if the translateY value is negative (element is above the desired position)
+	if (translateYValue > 0) {
+		translateYValue = 0;
 	}
+	$("#mainlogo").css({ "transform": "translateY(" + translateYValue + "vw" + ")" });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
