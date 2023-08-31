@@ -8,10 +8,10 @@
 }
 
 body {
-	padding: 25px;
+	padding: 2vw;
 	background-color: #111;
 	color: #FFF;
-	font-size: 25px;
+	font-size: 2vw;
 }
 
 .dark-mode {
@@ -39,9 +39,11 @@ body {
 
 .top-bar {
     background-color: #222;
-    height: var(--topbarsize, 6vw);
+    height: 6vw;
+	width: 100vw;
+	left: 0;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .nav-list {
@@ -58,7 +60,7 @@ body {
 
 .gap {
     display: block;
-    width: 13.5vw;
+    width: 12.6vw;
 	height: 6vw;
     border: none;
     background-color: #333;
@@ -201,10 +203,26 @@ a:active { text-decoration: none; }
 	right: 40%;
     top: 10%;
 	bottom: 70%;
+	z-index: 100;
 
   /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: 43.25vw 2vw;
     background-repeat: no-repeat;
     background-size: 13.5vw 13.5vw;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  
+}
+
+.content {
+  padding: 1vw;
+}
+
+.sticky + .content {
+  padding-top: 7vw;
 }
