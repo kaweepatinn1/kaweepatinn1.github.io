@@ -1,0 +1,27 @@
+{
+  "name": "kaweepatinn1.github.io",
+  "version": "1.0.0",
+  "description": "A static website built upon the awesome github pages.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "prod": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaweepatinn1/kaweepatinn1.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaweepatinn1/kaweepatinn1.github.io/issues"
+  },
+  "homepage": "https://github.com/kaweepatinn1/kaweepatinn1.github.io#readme",
+  "dependencies": {
+    "smooth-scrollbar": "^8.8.4"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.8.1"
+  }
+}

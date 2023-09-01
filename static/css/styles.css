@@ -37,11 +37,116 @@ body {
   font-weight: bold;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+  }
+
+.grid-item{
+    height: 17w;
+    margin: 1vw;
+}
+
+.applead {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+  
+.applead img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.applead .img-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+.gif {
+    transition: filter 0.3s ease;
+    filter: brightness(100%);
+  }
+
+.img {
+    transition: filter 0.3s ease;
+    filter: brightness(100%);
+  }
+
+
+
+.applead:hover .img-caption {
+    opacity: 1;
+  }
+  
+.applead:hover .gif {
+    filter: brightness(50%);
+  }
+
+.applead:hover .img {
+    filter: brightness(50%);
+  }
+ 
+.applead .gif {
+    position: relative;
+    display: inline-block;
+  }
+  
+.applead #applegif {
+    display: none;
+  }
+  
+.applead:hover #appleimage {
+    display: none;
+  }
+  
+.applead:hover #applegif {
+    display: block;
+  }
+
+.vid-title{
+    width:100%;
+    position:absolute;
+    text-align:center;
+    top:50%;
+    font-weight:400;
+    font-size:20px;
+    letter-spacing:10px;
+    color:white;
+    -webkit-transform:translate3d(0,-50%,0);
+    transform:translate3d(0,-50%,0);
+    padding:0px 15px;
+    box-sizing:border-box;
+}
+
+.vid-director{
+    color:white;
+    opacity:0.5;
+    font-size:11px;
+    letter-spacing:3px;
+    font-weight:100;
+    width:100%;
+    position:absolute;
+    text-align:center;
+    bottom:5px;
+}
+
 .nav-list {
 	background-color:#333;
     list-style-type: none;
 	height: 6vw;
-    margin: 0;
+    margin: 0vw 0vw 6vw 0vw;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -50,6 +155,7 @@ body {
     transition-duration: 1s;
     transition-timing: ease-in-out;
 	width: 100%;
+    z-index: 1000;
 }
 
 .gap {
@@ -181,7 +287,7 @@ a:hover { text-decoration: none; }
 
 a:active { text-decoration: none; }
 
-#mainlogo{
+#mainLogo{
 	margin: 0vw 0vw 0vw 0vw;
 }
 
@@ -195,10 +301,21 @@ a:active { text-decoration: none; }
 }
 
 .paddingtop {
-	padding-top: 7vw;
+	padding-top: 13vw;
+}
+
+.divGap{
+	display: flex;
+	flex-direction: column;
 }
 
 #topVideo{
 	padding: 0;
 	margin: 0;
+}
+
+.custom{
+    width: 10vw;
+    height: 20vw;
+    overflow: auto;
 }

@@ -12,9 +12,10 @@
 </script>
 <link rel="stylesheet" type="text/css" href="static/css/styles.css">
 <link rel="stylesheet" href="static/css/cursors.css">
-<script type="text/javascript" src="static/js/jquery-3.7.1.js"></script>
-<script type="text/javascript" src="static/js/index.js"></script>
-<script type="text/javascript" src="static/js/topvideo.js"></script>
+<script src="static/js/jquery-3.7.1.js"></script>
+<script src="static/js/index.js"></script>
+<script src="static/js/gifs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -33,10 +34,10 @@
   <link rel="icon" type="image/x-icon" href=".\static\assets\favicon.ico">
 </head>
 
-<body>
+<body id ="my-scrollbar">
 	
-<div>
-	<video id="topVideo" width="100%">
+<div class ="divGap scroll-container">
+	<video id="topVideo" width="100%" autobuffer preload muted>
 		<source src="static/assets/intro.mp4" type="video/mp4">
 		Your browser does not support the video tag.
 	</video>
@@ -57,7 +58,7 @@
     ANIMATION
     </button></a>
 	  <button type="button" class="gap default">
-		  <img src="static/assets/logo1k.webp" alt="Logo" id = "mainlogo" height="auto" width = "100%">⠀
+    <img src="static/assets/logo1k.webp" alt="Logo" id = "mainLogo" height="auto" width = "100%">⠀
     </button>
     <a href="Nanomotions.html"><button type="button" class="block link">
     MUSIC VIDEO
@@ -76,17 +77,32 @@
     </button></a>
   </ul>
 </div>
-<div class="content">
-	<h1 class="title">🚧 Nanomotions Under Construction 1 🚧</h1>
-	<h1 class="title">🚧 Nanomotions Under Construction 2 🚧</h1>
-	<h1 class="title">🚧 Nanomotions Under Construction 3 🚧</h1>
-	<h1 class="title">🚧 Nanomotions Under Construction 4 🚧</h1>
-	<h1 class="title">🚧 Nanomotions Under Construction 5 🚧</h1>
-	<h1 class="title">🚧 Nanomotions Under Construction 6 🚧</h1>
-	<h1 class="title">🚧 Nanomotions Under Construction 7 🚧</h1>
-	<h1 class="title">🚧 Nanomotions Under Construction 8 🚧</h1>
-	<h1 class="title">🚧 Nanomotions Under Construction 9 🚧</h1>
-	<h1 class="title">🚧 Nanomotions Under Construction 10 🚧</h1>
+<div class="content grid-container">
+  <a href="your-link-url">
+<div class="applead">
+<img class="img" id="appleimage" width="100%" height="auto" src="./static/assets/applead.webp" alt="Applead Image">
+<img class="gif" id="applegif" width="100%" src="./static/assets/applead.gif" alt="GIF">
+  <div class="img-caption">
+    <div class="vid-title">
+      nano
+    </div>
+    <div class="vid-director">
+      motions
+    </div>
+  </div>
+</img>
+</img>
+</div>
+</a>
+	<h1 class="title grid-item">🚧 Nanomotions Under Construction 2 🚧</h1>
+	<h1 class="title grid-item">🚧 Nanomotions Under Construction 3 🚧</h1>
+	<h1 class="title grid-item">🚧 Nanomotions Under Construction 4 🚧</h1>
+	<h1 class="title grid-item">🚧 Nanomotions Under Construction 5 🚧</h1>
+	<h1 class="title grid-item">🚧 Nanomotions Under Construction 6 🚧</h1>
+	<h1 class="title grid-item">🚧 Nanomotions Under Construction 7 🚧</h1>
+	<h1 class="title grid-item">🚧 Nanomotions Under Construction 8 🚧</h1>
+	<h1 class="title grid-item">🚧 Nanomotions Under Construction 9 🚧</h1>
+	<h1 class="title grid-item">🚧 Nanomotions Under Construction 10 🚧</h1>
 </div>
 	<iframe src="https://player.vimeo.com/video/855576014?h=5f6fef5840" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </body>
