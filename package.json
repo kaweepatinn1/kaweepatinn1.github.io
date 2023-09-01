@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kaweepatinn1/kaweepatinn1.github.io#readme",
   "dependencies": {
+    "gif.js": "^0.2.0",
     "smooth-scrollbar": "^8.8.4"
   },
   "devDependencies": {

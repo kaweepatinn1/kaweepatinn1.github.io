@@ -3,7 +3,6 @@ window.onbeforeunload = function () {
 }
 
 function changeMode() {
-  let element = document.body;
   let button = document.getElementById("lightButton");
   let content = document.getElementById("changeModeA");
   if (content && content.src.includes("lightswitchlight.png")) {
