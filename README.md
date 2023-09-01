@@ -1,2 +1,3 @@
-# kaweepatinn1.github.io
-Website
+# nanomotions.org
+
+A static website built upon the awesome github pages.
