@@ -40,7 +40,6 @@ var toActivateOYYGC = false;
 function regifOYYGC(){
     if (mouseWasGoneOYYGC == true){
     let content = document.getElementById("OYYGCimage");
-    console.log(content);
     content.play();
     mouseWasGoneOYYGC = false;
     }
