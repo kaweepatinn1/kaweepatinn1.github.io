@@ -197,3 +197,8 @@ a:active { text-decoration: none; }
 .paddingtop {
 	padding-top: 7vw;
 }
+
+#topVideo{
+	padding: 0;
+	margin: 0;
+}
