@@ -21,6 +21,22 @@ a:active {
     cursor: url("../cursors/opencursor.png") 10 11, auto;
 }
 
+.purplink{
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
+.darkpurplink{
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
+.bluelink{
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
+.darkbluelink{
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
 .link{
     cursor: url("../cursors/opencursor.png") 10 11, auto;
 }

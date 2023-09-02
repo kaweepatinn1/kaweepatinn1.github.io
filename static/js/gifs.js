@@ -38,7 +38,7 @@ function revertApple(){
     let content = document.getElementById("Appleimage");
     content.pause();
     content.currentTime = 0;
-    mouseWasGoneOYYGC = true;
+    mouseWasGoneApple = true;
 }
 
 var mouseOverOYYGC = false;

@@ -19,7 +19,6 @@ body {
 	color: #FFF;
 	transition-property: all;
     transition-duration: 0.5s;
-    transition-timing: ease-in-out;
 }
 
 .light-mode {
@@ -27,7 +26,40 @@ body {
 	color: #333;
 	transition-property: all;
     transition-duration: 0.5s;
-    transition-timing: ease-in-out;
+}
+
+.dark-mode-element{
+    color: #333;
+    background-color: #FFF;
+}
+
+.light-mode-element{
+    color: #FFF;
+    background-color: #333;
+}
+
+.purplink{ /* used in dark mode */
+    color: #ceabee;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.darkpurplink{ /* used in light mode */
+    color: #9853d8;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.bluelink{ /* used in dark mode */
+    color: #57a9e0;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.darkbluelink{ /* used in light mode */
+    color: #3d59d3;
+    transition-property: all;
+    transition-duration: 0.5s;
 }
 
 .title {
@@ -48,7 +80,6 @@ body {
     align-items: center;
 	transition-property: all;
     transition-duration: 0.75s;
-    transition-timing: ease-in-out;
 	width: 100%;
     z-index: 1000;
 }
@@ -69,7 +100,6 @@ body {
     font-weight: bold;
     transition-property: all;
     transition-duration: 0.75s;
-    transition-timing: ease-in-out;
 }
 
 .block {
@@ -88,7 +118,6 @@ body {
     text-decoration: none;
     transition-property: all;
     transition-duration: 0.75s;
-    transition-timing: ease-in-out;
 	font-weight: bold;
 	filter: brightness(100%);
 }
@@ -96,8 +125,16 @@ body {
 .block:hover{
   background-color: #666;
   color: #FFF;
-  line-height: 3vw;
   filter: brightness(85%);
+  transition-property: all;
+  transition-duration: 0.75s;
+}
+
+.hoverUp{
+    transition-property: all;
+    transition-duration: 0.75s;
+    transform: translateY(0vw);
+    pointer-events: none;
 }
 
 .icon {
@@ -114,12 +151,10 @@ body {
     text-decoration: none;
     transition-property: all;
     transition-duration: 0.75s;
-    transition-timing: ease-in-out;
     filter: brightness(100%);
 }
 
 .icon:hover{
-  padding: 2.05vw 0vw 0.85vw 0vw;
   filter: brightness(75%);
 }
 .mail:hover{
@@ -143,7 +178,6 @@ body {
     text-decoration: none;
     transition-property: all;
     transition-duration: 0.5s;
-    transition-timing: ease-in-out;
 }
 
 .lightOn{
@@ -159,7 +193,6 @@ body {
     text-decoration: none;
     transition-property: all;
     transition-duration: 0.5s;
-    transition-timing: ease-in-out;
 }
 
 .lightOff:hover{
@@ -203,6 +236,23 @@ a:active { text-decoration: none; }
 	padding: 1vw;
 }
 
+.mainTitle{
+    font-size: 8vw;
+    margin: auto;
+    width: 5%;
+    padding: 1vw;
+    margin-top: 0vw;
+    margin-bottom: 2vw;
+    width: 90vw;
+    text-align: center;
+    transition-duration: 0.75s;
+}
+
+.mainTitle:hover{
+    letter-spacing:1vw;
+    opacity: 0.6;
+}
+
 .paddingtop {
 	padding-top: 7vw;
 }
@@ -217,8 +267,41 @@ a:active { text-decoration: none; }
 	margin: 0;
 }
 
-.custom{
-    width: 10vw;
-    height: 20vw;
-    overflow: auto;
+.footer{
+    background-color:#333; 
+    color:white; 
+    display:flex;
+    padding:0vw;
+}
+
+.footertext{
+    padding:0.75vw;
+    margin:0;
+    font-size: 1vw;
+    transition-property: all;
+    transition-duration: 0.75s;
+}
+
+.footertext:hover{
+    filter: brightness(50%);
+    transform: translateX(1vw);
+}
+
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.THICK{
+    height: 5px;
+    border: none;
+    transition-property: all;
+    transition-duration: 0.75s;
 }

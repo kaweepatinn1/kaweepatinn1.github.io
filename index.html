@@ -41,126 +41,197 @@
   <link rel="icon" type="image/x-icon" href=".\static\assets\favicon.ico">
 </head>
 
-<body id ="my-scrollbar">
-	
+<body>
 <div class ="divGap scroll-container">
 	<video id="topVideo" width="100%" autobuffer preload muted>
 		<source src="static/assets/intro.mp4" type="video/mp4">
 		Your browser does not support the video tag.
   </video>
   <ul id="navbar" class="nav-list">
-    <a href="mailto:contact@nanomotions.org"><button type="button" class="icon mail">
-    <img src=".\static\assets\email.png" alt="Email Icon" height="50%" width = "50%">
-    </button></a>
-	<a href="https://www.youtube.com/@nanomotionstudio" target="_blank" rel="noopener noreferrer"><button type="button" class="icon youtube">
-    <img src=".\static\assets\youtube.png" alt="YouTube Icon" height="50%" width = "50%">
-    </button></a>
-	<a href="Nanomotions.html"><button type="button" class="block link">
-    FILM
-    </button></a>
-    <a href="Nanomotions.html"><button type="button" class="block link">
-    ADVERTISING
-    </button></a>
-    <a href="Nanomotions.html"><button type="button" class="block link">
-    ANIMATION
-    </button></a>
+    <a href="mailto:contact@nanomotions.org">
+      <button id="!0AHover" type="button" class="icon mail">
+        <img id="!0AHoverChild" class="hoverUp" src=".\static\assets\email.png" alt="Email Icon" height="50%" width = "50%">
+      </button>
+    </a>
+    <a href="https://www.youtube.com/@nanomotionstudio" target="_blank" rel="noopener noreferrer">
+      <button id="!0BHover" type="button" class="icon youtube">
+        <img id="!0BHoverChild" class="hoverUp" src=".\static\assets\youtube.png" alt="YouTube Icon" height="50%" width = "50%">
+      </button>
+    </a>
+    <a href="Nanomotions.html">
+      <button id="!01Hover" type="button" class="block link">
+        <div id="!01HoverChild" class="hoverUp">FILM</div>
+      </button>
+    </a>
+    <a href="Nanomotions.html">
+      <button id="!02Hover" type="button" class="block link">
+        <div id="!02HoverChild" class="hoverUp">ADVERTISING</div>
+      </button>
+    </a>
+    <a href="Nanomotions.html">
+      <button id="!03Hover" type="button" class="block link">
+        <div id="!03HoverChild" class="hoverUp">ANIMATION</div>
+      </button>
+    </a>
 	  <button type="button" class="gap default">
-    <img src="static/assets/logo1k.webp" alt="Logo" id = "mainLogo" height="auto" width = "100%">⠀
+      <img src="static/assets/logo1k.webp" onclick="location.href='./index.html'" alt="Logo" id = "mainLogo" height="auto" width = "100%">⠀
     </button>
-    <a href="Nanomotions.html"><button type="button" class="block link">
-    MUSIC VIDEO
-    </button></a>
-    <a href="Nanomotions.html"><button type="button" class="block link">
-    PHOTOGRAPHY
-    </button></a>
-    <a href="Nanomotions.html"><button type="button" class="block link">
-    ABOUT
-    </button></a>
-	<button id="lightButton" type="button" onclick="changeMode()" class="lightOff">
-    <img id="changeModeA" src="./static/assets/lightswitchlight.png" alt="Light Switch" height="50%" width = "50%">
+    <a href="Nanomotions.html">
+      <button id="!04Hover" type="button" class="block link">
+        <div id="!04HoverChild" class="hoverUp">MUSIC VIDEO</div>
+      </button>
+    </a>
+    <a href="Nanomotions.html">
+      <button id="!05Hover" type="button" class="block link">
+        <div id="!05HoverChild" class="hoverUp">PHOTOGRAPHY</div>
+      </button>
+    </a>
+    <a href="Nanomotions.html">
+      <button id="!06Hover" type="button" class="block link">
+        <div id="!06HoverChild" class="hoverUp">ABOUT</div>
+      </button>
+    </a>
+	  <button id="!0CHover" type="button" onclick="changeMode()" class="lightOff">
+      <img id="!0CHoverChild" class="hoverUp" src="./static/assets/lightswitchlight.png" alt="Light Switch" height="50%" width = "50%">
     </button>
-	<a href="https://www.instagram.com/nanomotions/" target="_blank" rel="noopener noreferrer"><button type="button" class="icon instagram">
-    <img src=".\static\assets\instagram.png" alt="Instagram Icon" height="50%" width = "50%">
-    </button></a>
+	  <a href="https://www.instagram.com/nanomotions/" target="_blank" rel="noopener noreferrer">
+      <button id="!0DHover" type="button" class="icon instagram">
+        <img id="!0DHoverChild" class="hoverUp" src=".\static\assets\instagram.png" alt="Instagram Icon" height="50%" width = "50%">
+      </button>
+    </a>
   </ul>
 </div>
-<div class="content grid-container">
-  <a href="TO SET" class="grid-item">
+<div class="content"></div>
+<div class="poppinsbold mainTitle" onmouseenter=ThickUp() onmouseleave=ThickDown()>
+  <div data-aos="fade-down" data-aos-offset="400" data-aos-delay="0">
+    Featured Works
+  </div>
+  <div data-aos="fade-up" data-aos-offset="100" data-aos-delay="0">
+    <hr id="thick" class="THICK dark-mode-element">
+  </div>
+</div>
+<div class="grid-container">
+  <div onclick="window.open('https://youtu.be/TJcj5AYzPAI')" class="grid-item grid-video">
     <div class="applead" onmouseover="regifApple()" data-aos="fade-up" data-aos-delay="0">
-      <video class="img" id="Appleimage" width="100%" height="auto" src="./static/assets/AppleAd.mp4" loop="" muted="muted" alt="OYYGC"></video>
+      <video class="img" id="Appleimage" width="100%" height="auto" src="./static/assets/AppleAd.mp4" loop="" muted="muted" alt="OYYGC">
+        Your browser does not support this video preview.
+      </video>
       <div class="img-caption" style="pointer-events: none;">
           <div class="vid-title">Mock Apple Ad</div>
           <div class="vid-director">Animtaion x Motion Graphics</div>
       </div>
     </div>
-  </a>
-  <a href="TO SET" class="grid-item">
+  </div>
+  <div onclick="window.open('https://youtu.be/bEeUHc6P1r4')" class="grid-item grid-video">
     <div class="OYYGC" onmouseover="regifOYYGC()" data-aos="fade-up" data-aos-delay="100">
-      <video class="img" id="OYYGCimage" width="100%" height="auto" src="./static/assets/OYYGC.mp4" loop="" muted="muted" alt="OYYGC"></video>
+      <video class="img" id="OYYGCimage" width="100%" height="auto" src="./static/assets/OYYGC.mp4" loop="" muted="muted" alt="OYYGC">
+        Your browser does not support this video preview.
+      </video>
       <div class="img-caption" style="pointer-events: none;">
           <div class="vid-title">Oh Yeah You Gonna Cry?</div>
           <div class="vid-director">Animated x Live Music Video</div>
       </div>
     </div>
-  </a>
-  <a href="TO SET" class="grid-item">
+  </div>
+  <div onclick="window.open('https://youtu.be/IKzMFwDjH6M')" class="grid-item grid-video">
     <div class="LiveHK" onmouseover="regifLiveHK()" data-aos="fade-up" data-aos-delay="200">
-      <video class="img" id="LiveHKimage" width="100%" height="auto" src="./static/assets/LiveHK.mp4" loop="" muted="muted" alt="LiveHK"></video>
+      <video class="img" id="LiveHKimage" width="100%" height="auto" src="./static/assets/LiveHK.mp4" loop="" muted="muted" alt="LiveHK">
+      Your browser does not support this video preview.
+      </video>
       <div class="img-caption" style="pointer-events: none;">
           <div class="vid-title">Live Hong Kong</div>
           <div class="vid-director">Advertisement</div>
       </div>
     </div>
-  </a>
+  </div>
   <div>
     <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="0">
-      <p1 id="?1APPAD" class="grid-item redhatbold grid-title">
-        Mock Apple Ad</p1>
+      <p1 id="?1APPAD" class="bluelink grid-item redhatbold grid-title" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
+        Mock Apple Ad
+      </p1>
       <br>
     </div>
-    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="50">
-      <p1 id="?2APPAD" class="grid-item redhatregular grid-subtitle">
-        Animation and Motion Graphics<hr></p1>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="50" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
+      <p1 id="?2APPAD" class="link grid-item redhatregular grid-subtitle">
+        Animation and Motion Graphics
+        <hr>
+      </p1>
     </div>
     <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="100">
       <p1 id="?3APPAD" class="grid-item redhatregular grid-text">
-        Hello</p1>
-      <br>
-    </div>
-  </div>
-  <div>
-    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="100">
-      <p1 id="?1OYYGC" class="grid-item redhatbold grid-title" onhover:test($event)>
-        Oh Yeah, You Gonna Cry?</p1>
-      <br>
+        An advertisement for the now outdated iPhone 7 that created using a combination of Maya and After Effects. Personal project started to show my improvement over three years of animating :)
+      </p1>
     </div>
     <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="150">
-      <p1 id="?2OYYGC" class="grid-item redhatregular grid-subtitle">
-        Animated x Live Music Video<hr></p1>
+      <p1 id="?4APPAD" class="grid-item redhatregular grid-text">
+        Produced as part of the same project is also a secondary video comparing the advertisement to the one I had made three years prior, followed by a story about my journey as an animator:
+      </p1>
     </div>
     <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="200">
+      <p1 id="?5APPAD" class="purplink grid-item redhatregular grid-text" onclick="window.open('https://youtu.be/hTNcdBrw8AM')">
+        Three Years of Animating
+      </p1>
+    </div>
+  </div>
+  <div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="200" onclick="window.open('https://youtu.be/bEeUHc6P1r4')">
+      <p1 id="?1OYYGC" class="bluelink grid-item redhatbold grid-title">
+        Oh Yeah, You Gonna Cry?
+      </p1>
+      <br>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="250" onclick="window.open('https://youtu.be/bEeUHc6P1r4')">
+      <p1 id="?2OYYGC" class="link grid-item redhatregular grid-subtitle">
+        Animated x Live Music Video<hr>
+      </p1>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="300">
       <p1 id="?3OYYGC" class="grid-item redhatregular grid-text">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, odio!</p1>
+        An unofficial music video made with a blend of live action and animation, created in After Effects, with the assets produced in Photoshop.
+      </p1>
+      <br>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="350">
+      <p1 id="?4OYYGC" class="grid-item redhatregular grid-text">
+        With over 200 hours spent in post-production, this is my largesy project as of today.
+      </p1>
       <br>
     </div>
   </div>
   <div>
-    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="200">
-      <p1 id="?1LHK" class="grid-item redhatbold grid-title">
-        Live Hong Kong</p1>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="400" onclick="window.open('https://youtu.be/IKzMFwDjH6M')">
+      <p1 id="?1LHK" class="bluelink grid-item redhatbold grid-title">
+        Live Hong Kong
+      </p1>
       <br>
     </div>
-    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="250">
-      <p1 id="?2LHK" class="grid-item redhatregular grid-subtitle">
-        Advertisement<hr></p1>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="450" onclick="window.open('https://youtu.be/IKzMFwDjH6M'">
+      <p1 id="?2LHK" class="link grid-item redhatregular grid-subtitle">
+        Advertisement<hr>
+      </p1>
     </div>
-    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="300">
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="500">
       <p1 id="?3LHK" class="grid-item redhatregular grid-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam odio nihil commodi quaerat expedita facilis dolore asperiores fugit. Incidunt, ratione?</p1>
+        A short advertisement made for Hong Kong, displaying a variety of locations within the busy city.
+      </p1>
+      <br>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="550">
+      <p1 id="?4LHK" class="grid-item redhatregular grid-text">
+        Produced in Premiere Pro long before I knew how to use After Effects.
+      </p1>
       <br>
     </div>
   </div>
 </div>
+<div>
+  <br><br>
+</div>
+<footer class="footer">
+  <p onclick="location.href='./index.html'" class="redhatregular footertext">
+    &copy; Nanomotions 2023
+  </p>
+</footer>
 	<!--<iframe src="https://player.vimeo.com/video/855576014?h=5f6fef5840" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
   -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

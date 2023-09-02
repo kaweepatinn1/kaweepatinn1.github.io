@@ -9,12 +9,15 @@
 .grid-item{
   height: 17w;
   margin: 0.5vw;
+}
+
+.grid-video{
   transition-duration: 0.5s;
   transition-property: all;
   transform: translateY(0vw);
 }
 
-.grid-item:hover{
+.grid-video:hover{
   margin: 0vw;
   transform: translateY(0.25vw);
 }
@@ -43,7 +46,7 @@
   padding-left: 1vw;
   display: inline-block;
   font-size: 1vw;
-  margin: 0vw;
+  margin: 0vw 0vw 0.5vw 0vw;
   vertical-align: text-top;
   transition-property: all;
   transition-duration: 0.75s;
