@@ -41,6 +41,10 @@ a:active {
     cursor: url("../cursors/opencursor.png") 10 11, auto;
 }
 
+.opencursor{
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
 .default{
     cursor: url("../cursors/defaultcursor.png") 10 11, auto;
 }
