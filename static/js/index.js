@@ -120,5 +120,6 @@ window.onload = function() {
   // Code to be executed after the entire page, including CSS, has been loaded
 	window.scrollTo(0, 0);
 	sticky = navbar.offsetTop;
+	$('.loader').css('display','none');
   // Perform other initialization tasks, set up event handlers, etc.
 };
