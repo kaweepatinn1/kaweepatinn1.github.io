@@ -17,16 +17,34 @@ function changeMode() {
   }
 }
 
-$(window).scroll(function() {
-  // Calculate the distance between the element and the top of the page
-	var distanceFromTop = $("#mainLogo").offset().top - $(window).scrollTop();
+function setLogo(){
+	// Calculate the distance between the element and the top of the page
+	var distanceFromTop = sticky - window.scrollY;
 	// console.log($("#mainlogo").offset().top); // some reason this jumps up and down when using a value of higher than -0.03 below.
 	// console.log($(window).scrollTop());
 	// console.log(distanceFromTop);
     // Calculate the translateY value based on the distance from the top
-	var translateYValue = Math.min(-0.01 * distanceFromTop, 0);
-	
+	var offsetFromPosition = Math.min((-0.01 * distanceFromTop), 0);
+	var translateYValue = offsetFromPosition - extramove;
 	$("#mainLogo").css({ "transform": "translateY(" + translateYValue + "vw" + ")" });
+}
+
+$(window).scroll(function() {
+	setLogo();
+});
+
+var extramove
+
+$(document).ready(function(){
+    $(document).mousemove(function(){
+         if($("#mainLogo:hover").length != 0){
+			extramove = 3;
+			setLogo();
+        } else{
+            extramove = 0;
+			setLogo();
+        }
+    });
 });
 
 var sticky
@@ -35,7 +53,6 @@ var video
 
 document.addEventListener("DOMContentLoaded", function() {
 	navbar = document.getElementById("navbar");
-	sticky = navbar.offsetTop;
 	video = document.getElementById("topVideo");
 	logo = document.getElementById("mainLogo");
 	function seekToFrame(frameNumber, frameRate) {
@@ -46,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		var content = Array.from(document.getElementsByClassName("content"));
 		var frameToPlay = Math.round((window.scrollY/sticky)*225);
 		var currentFrame = Math.min(frameToPlay,225);
-		console.log(currentFrame);
 		seekToFrame(currentFrame, 60);
 		if (window.scrollY >= sticky) {
 			navbar.classList.add("sticky");

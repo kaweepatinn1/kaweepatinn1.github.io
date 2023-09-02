@@ -41,13 +41,13 @@ body {
 	background-color:#333;
     list-style-type: none;
 	height: 6vw;
-    margin: 0vw 0vw 6vw 0vw;
+    margin: 0vw 0vw 0vw 0vw;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 	transition-property: all;
-    transition-duration: 1s;
+    transition-duration: 0.75s;
     transition-timing: ease-in-out;
 	width: 100%;
     z-index: 1000;
@@ -68,7 +68,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition-property: all;
-    transition-duration: 1s;
+    transition-duration: 0.75s;
     transition-timing: ease-in-out;
 }
 
@@ -87,7 +87,7 @@ body {
     font-family: Roboto, sans-serif;
     text-decoration: none;
     transition-property: all;
-    transition-duration: 1s;
+    transition-duration: 0.75s;
     transition-timing: ease-in-out;
 	font-weight: bold;
 	
@@ -112,7 +112,7 @@ body {
     font-family: Roboto, sans-serif;
     text-decoration: none;
     transition-property: all;
-    transition-duration: 1s;
+    transition-duration: 0.75s;
     transition-timing: ease-in-out;
 }
 
@@ -184,6 +184,9 @@ a:active { text-decoration: none; }
 
 #mainLogo{
 	margin: 0vw 0vw 0vw 0vw;
+    transform: translate3d(0,0,0);
+    transition-property: all;
+    transition-duration: 0.75s;
 }
 
 .sticky {
@@ -196,7 +199,7 @@ a:active { text-decoration: none; }
 }
 
 .paddingtop {
-	padding-top: 13vw;
+	padding-top: 7vw;
 }
 
 .divGap{
