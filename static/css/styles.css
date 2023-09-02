@@ -90,13 +90,14 @@ body {
     transition-duration: 0.75s;
     transition-timing: ease-in-out;
 	font-weight: bold;
-	
+	filter: brightness(100%);
 }
 
 .block:hover{
   background-color: #666;
   color: #FFF;
   line-height: 3vw;
+  filter: brightness(85%);
 }
 
 .icon {
@@ -114,10 +115,12 @@ body {
     transition-property: all;
     transition-duration: 0.75s;
     transition-timing: ease-in-out;
+    filter: brightness(100%);
 }
 
 .icon:hover{
   padding: 2.05vw 0vw 0.85vw 0vw;
+  filter: brightness(75%);
 }
 .mail:hover{
 	background-color:#008EFF;
@@ -161,10 +164,12 @@ body {
 
 .lightOff:hover{
 	background-color:#666;
+    filter: brightness(75%);
 }
 
 .lightOn:hover{
 	background-color:#CCC;
+    filter: brightness(75%);
 }
 
 .instagram:hover{

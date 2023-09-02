@@ -13,9 +13,12 @@
 <link rel="stylesheet" type="text/css" href="static/css/styles.css">
 <link rel="stylesheet" href="static/css/cursors.css">
 <link rel="stylesheet" href="static/css/grid.css">
+<link rel="stylesheet" href="static/css/fonts.css">
+<link rel="stylesheet" href="static/fonts/fontfaces.css">
 <script src="static/js/jquery-3.7.1.js"></script>
 <script src="static/js/index.js"></script>
 <script src="static/js/gifs.js"></script>
+<script src="static/js/animations.js"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="static/js/aos.js"></script>
@@ -31,7 +34,7 @@
   <meta property="og:site_name" content="Nanomotions">
   <meta property="og:title" content="Nanomotions">
   <meta property="og:url" content="https://nanomotions.org/">
-  <meta property="og:image" content="https://nanomotions.org/static/assets/favicon.ico">
+  <meta property="og:image" content="https://nanomotions.org/static/assets/logo1k.webp">
   <meta property="og:image:alt" content="Nanomotions Logo">
   <meta property="og:description" content="A portfolio" />
   <meta content="#2b2d31" data-react-helmet="true" name="theme-color">
@@ -82,42 +85,81 @@
   </ul>
 </div>
 <div class="content grid-container">
-  <a href="TO SET">
-<div data-aos="fade-up" data-aos-offset="200"
-class="applead grid-item" 
-onmouseover="regifApple()">
-  <img class="img" id="appleimage" width="100%" height="auto" src="./static/assets/applead.webp" alt="Applead Image">
-    <div class="img-caption">
-      <div class="vid-title">
-        Mock Apple Ad
-      </div>
-      <div class="vid-director">
-        Animation and Motion Graphics
+  <a href="TO SET" class="grid-item">
+    <div class="applead" onmouseover="regifApple()" data-aos="fade-up" data-aos-delay="0">
+      <video class="img" id="Appleimage" width="100%" height="auto" src="./static/assets/AppleAd.mp4" loop="" muted="muted" alt="OYYGC"></video>
+      <div class="img-caption" style="pointer-events: none;">
+          <div class="vid-title">Mock Apple Ad</div>
+          <div class="vid-director">Animtaion x Motion Graphics</div>
       </div>
     </div>
-  </div>
-</a>
-<a href="TO SET">
-  <div class="OYYGC grid-item" onmouseover="regifOYYGC()" data-aos="fade-up" data-aos-offset="375">
-    <video class="img" id="OYYGCimage" width="100%" height="auto" src="./static/assets/OYYGC.mp4" loop="" muted="muted" alt="OYYGC"></video>
-    <div class="img-caption" style="pointer-events: none;">
-        <div class="vid-title">Oh Yeah You Gonna Cry?</div>
-        <div class="vid-director">Animated x Live Music Video</div>
+  </a>
+  <a href="TO SET" class="grid-item">
+    <div class="OYYGC" onmouseover="regifOYYGC()" data-aos="fade-up" data-aos-delay="100">
+      <video class="img" id="OYYGCimage" width="100%" height="auto" src="./static/assets/OYYGC.mp4" loop="" muted="muted" alt="OYYGC"></video>
+      <div class="img-caption" style="pointer-events: none;">
+          <div class="vid-title">Oh Yeah You Gonna Cry?</div>
+          <div class="vid-director">Animated x Live Music Video</div>
+      </div>
+    </div>
+  </a>
+  <a href="TO SET" class="grid-item">
+    <div class="LiveHK" onmouseover="regifLiveHK()" data-aos="fade-up" data-aos-delay="200">
+      <video class="img" id="LiveHKimage" width="100%" height="auto" src="./static/assets/LiveHK.mp4" loop="" muted="muted" alt="LiveHK"></video>
+      <div class="img-caption" style="pointer-events: none;">
+          <div class="vid-title">Live Hong Kong</div>
+          <div class="vid-director">Advertisement</div>
+      </div>
+    </div>
+  </a>
+  <div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="0">
+      <p1 id="?1APPAD" class="grid-item redhatbold grid-title">
+        Mock Apple Ad</p1>
+      <br>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="0">
+      <p1 id="?2APPAD" class="grid-item redhatregular grid-subtitle">
+        Animation and Motion Graphics<hr></p1>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="0">
+      <p1 id="?3APPAD" class="grid-item redhatregular grid-text">
+        Hello</p1>
+      <br>
     </div>
   </div>
-</a>
-<a href="TO SET">
-  <div class="LiveHK grid-item" onmouseover="regifLiveHK()" data-aos="fade-up" data-aos-offset="550">
-    <video class="img" id="LiveHKimage" width="100%" height="auto" src="./static/assets/LiveHK.mp4" loop="" muted="muted" alt="LiveHK"></video>
-    <div class="img-caption" style="pointer-events: none;">
-        <div class="vid-title">Live Hong Kong</div>
-        <div class="vid-director">Advertisement</div>
+  <div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="100">
+      <p1 id="?1OYYGC" class="grid-item redhatbold grid-title" onhover:test($event)>
+        Oh Yeah, You Gonna Cry?</p1>
+      <br>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="100">
+      <p1 id="?2OYYGC" class="grid-item redhatregular grid-subtitle">
+        Animated x Live Music Video<hr></p1>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="100">
+      <p1 id="?3OYYGC" class="grid-item redhatregular grid-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, odio!</p1>
+      <br>
     </div>
   </div>
-</a>
-	<h1 class="grid-item" data-aos="fade-up" data-aos-offset="200">🚧 Nanomotions Under Construction 2 🚧</h1>
-	<h1 class="grid-item" data-aos="fade-up" data-aos-offset="375">🚧 Nanomotions Under Construction 3 🚧</h1>
-	<h1 class="grid-item" data-aos="fade-up" data-aos-offset="550">🚧 Nanomotions Under Construction 4 🚧</h1>
+  <div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="200">
+      <p1 id="?1LHK" class="grid-item redhatbold grid-title">
+        Live Hong Kong</p1>
+      <br>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="200">
+      <p1 id="?2LHK" class="grid-item redhatregular grid-subtitle">
+        Advertisement<hr></p1>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="50" data-aos-delay="200">
+      <p1 id="?3LHK" class="grid-item redhatregular grid-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam odio nihil commodi quaerat expedita facilis dolore asperiores fugit. Incidunt, ratione?</p1>
+      <br>
+    </div>
+  </div>
 </div>
 	<iframe src="https://player.vimeo.com/video/855576014?h=5f6fef5840" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
