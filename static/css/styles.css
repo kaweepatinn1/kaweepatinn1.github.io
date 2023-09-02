@@ -250,6 +250,7 @@ a:active { text-decoration: none; }
 
 .mainTitle:hover{
     letter-spacing:1vw;
+    transform: translateY(0.5vw);
     opacity: 0.6;
 }
 
