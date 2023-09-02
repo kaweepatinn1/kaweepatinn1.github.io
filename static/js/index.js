@@ -122,11 +122,3 @@ window.onload = function() {
 	sticky = navbar.offsetTop;
   // Perform other initialization tasks, set up event handlers, etc.
 };
-
-function ThickUp(){
-	$("#thick").css({ "transform": "translateY(-1.5vw)"});
-}
-
-function ThickDown(){
-	$("#thick").css({ "transform": "translateY(0vw)"});
-}
