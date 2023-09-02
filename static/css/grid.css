@@ -11,10 +11,12 @@
   margin: 0.5vw;
   transition-duration: 0.5s;
   transition-property: all;
+  transform: translateY(0vw);
 }
 
 .grid-item:hover{
   margin: 0vw;
+  transform: translateY(0.25vw);
 }
 
 .grid-title{
