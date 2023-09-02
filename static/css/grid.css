@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 32.5vw 32.5vw 32.5vw;
     justify-content: space-evenly;
+    overflow-x: hidden
   }
 
 .grid-item{
