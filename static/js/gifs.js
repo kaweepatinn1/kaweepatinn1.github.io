@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(document).mousemove(function(){
-         if($("#appleimage:hover").length != 0){
+         if($("#Appleimage:hover").length != 0){
             mouseOverApple = true;
         } else{
             mouseOverApple = false;
@@ -28,18 +28,17 @@ var mouseWasGoneApple = true;
 
 function regifApple(){
     if (mouseWasGoneApple == true){
-    let content = document.getElementById("appleimage");
-    content.src = "./static/assets/applead.gif";
+    let content = document.getElementById("Appleimage");
+    content.play();
     mouseWasGoneApple = false;
     }
 }
 
 function revertApple(){
-    if (mouseOverApple == false){
-        let content = document.getElementById("appleimage");
-        content.src = "./static/assets/applead.webp";
-        mouseWasGoneApple = true;
-    }
+    let content = document.getElementById("Appleimage");
+    content.pause();
+    content.currentTime = 0;
+    mouseWasGoneOYYGC = true;
 }
 
 var mouseOverOYYGC = false;

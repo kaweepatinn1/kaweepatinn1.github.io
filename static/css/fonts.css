@@ -1,0 +1,35 @@
+.nunitoregular {
+    font-family: 'Nunito';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.nunitobold {
+    font-family: 'Nunito';
+    font-weight: bold;
+    font-style: normal;
+}
+
+.redhatregular {
+    font-family: 'Red Hat Display';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.redhatbold {
+    font-family: 'Red Hat Display';
+    font-weight: bold;
+    font-style: normal;
+}
+
+.poppinsregular {
+    font-family: 'Poppins';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.poppinsbold {
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-style: normal;
+}

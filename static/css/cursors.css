@@ -17,6 +17,10 @@ a:active {
     cursor: url("../cursors/opencursor.png") 10 11, auto;
 }
 
+#mainLogo{
+    cursor: url("../cursors/opencursor.png") 10 11, auto;
+}
+
 .link{
     cursor: url("../cursors/opencursor.png") 10 11, auto;
 }

@@ -1,13 +1,49 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 32.5vw 32.5vw 32.5vw;
     justify-content: space-evenly;
   }
 
 .grid-item{
-    height: 17w;
-    margin: 0.5vw;
+  height: 17w;
+  margin: 0.5vw;
+  transition-duration: 0.5s;
+  transition-property: all;
+}
+
+.grid-item:hover{
+  margin: 0vw;
+}
+
+.grid-title{
+  padding-left: 1vw;
+  display: inline-block;
+  font-size: 2vw;
+  margin: 0vw;
+  transition-property: all;
+  transition-duration: 0.75s;
+}
+
+.grid-subtitle{
+  padding-left: 1vw;
+  display: inline-block;
+  font-size: 0.6vw;
+  margin: 0vw;
+  vertical-align: text-top;
+  height: 2.5vw;
+  transition-property: all;
+  transition-duration: 0.75s;
+}
+
+.grid-text{
+  padding-left: 1vw;
+  display: inline-block;
+  font-size: 1vw;
+  margin: 0vw;
+  vertical-align: text-top;
+  transition-property: all;
+  transition-duration: 0.75s;
 }
 
 .vid-title{
@@ -23,6 +59,9 @@
     transform:translate3d(0,-50%,0);
     padding:0vw 3vw;
     box-sizing:border-box;
+    transform: translateY(2vw);
+    transition-property: all;
+    transition-duration: 0.75s;
 }
 
 .vid-director{
@@ -35,6 +74,9 @@
     position:absolute;
     text-align:center;
     bottom:0.7vw;
+    transform: translateY(1vw);
+    transition-property: all;
+    transition-duration: 0.75s;
 }
 
 .img {
@@ -67,10 +109,8 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    transform: translateY(1vw);
     transition-property: all;
     transition-duration: 0.75s;
-    pointer-events:none
   }
 
 .applead:hover .img-caption {
@@ -78,8 +118,20 @@
     transform: translateY(0vw);
   }
 
+.applead:hover .vid-director {
+    transform: translateY(0vw);
+  }
+
+.applead:hover .vid-title {
+    transform: translateY(-1vw);
+  }
+
 .applead:hover .img {
     filter: brightness(50%);
+  }
+
+.applead .img-caption .vid-director {
+    bottom: 1.1vw;
   }
 
 .OYYGC {
@@ -106,7 +158,6 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    transform: translateY(1vw);
     transition-property: all;
     transition-duration: 0.75s;
   }
@@ -114,6 +165,14 @@
 .OYYGC:hover .img-caption {
     opacity: 1;
     transform: translateY(0vw);
+  }
+
+.OYYGC:hover .vid-director {
+    transform: translateY(0vw);
+  }
+
+.OYYGC:hover .vid-title {
+    transform: translateY(-1vw);
   }
 
 .OYYGC:hover .img {
@@ -148,7 +207,6 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    transform: translateY(1vw);
     transition-property: all;
     transition-duration: 0.75s;
   }
@@ -156,6 +214,14 @@
 .LiveHK:hover .img-caption {
     opacity: 1;
     transform: translateY(0vw);
+  }
+
+.LiveHK:hover .vid-director {
+    transform: translateY(0vw);
+  }
+
+.LiveHK:hover .vid-title {
+    transform: translateY(-1vw);
   }
 
 .LiveHK:hover .img {
