@@ -15,4 +15,60 @@ document.addEventListener("DOMContentLoaded", function() {
         title = document.getElementById("mainTitleID");
         title.setAttribute('data-aos-offset', '0'); // fix title not showing on mobile devices
     }
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    if (h > w){
+        changeAos();
+    }
 });
+
+function changeAos(){
+    let gridTitle = Array.from(document.getElementsByClassName("grid-title"));
+	    gridTitle.forEach((gridTitleItem) => {
+    gridTitleItem.setAttribute('data-aos-offset', '-50');
+    })
+    let gridSubtitle = Array.from(document.getElementsByClassName("grid-subtitle"));
+    gridSubtitle.forEach((gridSubtitleItem) => {
+        gridSubtitleItem.setAttribute('data-aos-offset', '-50');
+    })
+    let gridText = Array.from(document.getElementsByClassName("grid-text"));
+    gridText.forEach((gridTextItem) => {
+        gridTextItem.setAttribute('data-aos-offset', '-50');
+    })
+    let aosAnimate = Array.from(document.getElementsByClassName("aosable"));
+    aosAnimate.forEach((aosItem) => {
+        aosItem.classList.add("aos-animate");
+    })
+    //aosable class all gets animations when resizing height beyond witdh
+}
+
+function changeAosBack(){
+    let gridTitle = Array.from(document.getElementsByClassName("grid-title"));
+	    gridTitle.forEach((gridTitleItem) => {
+        gridTitleItem.setAttribute('data-aos-offset', '50');
+    })
+    let gridSubtitle = Array.from(document.getElementsByClassName("grid-subtitle"));
+        gridSubtitle.forEach((gridSubtitleItem) => {
+        gridSubtitleItem.setAttribute('data-aos-offset', '50');
+    })
+    let gridText = Array.from(document.getElementsByClassName("grid-text"));
+        gridText.forEach((gridTextItem) => {
+        gridTextItem.setAttribute('data-aos-offset', '50');
+    })
+}
+
+function displayWindowSize(){
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    console.log(w);
+    console.log(h);
+    if (h > w){
+        changeAos();
+        console.log("changed");
+    } else{
+        changeAosBack();
+        console.log("changedback");
+    }
+}
+
+window.addEventListener("resize", displayWindowSize);
