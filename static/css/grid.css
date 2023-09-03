@@ -4,7 +4,21 @@
     grid-template-columns: 32.5vw 32.5vw 32.5vw;
     justify-content: space-evenly;
     overflow-x: hidden
-  }
+}
+
+.grid-left-container {
+  display: grid;
+  grid-template-columns: 32.5vw 65vw;
+  justify-content: space-evenly;
+  overflow-x: hidden
+}
+
+.grid-right-container {
+  display: grid;
+  grid-template-columns: 65vw 32.5vw;
+  justify-content: space-evenly;
+  overflow-x: hidden
+}
 
 .grid-item{
   height: 17w;
