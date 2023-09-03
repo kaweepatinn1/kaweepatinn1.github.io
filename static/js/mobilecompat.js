@@ -22,38 +22,40 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-function changeAos(){
-    let gridTitle = Array.from(document.getElementsByClassName("grid-title"));
-	    gridTitle.forEach((gridTitleItem) => {
-    gridTitleItem.setAttribute('data-aos-offset', '-50');
-    })
-    let gridSubtitle = Array.from(document.getElementsByClassName("grid-subtitle"));
-    gridSubtitle.forEach((gridSubtitleItem) => {
-        gridSubtitleItem.setAttribute('data-aos-offset', '-50');
-    })
-    let gridText = Array.from(document.getElementsByClassName("grid-text"));
-    gridText.forEach((gridTextItem) => {
-        gridTextItem.setAttribute('data-aos-offset', '-50');
-    })
+function changeAos(to360){
     for (let i = 0; i < 760 ; i =  i + 50 ){
         setTimeout(aosGive, i); //runs the function every 50ms to get the lowest delay possible without killing pc
     }
+    //var sizeFrom1080 = Math.min(to360,360);
+    //var offsetOffset = toString(-50 + (150 * (sizeFrom1080 / 360)));
+    //let gridTitle = Array.from(document.getElementsByClassName("grid-title"));
+	//    gridTitle.forEach((gridTitleItem) => {
+    //gridTitleItem.setAttribute('data-aos-offset', offsetOffset);
+    //})
+    //let gridSubtitle = Array.from(document.getElementsByClassName("grid-subtitle"));
+    //gridSubtitle.forEach((gridSubtitleItem) => {
+    //    gridSubtitleItem.setAttribute('data-aos-offset', offsetOffset);
+    //})
+    //let gridText = Array.from(document.getElementsByClassName("grid-text"));
+    //gridText.forEach((gridTextItem) => {
+    //    gridTextItem.setAttribute('data-aos-offset', offsetOffset);
+    //})
 }
 
-function changeAosBack(){
-    let gridTitle = Array.from(document.getElementsByClassName("grid-title"));
-    gridTitle.forEach((gridTitleItem) => {
-        gridTitleItem.setAttribute('data-aos-offset', '50');
-    })
-    let gridSubtitle = Array.from(document.getElementsByClassName("grid-subtitle"));
-    gridSubtitle.forEach((gridSubtitleItem) => {
-        gridSubtitleItem.setAttribute('data-aos-offset', '50');
-    })
-    let gridText = Array.from(document.getElementsByClassName("grid-text"));
-    gridText.forEach((gridTextItem) => {
-        gridTextItem.setAttribute('data-aos-offset', '50');
-    })
-}
+//function changeAosBack(){
+//    let gridTitle = Array.from(document.getElementsByClassName("grid-title"));
+//    gridTitle.forEach((gridTitleItem) => {
+//        gridTitleItem.setAttribute('data-aos-offset', '100');
+//    })
+//    let gridSubtitle = Array.from(document.getElementsByClassName("grid-subtitle"));
+//    gridSubtitle.forEach((gridSubtitleItem) => {
+//        gridSubtitleItem.setAttribute('data-aos-offset', '100');
+//    })
+//    let gridText = Array.from(document.getElementsByClassName("grid-text"));
+//    gridText.forEach((gridTextItem) => {
+//        gridTextItem.setAttribute('data-aos-offset', '100');
+//    })
+//}
 
 function aosGive(){
     let aosAnimate = Array.from(document.getElementsByClassName("aos-init"));
@@ -64,12 +66,12 @@ function aosGive(){
 }
 
 function displayWindowSize(){
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-    console.log(w);
-    console.log(h);
-    if (h > w){
-        changeAos();
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+    console.log(windowWidth);
+    console.log(windowHeight);
+    if (windowHeight * 1.5 > windowWidth || windowHeight < 1080){
+        changeAos(1080 - windowHeight);
     } else{
         changeAosBack();
     }
