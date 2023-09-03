@@ -62,7 +62,7 @@
   font-size: 0.6vw;
   margin: 0vw;
   vertical-align: text-top;
-  height: 2.5vw;
+  height: 1.5vw;
   transition-property: all;
   transition-duration: 0.75s;
 }
@@ -77,37 +77,47 @@
   transition-duration: 0.75s;
 }
 
-.vid-title{
-    width:100%;
-    position:absolute;
-    text-align:center;
-    top:50%;
-    font-weight:400;
-    font-size:1.5vw;
-    letter-spacing:0.2vw;
-    color:white;
-    -webkit-transform:translate3d(0,-50%,0);
-    transform:translate3d(0,-50%,0);
-    padding:0vw 3vw;
-    box-sizing:border-box;
-    transform: translateY(2vw);
-    transition-property: all;
-    transition-duration: 0.75s;
+.grid-subtext{
+  padding-left: 1vw;
+  display: inline-block;
+  font-size: 0.8vw;
+  margin: 0vw 0vw 0.5vw 0vw;
+  vertical-align: text-top;
+  transition-property: all;
+  transition-duration: 0.75s;
 }
 
-.vid-director{
-    color:white;
-    opacity:0.5;
-    font-size:0.75vw;
-    letter-spacing:0.1vw;
-    font-weight:100;
-    width:100%;
-    position:absolute;
-    text-align:center;
-    bottom:0.7vw;
-    transform: translateY(0.8vw);
-    transition-property: all;
-    transition-duration: 0.75s;
+.vid-title{
+  width:100%;
+  position:absolute;
+  text-align:center;
+  top:50%;
+  font-weight:400;
+  font-size:1.5vw;
+  letter-spacing:0.2vw;
+  color:white;
+  -webkit-transform:translate3d(0,-50%,0);
+  transform:translate3d(0,-50%,0);
+  padding:0vw 3vw;
+  box-sizing:border-box;
+  transform: translateY(2vw) translateX(0.6vw);
+  transition-property: all;
+  transition-duration: 0.75s;
+}
+
+.vid-subtitle{
+  color:white;
+  opacity:0.5;
+  font-size:0.75vw;
+  letter-spacing:0.1vw;
+  font-weight:100;
+  width:100%;
+  position:absolute;
+  text-align:center;
+  bottom:0.7vw;
+  transform: translateY(0.8vw) translateX(0.6vw);
+  transition-property: all;
+  transition-duration: 0.75s;
 }
 
 .img {
@@ -118,6 +128,7 @@
 
 .hoverable-video {
     position: relative;
+    padding: 0.3vw;
     overflow: hidden;
     font-family: Roboto, sans-serif;
 }
@@ -149,19 +160,19 @@
     transform: translateY(0vw);
   }
 
-.hoverable-video:hover .vid-director {
-    transform: translateY(0vw);
+.hoverable-video:hover .vid-subtitle {
+    transform: translateY(-0.5vw) translateX(0.6vw);
   }
 
 .hoverable-video:hover .vid-title {
-    transform: translateY(-1vw);
+    transform: translateY(-1vw) translateX(0.6vw);
   }
 
 .hoverable-video:hover .img {
     filter: brightness(50%);
   }
 
-.hoverable-video .img-caption .vid-director {
+.hoverable-video .img-caption .vid-subtitle {
     bottom: 1.1vw;
   }
 
@@ -176,4 +187,14 @@
 .separator{
   width: 87.5vw; 
   transform: translateY(0vw);
+}
+
+i{
+  pointer-events: none;
+}
+
+.bordered{
+  border-style: solid;
+  border-radius: 1vw;
+  border-width: 0.15vw;
 }

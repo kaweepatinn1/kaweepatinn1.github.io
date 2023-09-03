@@ -302,7 +302,7 @@ hr {
 }
 
 .LESSTHICK{
-    height: 0.5vw;
+    height: 0.4vw;
     border: none;
     transition-property: all;
     transition-duration: 0.75s;
