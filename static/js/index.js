@@ -51,12 +51,23 @@ function changeMode() {
 function setLogo(){
 	// Calculate the distance between the element and the top of the page
 	var distanceFromTop = sticky - window.scrollY;
-	// console.log($("#mainlogo").offset().top); // some reason this jumps up and down when using a value of higher than -0.03 below.
+	// console.log($("#mainlogo").offset().top); 
+	// some reason this jumps up and down when using a value of higher than -0.03 below.
+	// turns out it was due to using main logo offset which obviously changes. use sticky and scrollY instead.
 	// console.log($(window).scrollTop());
 	// console.log(distanceFromTop);
     // Calculate the translateY value based on the distance from the top
+	var mainOffset = -2.9;
+	var containsLarge = logo.classList.contains("large");
+	if (containsLarge){
+		var largeImageUp = -3.14;
+		var multi = 1.75;
+	} else{
+		var largeImageUp = 0;
+		var multi = 1.18;
+	}
 	var offsetFromPosition = Math.min((-0.01 * distanceFromTop), 0);
-	var translateYValue = offsetFromPosition - extramove;
+	var translateYValue = offsetFromPosition + extramove * multi + largeImageUp + mainOffset;
 	$("#mainLogo").css({ "transform": "translateY(" + translateYValue + "vw)" });
 }
 
@@ -69,7 +80,7 @@ var extramove
 $(document).ready(function(){
     $(document).mousemove(function(){
          if($("#mainLogo:hover").length != 0){
-			extramove = 3;
+			extramove = 2.5;
 			setLogo();
         } else{
             extramove = 0;
@@ -90,12 +101,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		var timeInSeconds = frameNumber / frameRate;
 		video.currentTime = timeInSeconds;
 	}
+
 	function stickyGiver() {
-		var content = Array.from(document.getElementsByClassName("content"));
-		var frameToPlay = Math.round((window.scrollY/sticky)*225);
-		var currentFrame = Math.min(frameToPlay,225);
-		seekToFrame(currentFrame, 60);
-		if (window.scrollY >= sticky && !window.mobileCheck()) {
+		if (video != undefined){
+			var content = Array.from(document.getElementsByClassName("content"));
+			var frameToPlay = Math.round((window.scrollY/sticky)*225);
+			var currentFrame = Math.min(frameToPlay,225);
+			seekToFrame(currentFrame, 60);
+		}
+		if ((window.scrollY >= sticky && !window.mobileCheck())) {
 			navbar.classList.add("sticky");
 			content.forEach((el) => {
 				el.classList.add("paddingtop");
@@ -108,15 +122,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 	window.addEventListener("scroll", function() {
-		stickyGiver();
-		video.pause();
+		if  (video != undefined){
+			stickyGiver();
+			video.pause();
+		}
 	});
 });
 
 window.onload = function() {
-  // Code to be executed after the entire page, including CSS, has been loaded
+	// Code to be executed after the entire page, including CSS, has been loaded
+	video = document.getElementById("topVideo");
+	if (video == undefined){
+		var content = Array.from(document.getElementsByClassName("content"));
+		navbar.classList.add("sticky");
+		content.forEach((el) => {
+			el.classList.add("paddingtop");
+		})
+	}
 	window.scrollTo(0, 0);
 	sticky = navbar.offsetTop;
 	$('.loader').css('display','none');
+	extramove = 0;
+	setTimeout(setLogo, 0);
   // Perform other initialization tasks, set up event handlers, etc.
 };

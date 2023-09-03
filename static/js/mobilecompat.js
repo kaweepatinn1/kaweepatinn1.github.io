@@ -57,6 +57,9 @@ function changeAos(to360){
 //    })
 //}
 
+// ABOVE is broken code (it targets the element instead of its parent,
+// which is what holds the aos class) that turned out to be unnecessary.
+
 function aosGive(){
     let aosAnimate = Array.from(document.getElementsByClassName("aos-init"));
     aosAnimate.forEach((aosItem) => {

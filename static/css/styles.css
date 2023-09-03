@@ -1,28 +1,22 @@
 @charset "utf-8";
 /* CSS Document */
-:root {
-  --blue: #1e90ff;
-  --white: #ffffff;
-  --topbarsize: 6vw;
-  --topbarfontsize: 1.8vw;
-}
 
 body {
 	background-color: #111;
-	color: #FFF;
+	color: #EEE;
 	font-size: 2vw;
 	margin: 0vw;
 }
 
 .dark-mode {
 	background-color: #111;
-	color: #FFF;
+	color: #EEE;
 	transition-property: all;
     transition-duration: 0.5s;
 }
 
 .light-mode {
-	background-color: #FFF;
+	background-color: #EEE;
 	color: #333;
 	transition-property: all;
     transition-duration: 0.5s;
@@ -30,11 +24,11 @@ body {
 
 .dark-mode-element{
     color: #333;
-    background-color: #FFF;
+    background-color: #EEE;
 }
 
 .light-mode-element{
-    color: #FFF;
+    color: #EEE;
     background-color: #333;
 }
 
