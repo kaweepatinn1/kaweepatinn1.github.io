@@ -80,4 +80,8 @@ function displayWindowSize(){
     }
 }
 
+$(window).scroll(function() {
+	displayWindowSize();
+});
+
 window.addEventListener("resize", displayWindowSize);
