@@ -36,7 +36,6 @@ function changeMode() {
 		link.classList.remove("darkpurplink");
 	})
 	let linksDarkBlue = Array.from(document.getElementsByClassName("darkbluelink"));
-	console.log(linksDarkBlue);
 	linksDarkBlue.forEach((link) => {
 		link.classList.add("bluelink");
 		link.classList.remove("darkbluelink");
@@ -113,8 +112,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		video.pause();
 	});
 });
-
-
 
 window.onload = function() {
   // Code to be executed after the entire page, including CSS, has been loaded
