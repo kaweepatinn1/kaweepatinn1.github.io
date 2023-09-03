@@ -300,3 +300,14 @@ hr {
     transition-property: all;
     transition-duration: 0.75s;
 }
+
+.LESSTHICK{
+    height: 0.5vw;
+    border: none;
+    transition-property: all;
+    transition-duration: 0.75s;
+}
+
+.LESSTHICK:hover{
+    opacity: 0.6;
+}

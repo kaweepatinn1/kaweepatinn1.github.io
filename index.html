@@ -23,7 +23,6 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
 <link rel="stylesheet" href="static/fonts/fontfaces.css">
 <script src="static/js/jquery-3.7.1.js"></script>
 <script src="static/js/index.js"></script>
-<script src="static/js/videos.js"></script>
 <script src="static/js/animations.js"></script>
 <script src="static/js/mobilecompat.js"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -89,12 +88,12 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
           <div id="!01HoverChild" class="hoverUp">FILM</div>
         </button>
       </a>
-      <a href="Nanomotions.html">
+      <a href="advertising.html">
         <button id="!02Hover" type="button" class="block link">
           <div id="!02HoverChild" class="hoverUp">ADVERTISING</div>
         </button>
       </a>
-      <a href="Nanomotions.html">
+      <a href="animation.html">
         <button id="!03Hover" type="button" class="block link">
           <div id="!03HoverChild" class="hoverUp">ANIMATION</div>
         </button>
@@ -102,17 +101,17 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       <button type="button" class="gap default">
         <img src="static/assets/logos/logoHOME1k.webp" onclick="location.href='./index.html'" alt="Logo" id = "mainLogo" height="auto" width = "100%">⠀
       </button>
-      <a href="Nanomotions.html">
+      <a href="music-video.html">
         <button id="!04Hover" type="button" class="block link">
           <div id="!04HoverChild" class="hoverUp">MUSIC VIDEO</div>
         </button>
       </a>
-      <a href="Nanomotions.html">
+      <a href="photography.html">
         <button id="!05Hover" type="button" class="block link">
           <div id="!05HoverChild" class="hoverUp">PHOTOGRAPHY</div>
         </button>
       </a>
-      <a href="Nanomotions.html">
+      <a href="about.html">
         <button id="!06Hover" type="button" class="block link">
           <div id="!06HoverChild" class="hoverUp">ABOUT</div>
         </button>
@@ -138,8 +137,8 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
   </div>
   <div class="grid-container">
     <div onclick="window.open('https://youtu.be/TJcj5AYzPAI')" class="grid-item grid-video">
-      <div class="applead" onmouseover="regifApple()" data-aos="fade-up" data-aos-delay="0">
-        <video class="video img opencursor" id="Appleimage" width="100%" height="auto" src="./static/assets/AppleAd.mp4" loop="" muted="muted" playsinline alt="OYYGC" poster="static/assets/applead.webp">
+      <div class="hoverable-video" data-aos="fade-up" data-aos-delay="0">
+        <video class="video img opencursor" id="$01" width="100%" height="auto" src="./static/assets/AppleAd.mp4" loop="" muted="muted" playsinline alt="OYYGC" poster="static/assets/applead.webp">
           Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -149,8 +148,8 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
     </div>
     <div onclick="window.open('https://youtu.be/bEeUHc6P1r4')" class="grid-item grid-video">
-      <div class="OYYGC" onmouseover="regifOYYGC()" data-aos="fade-up" data-aos-delay="100">
-        <video class="video img opencursor" id="OYYGCimage" width="100%" height="auto" src="./static/assets/OYYGC.mp4" loop="" muted="muted" playsinline alt="OYYGC" poster="static/assets/OYYGC.webp">
+      <div class="hoverable-video" data-aos="fade-up" data-aos-delay="100">
+        <video class="video img opencursor" id="$02" width="100%" height="auto" src="./static/assets/OYYGC.mp4" loop="" muted="muted" playsinline alt="OYYGC" poster="static/assets/OYYGC.webp">
           Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -160,8 +159,8 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
     </div>
     <div onclick="window.open('https://youtu.be/IKzMFwDjH6M')" class="grid-item grid-video">
-      <div class="LiveHK" onmouseover="regifLiveHK()" data-aos="fade-up" data-aos-delay="200">
-        <video class="video img opencursor" id="LiveHKimage" width="100%" height="auto" src="./static/assets/LiveHK.mp4" loop="" muted="muted" playsinline alt="LiveHK" poster="static/assets/LiveHK.webp">
+      <div class="hoverable-video" data-aos="fade-up" data-aos-delay="200">
+        <video class="video img opencursor" id="$03" width="100%" height="auto" src="./static/assets/LiveHK.mp4" loop="" muted="muted" playsinline alt="LiveHK" poster="static/assets/LiveHK.webp">
         Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -171,7 +170,7 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
     </div>
     <div>
-      <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="0">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="0">
         <p1 id="?1APPAD" class="bluelink grid-item redhatbold grid-title" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
           Mock Apple Ad
         </p1>
@@ -180,7 +179,7 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="50" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
         <p1 id="?2APPAD" class="link grid-item redhatregular grid-subtitle">
           Animation and Motion Graphics
-          <hr>
+          <hr class="smallHR">
         </p1>
       </div>
       <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="100">
@@ -200,7 +199,7 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
     </div>
     <div>
-      <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="200" onclick="window.open('https://youtu.be/bEeUHc6P1r4')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="200" onclick="window.open('https://youtu.be/bEeUHc6P1r4')">
         <p1 id="?1OYYGC" class="bluelink grid-item redhatbold grid-title">
           Oh Yeah, You Gonna Cry?
         </p1>
@@ -208,7 +207,8 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
       <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="250" onclick="window.open('https://youtu.be/bEeUHc6P1r4')">
         <p1 id="?2OYYGC" class="link grid-item redhatregular grid-subtitle">
-          Animated x Live Music Video<hr>
+          Animated x Live Music Video
+          <hr class="smallHR">
         </p1>
       </div>
       <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="300">
@@ -225,7 +225,7 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
     </div>
     <div>
-      <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="400" onclick="window.open('https://youtu.be/IKzMFwDjH6M')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="400" onclick="window.open('https://youtu.be/IKzMFwDjH6M')">
         <p1 id="?1LHK" class="bluelink grid-item redhatbold grid-title">
           Live Hong Kong
         </p1>
@@ -233,7 +233,8 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
       <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="450" onclick="window.open('https://youtu.be/IKzMFwDjH6M')">
         <p1 id="?2LHK" class="link grid-item redhatregular grid-subtitle">
-          Advertisement<hr>
+          Advertisement
+          <hr class="smallHR">
         </p1>
       </div>
       <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="500">

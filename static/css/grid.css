@@ -1,23 +1,26 @@
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 32.5vw 32.5vw 32.5vw;
-    justify-content: space-evenly;
-    overflow-x: hidden
+  display: grid;
+  grid-template-columns: 32.5vw 32.5vw 32.5vw;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .grid-left-container {
   display: grid;
-  grid-template-columns: 32.5vw 65vw;
-  justify-content: space-evenly;
-  overflow-x: hidden
+  grid-template-columns: 32.5vw 50vw;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .grid-right-container {
   display: grid;
-  grid-template-columns: 65vw 32.5vw;
-  justify-content: space-evenly;
-  overflow-x: hidden
+  grid-template-columns: 50vw 32.5vw;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .grid-item{
@@ -29,20 +32,28 @@
   transition-duration: 0.5s;
   transition-property: all;
   transform: translateY(0vw);
+  height: 18vw;
 }
 
 .grid-video:hover{
   margin: 0vw;
   transform: translateY(0.25vw);
+  height: 19vw;
 }
 
 .grid-title{
   padding-left: 1vw;
-  display: inline-block;
+  display: block;
   font-size: 2vw;
   margin: 0vw;
   transition-property: all;
   transition-duration: 0.75s;
+}
+
+.rightalign{
+  text-align: right;
+  padding-left: 0vw;
+  padding-right: 1vw;
 }
 
 .grid-subtitle{
@@ -94,7 +105,7 @@
     position:absolute;
     text-align:center;
     bottom:0.7vw;
-    transform: translateY(1vw);
+    transform: translateY(0.8vw);
     transition-property: all;
     transition-duration: 0.75s;
 }
@@ -105,19 +116,19 @@
     pointer-events: auto;
   }
 
-.applead {
+.hoverable-video {
     position: relative;
     overflow: hidden;
     font-family: Roboto, sans-serif;
 }
   
-.applead img {
+.hoverable-video img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-.applead .img-caption {
+.hoverable-video .img-caption {
     position: absolute;
     top: 0;
     left: 0;
@@ -133,121 +144,31 @@
     transition-duration: 0.75s;
   }
 
-.applead:hover .img-caption {
+.hoverable-video:hover .img-caption {
     opacity: 1;
     transform: translateY(0vw);
   }
 
-.applead:hover .vid-director {
+.hoverable-video:hover .vid-director {
     transform: translateY(0vw);
   }
 
-.applead:hover .vid-title {
+.hoverable-video:hover .vid-title {
     transform: translateY(-1vw);
   }
 
-.applead:hover .img {
+.hoverable-video:hover .img {
     filter: brightness(50%);
   }
 
-.applead .img-caption .vid-director {
+.hoverable-video .img-caption .vid-director {
     bottom: 1.1vw;
   }
 
-.OYYGC {
-    position: relative;
-    overflow: hidden;
-    font-family: Roboto, sans-serif;
-}
-  
-.OYYGC img {
-    display: block;
-    width: 100%;
-    height: auto;
+.notext{
+  font-size: 0;
 }
 
-.OYYGC .img-caption {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    transition-property: all;
-    transition-duration: 0.75s;
-  }
-
-.OYYGC:hover .img-caption {
-    opacity: 1;
-    transform: translateY(0vw);
-  }
-
-.OYYGC:hover .vid-director {
-    transform: translateY(0vw);
-  }
-
-.OYYGC:hover .vid-title {
-    transform: translateY(-1vw);
-  }
-
-.OYYGC:hover .img {
-    filter: brightness(50%);
-  }
-
-.OYYGC .img-caption .vid-director {
-    bottom: 1.1vw;
-  }
-
-.LiveHK {
-    position: relative;
-    overflow: hidden;
-    font-family: Roboto, sans-serif;
+.smallHR{
+  border-width: 0.01vw;
 }
-  
-.LiveHK img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.LiveHK .img-caption {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    transition-property: all;
-    transition-duration: 0.75s;
-  }
-
-.LiveHK:hover .img-caption {
-    opacity: 1;
-    transform: translateY(0vw);
-  }
-
-.LiveHK:hover .vid-director {
-    transform: translateY(0vw);
-  }
-
-.LiveHK:hover .vid-title {
-    transform: translateY(-1vw);
-  }
-
-.LiveHK:hover .img {
-    filter: brightness(50%);
-  }
-
-.LiveHK .img-caption .vid-director {
-    bottom: 1.1vw;
-  }

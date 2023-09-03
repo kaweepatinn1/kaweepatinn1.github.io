@@ -2,6 +2,8 @@ var wasHovering = false;
 var hovering = "";
 var wasHoveringNav = false;
 var hoveringNav = "";
+var wasHoveringVideo = false;
+var hoveringVideo = "";
 
 $(document).mouseover(function(item){
     var ID = $(item.target).attr('id');
@@ -32,8 +34,14 @@ $(document).mouseover(function(item){
                 }
             }
             for(let i = 1; i < totalplus1; i++){
+                var right = hovering.substr(2, 3);
                 var TrueID = hovering.substring(hovering.indexOf("?") + 2);
-                var toChange = "#\\?" + i + TrueID;
+                if (right == ".R."){ //if a right element, pass the .'s through the escape key
+                    var TrueIDnoR = (TrueID.substring(TrueID.indexOf(".") + 3));
+                    var toChange = "#\\?" + i + "\\.R\\." + TrueIDnoR;
+                } else{
+                    var toChange = "#\\?" + i + TrueID;
+                }
                 $(toChange).css('transform', 'translateX(0vw)');
                 $(toChange).css('letter-spacing', '0vw');
                 $(toChange).css('opacity', '1');
@@ -42,8 +50,19 @@ $(document).mouseover(function(item){
         }
     }
 
+    if (wasHoveringVideo){
+        if (ID == hoveringVideo){
+            //does nothing if the item last hovered is still hovered
+        } else{;
+            let content = document.getElementById(hoveringVideo);
+            content.pause();
+            content.currentTime = 0;
+        }
+    }
+
     if (ID != undefined){
         var type = ID.substr(0, 1);
+        var right = ID.substr(2, 3);
         if (type == "?"){
             var TrueID = ID.substring(ID.indexOf("?") + 2);
             //Deletes everything including the number
@@ -53,7 +72,7 @@ $(document).mouseover(function(item){
             var totalplus1 = 1;
             var stop = false;
             while(stop == false){ //counts the amount of elements with the tag and ID
-                var check = document.getElementById("?" + totalplus1 + TrueID)
+                var check = document.getElementById("?" + totalplus1 + TrueID);
                 if (check != undefined){
                     totalplus1++
                 } else{
@@ -61,11 +80,18 @@ $(document).mouseover(function(item){
                 }
             }
             for(let i = 1; i < totalplus1; i++){ // iterates the amount of elements there are
-                var toChange = "#\\?" + i + TrueID;
                 var distance = Math.abs(i - index);
                 var transformDistance = (0.2 * totalplus1) - ((distance + 1) * 0.2);
                 var letterSpaceIntensity = 0.05;
-                $(toChange).css('transform', 'translateX('+ transformDistance +'vw)');
+                if (right == ".R."){ //if a right element, pass the .'s through the escape key
+                    var TrueIDnoR = (TrueID.substring(TrueID.indexOf(".") + 3));
+                    var toChange = "#\\?" + i + "\\.R\\." + TrueIDnoR;
+                    var toTransformDistance = transformDistance * -1;
+                } else{
+                    var toChange = "#\\?" + i + TrueID;
+                    var toTransformDistance = transformDistance * 1;
+                }
+                $(toChange).css('transform', 'translateX('+ toTransformDistance +'vw)');
                 $(toChange).css('opacity', '1');
                 if (distance == 0){
                     $(toChange).css('opacity', '0.5');
@@ -89,6 +115,13 @@ $(document).mouseover(function(item){
             var TrueIDNav = ID.substring(ID.indexOf("!") + 1);
             var toChange = "#\\" + ID + "Child";
             $(toChange).css('transform', 'translateY(-0.5vw)');
+        }
+
+        if(type == "$"){
+            wasHoveringVideo = true;
+            hoveringVideo = ID;
+            let content = document.getElementById(ID);
+            content.play();
         }
     }
 });

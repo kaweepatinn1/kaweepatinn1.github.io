@@ -1,3 +1,6 @@
+// Archived javascript document, no longer needed.
+// Now part of animations.js as hoveringVideo using the $ id tag.
+
 $(document).ready(function(){
     $(document).mousemove(function(){
          if($("#Appleimage:hover").length != 0){
