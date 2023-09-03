@@ -230,6 +230,10 @@ a:active { text-decoration: none; }
 	padding: 1vw;
 }
 
+#mainTitleID{
+    transform: translateX(0.4vw);
+}
+
 .mainTitle{
     font-size: 8vw;
     margin: auto;
@@ -244,7 +248,7 @@ a:active { text-decoration: none; }
 
 .mainTitle:hover{
     letter-spacing:1vw;
-    transform: translateY(0.5vw);
+    transform: translateY(0.5vw) translateX(0.4vw);
     opacity: 0.6;
 }
 

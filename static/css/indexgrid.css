@@ -42,9 +42,9 @@
 }
 
 .grid-title{
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-top: 1.25vw;
+  padding-left: 1.8vw;
+  padding-right: 1.8vw;
+  padding-top: 0.2vw;
   display: block;
   font-size: 2vw;
   margin: 0vw;
@@ -57,8 +57,8 @@
 }
 
 .grid-subtitle{
-  padding-left: 1vw;
-  padding-right: 1vw;
+  padding-left: 1.8vw;
+  padding-right: 1.8vw;
   display: inline-block;
   font-size: 0.6vw;
   margin: 0vw;
@@ -69,8 +69,8 @@
 }
 
 .grid-text{
-  padding-left: 1vw;
-  padding-right: 1vw;
+  padding-left: 1.8vw;
+  padding-right: 1.8vw;
   display: inline-block;
   font-size: 1vw;
   margin: 0vw 0vw 0.5vw 0vw;
@@ -80,8 +80,8 @@
 }
 
 .grid-subtext{
-  padding-left: 1vw;
-  padding-right: 1vw;
+  padding-left: 1.8vw;
+  padding-right: 1.8vw;
   display: inline-block;
   font-size: 0.8vw;
   margin: 0vw 0vw 0.5vw 0vw;
@@ -197,15 +197,7 @@ i{
 }
 
 .bordered{
-  opacity: 1;
   border-style: solid;
   border-radius: 1vw;
   border-width: 0.15vw;
-  border-color: #999;
-  transition-property: all;
-  transition-duration: 0.75s;
-}
-
-.bordered:hover{
-  opacity: 0.5;
 }
