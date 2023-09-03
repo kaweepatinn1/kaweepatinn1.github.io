@@ -1,4 +1,8 @@
-AOS.init({});
+$(document).ready(function(){
+  AOS.init({
+    disable: 'phone tablet mobile',
+  });
+  });
 
   //Global settings:
   //disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function

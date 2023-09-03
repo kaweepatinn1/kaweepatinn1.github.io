@@ -71,12 +71,8 @@ function aosGive(){
 function displayWindowSize(){
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
-    console.log(windowWidth);
-    console.log(windowHeight);
     if (windowHeight * 1.5 > windowWidth || windowHeight < 1080){
         changeAos(1080 - windowHeight);
-    } else{
-        changeAosBack();
     }
 }
 

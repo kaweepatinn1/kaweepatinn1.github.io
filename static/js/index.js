@@ -58,6 +58,7 @@ function setLogo(){
 	// console.log(distanceFromTop);
     // Calculate the translateY value based on the distance from the top
 	var mainOffset = -2.9;
+	logo = document.getElementById("mainLogo");
 	var containsLarge = logo.classList.contains("large");
 	if (containsLarge){
 		var largeImageUp = -3.14;
