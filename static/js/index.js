@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		var frameToPlay = Math.round((window.scrollY/sticky)*225);
 		var currentFrame = Math.min(frameToPlay,225);
 		seekToFrame(currentFrame, 60);
-		if (window.scrollY >= sticky || window.mobileCheck()) {
+		if (window.scrollY >= sticky && !window.mobileCheck()) {
 			navbar.classList.add("sticky");
 			content.forEach((el) => {
 				el.classList.add("paddingtop");
