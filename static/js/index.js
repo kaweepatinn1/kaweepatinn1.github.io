@@ -60,9 +60,14 @@ function setLogo(){
 	var mainOffset = -2.9;
 	logo = document.getElementById("mainLogo");
 	var containsLarge = logo.classList.contains("large");
+	var containsLarger = logo.classList.contains("larger");
 	if (containsLarge){
 		var largeImageUp = -3.14;
 		var multi = 1.75;
+		if (containsLarger){
+			var largeImageUp = -3.14;
+			var multi = 1.98;
+		}
 	} else{
 		var largeImageUp = 0;
 		var multi = 1.18;
