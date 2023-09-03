@@ -35,26 +35,32 @@ function changeAos(){
     gridText.forEach((gridTextItem) => {
         gridTextItem.setAttribute('data-aos-offset', '-50');
     })
-    let aosAnimate = Array.from(document.getElementsByClassName("aosable"));
-    aosAnimate.forEach((aosItem) => {
-        aosItem.classList.add("aos-animate");
-    })
-    //aosable class all gets animations when resizing height beyond witdh
+    for (let i = 0; i < 760 ; i =  i + 50 ){
+        setTimeout(aosGive, i); //runs the function every 50ms to get the lowest delay possible without killing pc
+    }
 }
 
 function changeAosBack(){
     let gridTitle = Array.from(document.getElementsByClassName("grid-title"));
-	    gridTitle.forEach((gridTitleItem) => {
+    gridTitle.forEach((gridTitleItem) => {
         gridTitleItem.setAttribute('data-aos-offset', '50');
     })
     let gridSubtitle = Array.from(document.getElementsByClassName("grid-subtitle"));
-        gridSubtitle.forEach((gridSubtitleItem) => {
+    gridSubtitle.forEach((gridSubtitleItem) => {
         gridSubtitleItem.setAttribute('data-aos-offset', '50');
     })
     let gridText = Array.from(document.getElementsByClassName("grid-text"));
-        gridText.forEach((gridTextItem) => {
+    gridText.forEach((gridTextItem) => {
         gridTextItem.setAttribute('data-aos-offset', '50');
     })
+}
+
+function aosGive(){
+    let aosAnimate = Array.from(document.getElementsByClassName("aos-init"));
+    aosAnimate.forEach((aosItem) => {
+        aosItem.classList.add("aos-animate");
+    })
+    //aos-init class all gets animations when resizing height beyond witdh
 }
 
 function displayWindowSize(){
@@ -64,10 +70,8 @@ function displayWindowSize(){
     console.log(h);
     if (h > w){
         changeAos();
-        console.log("changed");
     } else{
         changeAosBack();
-        console.log("changedback");
     }
 }
 
