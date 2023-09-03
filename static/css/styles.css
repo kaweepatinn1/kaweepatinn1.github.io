@@ -291,11 +291,11 @@ hr {
     margin-inline-end: auto;
     overflow: hidden;
     border-style: inset;
-    border-width: 1px;
+    border-width: 0.1vw;
 }
 
 .THICK{
-    height: 5px;
+    height: 0.5vw;
     border: none;
     transition-property: all;
     transition-duration: 0.75s;
