@@ -172,3 +172,8 @@
 .smallHR{
   border-width: 0.01vw;
 }
+
+.separator{
+  width: 87.5vw; 
+  transform: translateY(0vw);
+}
