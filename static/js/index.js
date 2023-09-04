@@ -26,6 +26,11 @@ function changeMode() {
 		link.classList.add("light-mode-element");
 		link.classList.remove("dark-mode-element");
 	})
+	let borderDarkElement = Array.from(document.getElementsByClassName("bordered"));
+	borderDarkElement.forEach((border) => {
+		border.classList.add("bordered-black");
+		border.classList.remove("bordered");
+	})
   } else { // light mode --> dark mode
     content.src = "./static/assets/lightswitchlight.png";
     element.className = "dark-mode";
@@ -44,6 +49,11 @@ function changeMode() {
 	linksDarkElement.forEach((link) => {
 		link.classList.add("dark-mode-element");
 		link.classList.remove("light-mode-element");
+	})
+	let borderLightElement = Array.from(document.getElementsByClassName("bordered-black"));
+	borderLightElement.forEach((border) => {
+		border.classList.add("bordered");
+		border.classList.remove("bordered-black");
 	})
   }
 }

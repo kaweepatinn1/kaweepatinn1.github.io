@@ -201,11 +201,25 @@ i{
   border-style: solid;
   border-radius: 1vw;
   border-width: 0.15vw;
-  border-color: #999;
+  border-color: #EEEEEE;
   transition-property: all;
   transition-duration: 0.75s;
 }
 
 .bordered:hover{
+  opacity: 0.5;
+}
+
+.bordered-black{
+  opacity: 1;
+  border-style: solid;
+  border-radius: 1vw;
+  border-width: 0.15vw;
+  border-color: #333;
+  transition-property: all;
+  transition-duration: 0.75s;
+}
+
+.bordered-black:hover{
   opacity: 0.5;
 }
