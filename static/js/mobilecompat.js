@@ -7,9 +7,7 @@ window.mobileCheck = function() {
 document.addEventListener("DOMContentLoaded", function() {
     if (window.mobileCheck()){
         let videos = Array.from(document.getElementsByClassName("video")); //grab all videos
-        console.log(videos);
             videos.forEach((video) => {
-                console.log(video);
                 video.setAttribute('src', ''); //remove video srcs
 	    })
         title = document.getElementById("mainTitleID");
