@@ -71,8 +71,6 @@ function aosGive(){
 function displayWindowSize(){
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
-    console.log(windowHeight);
-    console.log(windowWidth); 
     if (windowHeight * 1.5 > windowWidth || windowWidth < 720){
         changeAos(1080 - windowHeight); // passing parameter no longer used
     }
