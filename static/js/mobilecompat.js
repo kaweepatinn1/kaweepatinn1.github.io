@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-function changeAos(to360){
+function changeAos(to360){ //passing parameter no longer used
     for (let i = 0; i < 760 ; i =  i + 50 ){
         setTimeout(aosGive, i); //runs the function every 50ms to get the lowest delay possible without killing pc
     }
@@ -71,8 +71,8 @@ function aosGive(){
 function displayWindowSize(){
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
-    if (windowHeight * 1.5 > windowWidth || windowHeight < 1080){
-        changeAos(1080 - windowHeight);
+    if (windowHeight * 1.5 > windowWidth || windowWidth < 720){
+        changeAos(1080 - windowHeight); // passing parameter no longer used
     }
 }
 
