@@ -197,7 +197,15 @@ i{
 }
 
 .bordered{
+  opacity: 1;
   border-style: solid;
   border-radius: 1vw;
   border-width: 0.15vw;
+  border-color: #999;
+  transition-property: all;
+  transition-duration: 0.75s;
+}
+
+.bordered:hover{
+  opacity: 0.5;
 }
