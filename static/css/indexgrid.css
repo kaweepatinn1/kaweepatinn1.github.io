@@ -101,7 +101,7 @@
   color:white;
   -webkit-transform:translate3d(0,-50%,0);
   transform:translate3d(0,-50%,0);
-  padding:0vw 3vw;
+  padding:0vw 1vw;
   box-sizing:border-box;
   transform: translateY(2vw) translateX(0.6vw);
   transition-property: all;
