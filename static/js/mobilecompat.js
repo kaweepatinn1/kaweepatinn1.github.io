@@ -79,4 +79,3 @@ $(window).scroll(function() {
 });
 
 window.addEventListener("resize", displayWindowSize);
-//test
