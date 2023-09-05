@@ -157,9 +157,10 @@ window.onload = function() {
 		})
 	}
 	window.scrollTo(0, 0);
-	sticky = navbar.offsetTop;
 	$('.loader').css('display','none');
 	extramove = 0;
-	setTimeout(setLogo, 0);
+	loadLogo();
+	setTimeout(setLogo, 100);
+	sticky = navbar.offsetTop;
   // Perform other initialization tasks, set up event handlers, etc.
 };

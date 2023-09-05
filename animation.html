@@ -70,59 +70,10 @@
     </div>
   </div>
   <div class ="divGap scroll-container">
-    <ul id="navbar" class="nav-list">
-      <a href="mailto:contact@nanomotions.org">
-        <button id="!0AHover" type="button" class="icon mail">
-          <img id="!0AHoverChild" class="hoverUp" src="./static/assets/email.png" alt="Email Icon" height="50%" width = "50%">
-        </button>
-      </a>
-      <a href="https://www.youtube.com/@nanomotionstudio" target="_blank" rel="noopener noreferrer">
-        <button id="!0BHover" type="button" class="icon youtube">
-          <img id="!0BHoverChild" class="hoverUp" src="./static/assets/youtube.png" alt="YouTube Icon" height="50%" width = "50%">
-        </button>
-      </a>
-      <a href="film.html">
-        <button id="!01Hover" type="button" class="block link">
-          <div id="!01HoverChild" class="hoverUp">FILM</div>
-        </button>
-      </a>
-      <a href="advertising.html">
-        <button id="!02Hover" type="button" class="block link">
-          <div id="!02HoverChild" class="hoverUp">ADVERTISING</div>
-        </button>
-      </a>
-      <a href="animation.html">
-        <button id="!03Hover" type="button" class="block link">
-          <div id="!03HoverChild" class="hoverUp">ANIMATION</div>
-        </button>
-      </a>
-      <button type="button" class="gap default">
-        <img src="static/assets/logos/logo3D1k.webp" class="large" onclick="location.href='./index.html'" alt="Logo" id = "mainLogo" height="auto" width = "100%">⠀
-      </button>
-      <a href="other.html">
-        <button id="!04Hover" type="button" class="block link">
-          <div id="!04HoverChild" class="hoverUp">OTHER</div>
-        </button>
-      </a>
-      <a href="photography.html">
-        <button id="!05Hover" type="button" class="block link">
-          <div id="!05HoverChild" class="hoverUp">PHOTOGRAPHY</div>
-        </button>
-      </a>
-      <a href="about.html">
-        <button id="!06Hover" type="button" class="block link">
-          <div id="!06HoverChild" class="hoverUp">ABOUT</div>
-        </button>
-      </a>
-      <button id="!0CHover" type="button" onclick="changeMode()" class="lightOff">
-        <img id="!0CHoverChild" class="hoverUp" src="./static/assets/lightswitchlight.png" alt="Light Switch" height="50%" width = "50%">
-      </button>
-      <a href="https://www.instagram.com/nanomotions/" target="_blank" rel="noopener noreferrer">
-        <button id="!0DHover" type="button" class="icon instagram">
-          <img id="!0DHoverChild" class="hoverUp" src="./static/assets/instagram.png" alt="Instagram Icon" height="50%" width = "50%">
-        </button>
-      </a>
-    </ul>
+    <div id="loadNavbar" class ="divGap scroll-container"></div>
+    <script src="static/js/loadcommon.js"></script>
+    <script src="static/js/loadlogo.js"></script>
+    <div id="pageIsAnimation"></div>
   </div>
   <div class="content"></div>
   <div class="poppinsbold mainTitle" onmouseenter=ThickUp() onmouseleave=ThickDown() onclick="location.href='./animation.html'">
