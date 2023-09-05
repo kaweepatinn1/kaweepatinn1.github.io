@@ -46,7 +46,7 @@
   <meta property="og:image:alt" content="Nanomotions Logo">
   <meta property="og:description" content="A portfolio" />
   <meta content="#2b2d31" data-react-helmet="true" name="theme-color">
-  <link rel="icon" type="image/x-icon" href="./static/assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">
 </head>
 
 <body>
@@ -69,60 +69,9 @@
       </div>
     </div>
   </div>
-  <div class ="divGap scroll-container">
-    <ul id="navbar" class="nav-list">
-      <a href="mailto:contact@nanomotions.org">
-        <button id="!0AHover" type="button" class="icon mail">
-          <img id="!0AHoverChild" class="hoverUp" src="./static/assets/email.png" alt="Email Icon" height="50%" width = "50%">
-        </button>
-      </a>
-      <a href="https://www.youtube.com/@nanomotionstudio" target="_blank" rel="noopener noreferrer">
-        <button id="!0BHover" type="button" class="icon youtube">
-          <img id="!0BHoverChild" class="hoverUp" src="./static/assets/youtube.png" alt="YouTube Icon" height="50%" width = "50%">
-        </button>
-      </a>
-      <a href="film.html">
-        <button id="!01Hover" type="button" class="block link">
-          <div id="!01HoverChild" class="hoverUp">FILM</div>
-        </button>
-      </a>
-      <a href="advertising.html">
-        <button id="!02Hover" type="button" class="block link">
-          <div id="!02HoverChild" class="hoverUp">ADVERTISING</div>
-        </button>
-      </a>
-      <a href="animation.html">
-        <button id="!03Hover" type="button" class="block link">
-          <div id="!03HoverChild" class="hoverUp">ANIMATION</div>
-        </button>
-      </a>
-      <button type="button" class="gap default">
-        <img src="static/assets/logos/logoMV1k.webp" class="large larger" onclick="location.href='./index.html'" alt="Logo" id = "mainLogo" height="auto" width = "100%">⠀
-      </button>
-      <a href="other.html">
-        <button id="!04Hover" type="button" class="block link">
-          <div id="!04HoverChild" class="hoverUp">OTHER</div>
-        </button>
-      </a>
-      <a href="photography.html">
-        <button id="!05Hover" type="button" class="block link">
-          <div id="!05HoverChild" class="hoverUp">PHOTOGRAPHY</div>
-        </button>
-      </a>
-      <a href="about.html">
-        <button id="!06Hover" type="button" class="block link">
-          <div id="!06HoverChild" class="hoverUp">ABOUT</div>
-        </button>
-      </a>
-      <button id="!0CHover" type="button" onclick="changeMode()" class="lightOff">
-        <img id="!0CHoverChild" class="hoverUp" src="./static/assets/lightswitchlight.png" alt="Light Switch" height="50%" width = "50%">
-      </button>
-      <a href="https://www.instagram.com/nanomotions/" target="_blank" rel="noopener noreferrer">
-        <button id="!0DHover" type="button" class="icon instagram">
-          <img id="!0DHoverChild" class="hoverUp" src="./static/assets/instagram.png" alt="Instagram Icon" height="50%" width = "50%">
-        </button>
-      </a>
-    </ul>
+  <div id="loadNavbar" class ="divGap scroll-container"></div>
+  <script src="static/js/loadcommon.js"></script>
+  <script type="text/javascript">loadNavMVButton()</script>
   </div>
   <div class="content"></div>
   <div class="poppinsbold mainTitle" onmouseenter=ThickUp() onmouseleave=ThickDown() onclick="location.href='./music-video.html'">
@@ -136,7 +85,9 @@
   <div class="grid-left-container">
     <div onclick="window.open('https://youtu.be/N9OdA1MlEvY')" class="grid-item grid-video">
       <div class="hoverable-video" data-aos="fade-right" data-aos-delay="0">
-        <video class="video img opencursor bordered" id="$01" width="100%" height="auto" src="./static/assets/OYYGC.mp4" loop="" muted="muted" playsinline alt="OYYGC" poster="static/assets/OYYGC.webp">
+        <video class="video img opencursor bordered" id="$01" width="100%" height="auto" 
+        src="./static/assets/StarPersonaVideoEssay.mp4" loop="" muted="muted" playsinline alt="OYYGC" 
+        poster="static/assets/StarPersonaVideoEssay.webp">
           Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -147,14 +98,16 @@
     </div>
     <div>
       <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="0">
-        <p1 id="?1PH1" class="bluelink grid-item redhatbold grid-title" onclick="window.open('https://youtu.be/N9OdA1MlEvY')">
-          Oh Yeah You Gonna Cry?
+        <p1 id="?1PH1" class="bluelink grid-item redhatbold grid-title" 
+        onclick="window.open('https://youtu.be/N9OdA1MlEvY')">
+          Star Perona of Musical Artists
         </p1>
         <br>
       </div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="50" onclick="window.open('https://youtu.be/N9OdA1MlEvY')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="50" 
+      onclick="window.open('https://youtu.be/N9OdA1MlEvY')">
         <p1 id="?2PH1" class="link grid-item redhatregular grid-subtitle">
-          Animated x Live Music Video
+          Video Essay
           <hr class="smallHR">
         </p1>
       </div>
