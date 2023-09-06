@@ -117,7 +117,7 @@ $(document).mouseover(function(item){
             $(toChange).css('transform', 'translateY(-0.5vw)');
         }
 
-        if(type == "$"){
+        if (type == "$"){
             wasHoveringVideo = true;
             hoveringVideo = ID;
             let content = document.getElementById(ID);

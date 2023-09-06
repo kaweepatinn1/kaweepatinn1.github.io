@@ -1,38 +1,32 @@
 <!doctype html>
 <html>
 <head>
-<!-- IMPORTANT INFO --> 
-<!--
-NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
--->
-<!-- IMPORTANT INFO -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7QNMLWK0P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- IMPORTANT INFO --> 
+  <!--
+  NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
+  -->
+  <!-- IMPORTANT INFO -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7QNMLWK0P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-H7QNMLWK0P');
-</script>
-<link rel="stylesheet" type="text/css" href="static/css/styles.css">
-<link rel="stylesheet" href="static/css/cursors.css">
-<link rel="stylesheet" href="static/css/grid.css">
-<link rel="stylesheet" href="static/css/fonts.css">
-<link rel="stylesheet" href="static/css/loader.css">
-<link rel="stylesheet" href="static/fonts/fontfaces.css">
-<script src="static/js/jquery-3.7.1.js"></script>
-<script src="static/js/index.js"></script>
-<script src="static/js/animations.js"></script>
-<script src="static/js/mobilecompat.js"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="static/js/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nanomotions</title>
+    gtag('config', 'G-H7QNMLWK0P');
+  </script>
+  <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+  <link rel="stylesheet" href="static/css/cursors.css">
+  <link rel="stylesheet" href="static/css/grid.css">
+  <link rel="stylesheet" href="static/css/fonts.css">
+  <link rel="stylesheet" href="static/css/loader.css">
+  <link rel="stylesheet" href="static/fonts/fontfaces.css">
+  <script src="static/js/jquery-3.7.1.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="darkreader-lock">
+  <title>Nanomotions</title>
   <meta name="color-scheme" content="dark">
   <meta name="keywords" content="Nanomotions">
   <meta name="author" content="Nanomotions">
@@ -68,63 +62,13 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
     </div>
   </div>
-  <div class ="divGap scroll-container">
-    <ul id="navbar" class="nav-list">
-      <a href="mailto:contact@nanomotions.org">
-        <button id="!0AHover" type="button" class="icon mail">
-          <img id="!0AHoverChild" class="hoverUp" src="./static/assets/email.png" alt="Email Icon" height="50%" width = "50%">
-        </button>
-      </a>
-      <a href="https://www.youtube.com/@nanomotionstudio" target="_blank" rel="noopener noreferrer">
-        <button id="!0BHover" type="button" class="icon youtube">
-          <img id="!0BHoverChild" class="hoverUp" src="./static/assets/youtube.png" alt="YouTube Icon" height="50%" width = "50%">
-        </button>
-      </a>
-      <a href="film.html">
-        <button id="!01Hover" type="button" class="block link">
-          <div id="!01HoverChild" class="hoverUp">FILM</div>
-        </button>
-      </a>
-      <a href="advertising.html">
-        <button id="!02Hover" type="button" class="block link">
-          <div id="!02HoverChild" class="hoverUp">ADVERTISING</div>
-        </button>
-      </a>
-      <a href="animation.html">
-        <button id="!03Hover" type="button" class="block link">
-          <div id="!03HoverChild" class="hoverUp">ANIMATION</div>
-        </button>
-      </a>
-      <button type="button" class="gap default">
-        <img src="static/assets/logos/logoINFO1k.webp" onclick="location.href='./index.html'" alt="Logo" id = "mainLogo" height="auto" width = "100%">⠀
-      </button>
-      <a href="music-video.html">
-        <button id="!04Hover" type="button" class="block link">
-          <div id="!04HoverChild" class="hoverUp">MUSIC VIDEO</div>
-        </button>
-      </a>
-      <a href="photography.html">
-        <button id="!05Hover" type="button" class="block link">
-          <div id="!05HoverChild" class="hoverUp">PHOTOGRAPHY</div>
-        </button>
-      </a>
-      <a href="about.html">
-        <button id="!06Hover" type="button" class="block link">
-          <div id="!06HoverChild" class="hoverUp">ABOUT</div>
-        </button>
-      </a>
-      <button id="!0CHover" type="button" onclick="changeMode()" class="lightOff">
-        <img id="!0CHoverChild" class="hoverUp" src="./static/assets/lightswitchlight.png" alt="Light Switch" height="50%" width = "50%">
-      </button>
-      <a href="https://www.instagram.com/nanomotions/" target="_blank" rel="noopener noreferrer">
-        <button id="!0DHover" type="button" class="icon instagram">
-          <img id="!0DHoverChild" class="hoverUp" src="./static/assets/instagram.png" alt="Instagram Icon" height="50%" width = "50%">
-        </button>
-      </a>
-    </ul>
-  </div>
+  <div id="loadNavbar" class ="divGap scroll-container"></div>
+    <script src="static/js/loadcommon.js"></script>
+    <script src="static/js/loadlogo.js"></script>
+    <div id="pageIsAbout"></div>
   <div class="content"></div>
-  <div class="poppinsbold mainTitle" onmouseenter=ThickUp() onmouseleave=ThickDown() onclick="location.href='./about.html'">
+  <div class="poppinsbold mainTitle" onmouseenter=ThickUp() onmouseleave=ThickDown()
+  onclick="location.href='./about.html'">
     <div id="mainTitleID" data-aos="fade-down" data-aos-offset="400" data-aos-delay="0">
         About
     </div>
@@ -133,9 +77,12 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
     </div>
   </div>
   <div class="grid-left-container">
-    <div onclick="window.open('https://youtu.be/TJcj5AYzPAI')" class="grid-item grid-video">
+    <div onclick=linkedVideo(1) class="grid-item grid-video">
       <div class="hoverable-video" data-aos="fade-right" data-aos-delay="0">
-        <video class="video img opencursor bordered" id="$03" width="100%" height="auto" src="./static/assets/Placeholder.mp4" loop="" muted="muted" playsinline alt="Placeholder" poster="static/assets/Placeholder.webp">
+        <video class="video img opencursor bordered" id="$01" width="100%" height="auto" 
+        src="./static/assets/Placeholder.mp4" loop="" muted="muted" playsinline 
+        alt="Placeholder" 
+        poster="static/assets/Placeholder.webp">
           Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -145,13 +92,15 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
     </div>
     <div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="0">
-        <p1 id="?1PH1" class="bluelink grid-item redhatbold grid-title" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="0"
+      onclick=linkedVideo(1)>
+        <p1 id="?1PH1" class="bluelink grid-item redhatbold grid-title">
           Placeholder
         </p1>
         <br>
       </div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="50" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="50"
+      onclick=linkedVideo(1)>
         <p1 id="?2PH1" class="link grid-item redhatregular grid-subtitle">
           Placeholder
           <hr class="smallHR">
@@ -190,13 +139,15 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
   <!-- GAP -->
   <div class="grid-right-container">
     <div class="rightalign">
-      <div class="notext" data-aos="fade-right" data-aos-offset="100" data-aos-delay="200" onclick="window.open('https://youtu.be/bEeUHc6P1r4')">
+      <div class="notext" data-aos="fade-right" data-aos-offset="100" data-aos-delay="200"
+      onclick=linkedVideo(2)>
         <p1 id="?1.R.PH2" class="bluelink grid-item redhatbold grid-title">
           Placeholder
         </p1>
         <br>
       </div>
-      <div class="notext" data-aos="fade-right" data-aos-offset="100" data-aos-delay="250" onclick="window.open('https://youtu.be/bEeUHc6P1r4')">
+      <div class="notext" data-aos="fade-right" data-aos-offset="100" data-aos-delay="250"
+      onclick=linkedVideo(2)>
         <p1 id="?2.R.PH2" class="link grid-item redhatregular grid-subtitle">
           Placeholder
           <hr class="smallHR">
@@ -223,9 +174,12 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
         <br>
       </div>
     </div>
-    <div onclick="window.open('https://youtu.be/TJcj5AYzPAI')" class="grid-item grid-video">
+    <div onclick=linkedVideo(2) class="grid-item grid-video">
       <div class="hoverable-video" data-aos="fade-left" data-aos-delay="0">
-        <video class="video img opencursor bordered" id="$02" width="100%" height="auto" src="./static/assets/Placeholder.mp4" loop="" muted="muted" playsinline alt="Placeholder" poster="static/assets/Placeholder.webp">
+        <video class="video img opencursor bordered" id="$02" width="100%" height="auto" 
+        src="./static/assets/Placeholder.mp4" loop="" muted="muted" playsinline 
+        alt="Placeholder" 
+        poster="static/assets/Placeholder.webp">
           Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -243,9 +197,12 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
   <div style="height: 2.5vw;"></div>
   <!-- GAP -->
   <div class="grid-left-container">
-    <div onclick="window.open('https://youtu.be/TJcj5AYzPAI')" class="grid-item grid-video">
+    <div onclick=linkedVideo(3) class="grid-item grid-video">
       <div class="hoverable-video" data-aos="fade-right" data-aos-delay="0">
-        <video class="video img opencursor bordered" id="$03" width="100%" height="auto" src="./static/assets/Placeholder.mp4" loop="" muted="muted" playsinline alt="Placeholder" poster="static/assets/Placeholder.webp">
+        <video class="video img opencursor bordered" id="$03" width="100%" height="auto" 
+        src="./static/assets/Placeholder.mp4" loop="" muted="muted" playsinline 
+        alt="Placeholder" 
+        poster="static/assets/Placeholder.webp">
           Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -255,13 +212,15 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
     </div>
     <div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="0">
-        <p1 id="?1PH3" class="bluelink grid-item redhatbold grid-title" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="0"
+      onclick=linkedVideo(3)>
+        <p1 id="?1PH3" class="bluelink grid-item redhatbold grid-title">
           Placeholder
         </p1>
         <br>
       </div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="50" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="50"
+      onclick=linkedVideo(3)>
         <p1 id="?2PH3" class="link grid-item redhatregular grid-subtitle">
           Placeholder
           <hr class="smallHR">
@@ -291,20 +250,20 @@ NO AOS ELEMENT SHOIULD BE GIVEN MORE THAN data-aos-offset MORE THAN 750
       </div>
     </div>
   </div>
-  <div>
-    <br><br>
-  </div>
-  <footer class="footer">
+  <footer class="footer footerMargin">
     <p onclick="location.href='./index.html'" class="redhatregular footertext">
       &copy; Nanomotions <script>document.write(new Date().getFullYear())</script>
     </p>
-    
   </footer>
 	<!--<iframe src="https://player.vimeo.com/video/855576014?h=5f6fef5840" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
   -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script src="static/js/index.js"></script>
+  <script src="static/js/videolinks.js"></script>
+  <script src="static/js/animations.js"></script>
+  <script src="static/js/mobilecompat.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </body>
 </html>

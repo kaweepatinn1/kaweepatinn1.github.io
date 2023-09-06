@@ -101,7 +101,7 @@
   color:white;
   -webkit-transform:translate3d(0,-50%,0);
   transform:translate3d(0,-50%,0);
-  padding:0vw 3vw;
+  padding:0vw 1vw;
   box-sizing:border-box;
   transform: translateY(2vw) translateX(0.6vw);
   transition-property: all;
@@ -197,7 +197,29 @@ i{
 }
 
 .bordered{
+  opacity: 1;
   border-style: solid;
   border-radius: 1vw;
   border-width: 0.15vw;
+  border-color: #EEEEEE;
+  transition-property: all;
+  transition-duration: 0.75s;
+}
+
+.bordered:hover{
+  opacity: 0.5;
+}
+
+.bordered-black{
+  opacity: 1;
+  border-style: solid;
+  border-radius: 1vw;
+  border-width: 0.15vw;
+  border-color: #333;
+  transition-property: all;
+  transition-duration: 0.75s;
+}
+
+.bordered-black:hover{
+  opacity: 0.5;
 }

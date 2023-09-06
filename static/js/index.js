@@ -26,6 +26,11 @@ function changeMode() {
 		link.classList.add("light-mode-element");
 		link.classList.remove("dark-mode-element");
 	})
+	let borderDarkElement = Array.from(document.getElementsByClassName("bordered"));
+	borderDarkElement.forEach((border) => {
+		border.classList.add("bordered-black");
+		border.classList.remove("bordered");
+	})
   } else { // light mode --> dark mode
     content.src = "./static/assets/lightswitchlight.png";
     element.className = "dark-mode";
@@ -45,6 +50,11 @@ function changeMode() {
 		link.classList.add("dark-mode-element");
 		link.classList.remove("light-mode-element");
 	})
+	let borderLightElement = Array.from(document.getElementsByClassName("bordered-black"));
+	borderLightElement.forEach((border) => {
+		border.classList.add("bordered");
+		border.classList.remove("bordered-black");
+	})
   }
 }
 
@@ -59,14 +69,19 @@ function setLogo(){
     // Calculate the translateY value based on the distance from the top
 	var mainOffset = -2.9;
 	logo = document.getElementById("mainLogo");
-	var containsLarge = logo.classList.contains("large");
-	var containsLarger = logo.classList.contains("larger");
-	if (containsLarge){
-		var largeImageUp = -3.14;
-		var multi = 1.75;
-		if (containsLarger){
+	if (logo != undefined){
+		var containsLarge = logo.classList.contains("large");
+		var containsLarger = logo.classList.contains("larger");
+		if (containsLarge){
 			var largeImageUp = -3.14;
-			var multi = 1.98;
+			var multi = 1.75;
+			if (containsLarger){
+				var largeImageUp = -3.14;
+				var multi = 1.98;
+			}
+		} else{
+			var largeImageUp = 0;
+			var multi = 1.18;
 		}
 	} else{
 		var largeImageUp = 0;
@@ -137,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 window.onload = function() {
 	// Code to be executed after the entire page, including CSS, has been loaded
+	navbar = document.getElementById("navbar");
 	video = document.getElementById("topVideo");
 	if (video == undefined){
 		var content = Array.from(document.getElementsByClassName("content"));
@@ -146,9 +162,10 @@ window.onload = function() {
 		})
 	}
 	window.scrollTo(0, 0);
-	sticky = navbar.offsetTop;
 	$('.loader').css('display','none');
 	extramove = 0;
-	setTimeout(setLogo, 0);
+	loadLogo();
+	setTimeout(setLogo, 100);
+	sticky = navbar.offsetTop;
   // Perform other initialization tasks, set up event handlers, etc.
 };
