@@ -4,7 +4,7 @@
 body {
 	background-color: #111;
 	color: #EEE;
-	font-size: 2vw;
+	font-size: 0vw;
 	margin: 0vw;
 }
 
@@ -114,6 +114,7 @@ body {
     transition-duration: 0.75s;
 	font-weight: bold;
 	filter: brightness(100%);
+    z-index: 5;
 }
 
 .block:hover{
@@ -259,11 +260,13 @@ a:active { text-decoration: none; }
 .divGap{
 	display: flex;
 	flex-direction: column;
+    font-size: 0;
 }
 
 #topVideo{
 	padding: 0;
 	margin: 0;
+    font-size: 0;
 }
 
 .footer{
@@ -315,3 +318,25 @@ hr {
 .LESSTHICK:hover{
     opacity: 0.6;
 }
+
+.footerMargin{
+    margin-top: 2.5vw;
+}
+
+.break{
+    height: 2.5vw;
+}
+
+/*
+.navbarLogo{
+    position: relative;
+	margin: 0vw 0vw 0vw 0vw;
+    align-items: center;
+    transform: translate3d(0,0,0);
+    transition-property: all;
+    transition-duration: 0.75s;
+    height:auto; 
+    width: 80%;
+    z-index: 1;
+}
+*/

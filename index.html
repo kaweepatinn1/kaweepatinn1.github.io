@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="static/css/fonts.css">
   <link rel="stylesheet" href="static/css/loader.css">
   <link rel="stylesheet" href="static/fonts/fontfaces.css">
+  <script src="static/js/jquery-3.7.1.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -61,7 +62,8 @@
       </div>
     </div>
   </div>
-    <video class="video" id="topVideo" width="100%" autobuffer preload muted poster="static/assets/intro.webp">
+    <video class="video" id="topVideo" width="100%" autobuffer preload muted 
+    poster="static/assets/intro.webp">
     <source src="static/assets/intro.mp4" type="video/mp4" playsinline>
     Your browser does not support the video tag.
     </video>
@@ -71,7 +73,8 @@
     <div id="pageIsIndex"></div>
   </div>
   <div class="content"></div>
-  <div class="poppinsbold mainTitle" onmouseenter=ThickUp() onmouseleave=ThickDown() onclick="location.href='./index.html'">
+  <div class="poppinsbold mainTitle" onmouseenter=ThickUp() onmouseleave=ThickDown()
+  onclick="location.href='./index.html'">
     <div data-aos="fade-down" data-aos-offset="100" data-aos-delay="150" data-aos-anchor="#thick">
       <div id="mainTitleID">
         Featured Works
@@ -82,9 +85,12 @@
     </div>
   </div>
   <div class="grid-container">
-    <div onclick="window.open('https://youtu.be/TJcj5AYzPAI')" class="grid-item grid-video">
+    <div onclick=linkedVideo(1) class="grid-item grid-video">
       <div class="hoverable-video" data-aos="fade-up" data-aos-delay="0">
-        <video class="video img opencursor bordered" id="$01" width="100%" height="auto" src="./static/assets/AppleAd.mp4" loop="" muted="muted" playsinline alt="OYYGC" poster="static/assets/applead.webp">
+        <video class="video img opencursor bordered" id="$01" width="100%" height="auto" 
+        src="./static/assets/AppleAd.mp4" loop="" muted="muted" playsinline 
+        alt="OYYGC" 
+        poster="static/assets/applead.webp">
           Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -93,9 +99,12 @@
         </div>
       </div>
     </div>
-    <div onclick="window.open('https://youtu.be/bEeUHc6P1r4')" class="grid-item grid-video">
+    <div onclick=linkedVideo(2) class="grid-item grid-video">
       <div class="hoverable-video" data-aos="fade-up" data-aos-delay="100">
-        <video class="video img opencursor bordered" id="$02" width="100%" height="auto" src="./static/assets/OYYGC.mp4" loop="" muted="muted" playsinline alt="OYYGC" poster="static/assets/OYYGC.webp">
+        <video class="video img opencursor bordered" id="$02" width="100%" height="auto" 
+        src="./static/assets/OYYGC.mp4" loop="" muted="muted" playsinline 
+        alt="OYYGC" 
+        poster="static/assets/OYYGC.webp">
           Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -104,9 +113,12 @@
         </div>
       </div>
     </div>
-    <div onclick="window.open('https://youtu.be/IKzMFwDjH6M')" class="grid-item grid-video">
+    <div onclick=linkedVideo(3) class="grid-item grid-video">
       <div class="hoverable-video" data-aos="fade-up" data-aos-delay="200">
-        <video class="video img opencursor bordered" id="$03" width="100%" height="auto" src="./static/assets/LiveHK.mp4" loop="" muted="muted" playsinline alt="LiveHK" poster="static/assets/LiveHK.webp">
+        <video class="video img opencursor bordered" id="$03" width="100%" height="auto" 
+        src="./static/assets/LiveHK.mp4" loop="" muted="muted" playsinline 
+        alt="LiveHK" 
+        poster="static/assets/LiveHK.webp">
         Your browser does not support this video preview.
         </video>
         <div class="img-caption" style="pointer-events: none;">
@@ -116,13 +128,15 @@
       </div>
     </div>
     <div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="0">
-        <p1 id="?1APPAD" class="bluelink grid-item redhatbold grid-title" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="0"
+      onclick=linkedVideo(1)>
+        <p1 id="?1APPAD" class="bluelink grid-item redhatbold grid-title">
           Concept Apple Ad
         </p1>
         <br>
       </div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="50" onclick="window.open('https://youtu.be/TJcj5AYzPAI')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="50"
+      onclick=linkedVideo(1)>
         <p1 id="?2APPAD" class="link grid-item redhatregular grid-subtitle">
           Animation and Motion Graphics
           <hr class="smallHR">
@@ -146,19 +160,21 @@
         </p1>
       </div>
       <div data-aos="fade-left" data-aos-offset="100" data-aos-delay="250" data-aos-anchor="#\?5APPAD">
-        <p1 id="?6APPAD" class="purplink grid-item redhatregular grid-text" onclick="window.open('https://youtu.be/hTNcdBrw8AM')">
+        <p1 id="?6APPAD" class="purplink grid-item redhatregular grid-text" onclick=staticLinkedVideo(5)>
           Three Years of Animating
         </p1>
       </div>
     </div>
     <div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="200" onclick="window.open('https://youtu.be/bEeUHc6P1r4')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="200"
+      onclick=linkedVideo(2)>
         <p1 id="?1OYYGC" class="bluelink grid-item redhatbold grid-title">
           Oh Yeah, You Gonna Cry?
         </p1>
         <br>
       </div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="250" onclick="window.open('https://youtu.be/bEeUHc6P1r4')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="250"
+      onclick=linkedVideo(2)>
         <p1 id="?2OYYGC" class="link grid-item redhatregular grid-subtitle">
           Animated x Live Music Video
           <hr class="smallHR">
@@ -186,13 +202,15 @@
       </div>
     </div>
     <div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="400" onclick="window.open('https://youtu.be/IKzMFwDjH6M')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="400"
+      onclick=linkedVideo(3)>
         <p1 id="?1LHK" class="bluelink grid-item redhatbold grid-title">
           Live Hong Kong
         </p1>
         <br>
       </div>
-      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="450" onclick="window.open('https://youtu.be/IKzMFwDjH6M')">
+      <div class="notext" data-aos="fade-left" data-aos-offset="100" data-aos-delay="450"
+      onclick=linkedVideo(3)>
         <p1 id="?2LHK" class="link grid-item redhatregular grid-subtitle">
           Advertisement
           <hr class="smallHR">
@@ -220,10 +238,7 @@
       </div>
     </div>
   </div>
-  <div>
-    <br><br>
-  </div>
-  <footer class="footer">
+  <footer class="footer footerMargin">
     <p onclick="location.href='./index.html'" class="redhatregular footertext">
       &copy; Nanomotions <script>document.write(new Date().getFullYear())</script>
     </p>
@@ -231,7 +246,6 @@
 	<!--<iframe src="https://player.vimeo.com/video/855576014?h=5f6fef5840" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
   -->
   </script>
-  <script src="static/js/jquery-3.7.1.js"></script>
   <script src="static/js/index.js"></script>
   <script src="static/js/animations.js"></script>
   <script src="static/js/mobilecompat.js"></script>
