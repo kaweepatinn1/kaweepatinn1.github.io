@@ -125,7 +125,7 @@ body {
 .hoverUp{
     transition-property: all;
     transition-duration: 0.75s;
-    transform: translateY(0vw);
+    transform: translateY(0.15vw);
     pointer-events: none;
 }
 
@@ -334,7 +334,7 @@ hr {
     position: relative;
 	margin: 0vw 0vw 0vw 0vw;
     align-items: center;
-    transform: rotate(180deg) translateY(6.5vw);
+    transform: rotate(180deg) rotateY(90deg) translateY(6.5vw);
     transition-property: all;
     transition-duration: 0.75s;
     height:auto; 
