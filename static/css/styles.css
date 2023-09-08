@@ -342,3 +342,7 @@ hr {
     z-index: -1;
     pointer-events: none;
 }
+
+.iconTransform{
+    transform: translateY(0vw);
+}
