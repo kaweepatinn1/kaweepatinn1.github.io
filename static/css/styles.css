@@ -113,14 +113,11 @@ body {
     transition-property: all;
     transition-duration: 0.75s;
 	font-weight: bold;
-	filter: brightness(100%);
-    z-index: 5;
 }
 
 .block:hover{
   background-color: #666;
   color: #FFF;
-  filter: brightness(85%);
   transition-property: all;
   transition-duration: 0.75s;
 }
@@ -128,7 +125,7 @@ body {
 .hoverUp{
     transition-property: all;
     transition-duration: 0.75s;
-    transform: translateY(0vw);
+    transform: translateY(0.15vw);
     pointer-events: none;
 }
 
@@ -233,6 +230,11 @@ a:active { text-decoration: none; }
 
 #mainTitleID{
     transform: translateX(0.4vw);
+    pointer-events: none;
+}
+
+.mainTitleTop{
+    pointer-events: none;
 }
 
 .mainTitle{
@@ -327,16 +329,16 @@ hr {
     height: 2.5vw;
 }
 
-/*
+
 .navbarLogo{
     position: relative;
 	margin: 0vw 0vw 0vw 0vw;
     align-items: center;
-    transform: translate3d(0,0,0);
+    transform: rotate(180deg) rotateY(90deg) translateY(6.5vw);
     transition-property: all;
     transition-duration: 0.75s;
     height:auto; 
     width: 80%;
-    z-index: 1;
+    z-index: -1;
+    pointer-events: none;
 }
-*/
