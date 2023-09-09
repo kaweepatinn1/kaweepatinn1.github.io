@@ -65,9 +65,9 @@ function linkedVideo(video, type){
     if (type == undefined){
         staticLinkedVideo(reference);
     } else if (type == 2){
-        return staticLinkedEmbed(reference, true);
+        return staticEmbed(reference, true);
     } else if (type == 3){
-        return staticLinkedEmbed(reference, false);
+        return staticEmbed(reference, false);
     }
 }
 
@@ -93,27 +93,7 @@ function staticLinkedVideo(video){
 
 // Linked embeds below
 
-function loadLinks(){
-    var totalplus1 = 1;
-    stop = false;
-    while(stop == false){ //counts the amount of elements with the tag and ID
-        var check = document.getElementById("$" + totalplus1);
-        if (check != undefined){
-            totalplus1++
-        } else{
-            stop = true;
-        }
-    }
-    console.log(totalplus1);
-    for (let i = 1; i < totalplus1 ; i++){
-        toChange = "#\\$" + i;
-        console.log(toChange);
-        $(toChange).attr('src', linkedVideo(i, 2));
-        $(toChange).attr('poster', linkedVideo(i, 3));
-    }
-}
-
-function staticLinkedEmbed(videoIndex, isVideo){
+function staticEmbed(videoIndex, isVideo){
     const videoEmbeds = [];
     if (isVideo){
         videoEmbeds.push(
@@ -141,6 +121,26 @@ function staticLinkedEmbed(videoIndex, isVideo){
             "./static/assets/TheSecondSet.webp",             // 9. HK Documentary
             );
         return(videoEmbeds[videoIndex-1]);
+    }
+}
+
+function loadLinks(){
+    var totalplus1 = 1;
+    stop = false;
+    while(stop == false){ //counts the amount of elements with the tag and ID
+        var check = document.getElementById("$" + totalplus1);
+        if (check != undefined){
+            totalplus1++
+        } else{
+            stop = true;
+        }
+    }
+    console.log(totalplus1);
+    for (let i = 1; i < totalplus1 ; i++){
+        toChange = "#\\$" + i;
+        console.log(toChange);
+        $(toChange).attr('src', linkedVideo(i, 2));
+        $(toChange).attr('poster', linkedVideo(i, 3));
     }
 }
 
