@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 window.onload = function() {
 	// Code to be executed after the entire page, including CSS, has been loaded
+	loadLogo();
 	navbar = document.getElementById("navbar");
 	video = document.getElementById("topVideo");
 	if (video == undefined){
