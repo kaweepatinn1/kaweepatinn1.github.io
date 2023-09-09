@@ -1,0 +1,55 @@
+
+  h1 {
+    color: #efefef;
+    font-weight: normal;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+  h1 a {
+    color: #efefef;
+    border-bottom: 2px solid #efefef;
+    text-decoration: none;
+    padding-bottom: 3px;
+  }
+  h1 a:hover {
+    color: #9acd32;
+    border-color: #9acd32;
+  }
+  #container {
+    overflow: hidden;
+    clear: both;
+    width: 100vw;
+    position: relative;
+  }
+  #container .box {
+    display: inline-block;
+    width: 19vw;
+    height: 10vw;
+    margin: 0.5vw;
+    background: #9acd32;
+    text-align: center;
+    font-size: 20px;
+    line-height: 100px;
+    position: relative;
+  }
+  .button {
+    float: left;
+    width: 100px;
+    margin: 0px 5px 20px 5px;
+    padding: 10px 0px;
+    font-size: 16px;
+    background: #efefef;
+    color: #333;
+    border: none;
+  }
+  .button:hover {
+    background: #d5d5d5;
+  }
+  .button.spacer {
+    background: #3a3a4d;
+  }
+  
+
+  #container{
+    font-size: 1vw;
+  }
