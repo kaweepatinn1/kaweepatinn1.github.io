@@ -153,7 +153,6 @@ var navbar
 var video
 
 document.addEventListener("DOMContentLoaded", function() {
-	loadLogo();
 	navbar = document.getElementById("navbar");
 	video = document.getElementById("topVideo");
 	logo = document.getElementById("mainLogo");
