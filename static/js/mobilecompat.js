@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     var w = window.innerWidth;
     var h = window.innerHeight;
-    if (h > w){
-        changeAos();
-    }
+    //if (h > w){
+    //    changeAos();
+    //}
 });
 
 function changeAos(to360){ //passing parameter no longer used

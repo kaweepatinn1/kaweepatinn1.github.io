@@ -109,9 +109,29 @@ function downArrow(){
 }
 */
 
+///*
+// Couldn't figure out how to get document's max scroll
+function scrollCheck(){
+	totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+	if (totalHeight - window.scrollY < 100){ // if too close to bottom of page (100 scroll), just animate all
+		let aosInits = Array.from(document.getElementsByClassName("aos-init"));
+		aosInits.forEach((element) => {
+			element.classList.add("aos-animate"); 
+		}) 
+	} 
+	/*
+	else{
+		let aosInits = Array.from(document.getElementsByClassName("aos-init"));
+		aosInits.forEach((element) => {
+		})
+	}
+	*/
+}
+//*/
 $(window).scroll(function() {
 	setLogo();
 	// downArrow();
+	 scrollCheck();
 });
 
 var extramove
