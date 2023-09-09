@@ -1,4 +1,4 @@
-// Add new links to the bottom of the links list in staticLinkedVideo()
+// Add new links to the bottom of the links list in staticLinkedVidenko()
 // linkedVideo() should refer to indexes of staticLinkedVideo
 // where 1 is the first element.
 
@@ -9,53 +9,53 @@ function linkedVideo(video, type){
     const references = [];
     reference = -1;
     if ( document.getElementById("pageIsIndex") != undefined ){       
-        references.push( // INDEX PAGE LINKS
+        references.push( // INDEX PAGE MEDIA AND LINKS
             2, // 2. Concept Apple Ad
             3, // 3. OYYGC Animated MV
             4, // 4. Three Years of Animating
         );
         reference = references[video-1]
     } else if ( document.getElementById("pageIsAbout") != undefined ){
-        references.push( // ABOUT PAGE LINKS
-            1, // 1. Null Link
-            1, // 1. Null Link
-            1, // 1. Null Link
+        references.push( // ABOUT PAGE MEDIA AND LINKS
+            1, // 1. Placeholder
+            1, // 1. Placeholder
+            1, // 1. Placeholder
         );
         reference = references[video-1]
     } else if ( document.getElementById("pageIsAdvertising") != undefined ){
-        references.push( // ADVERTISING PAGE LINKS
+        references.push( // ADVERTISING PAGE MEDIA AND LINKS
             2, // 2. Concept Apple Ad
             4, // 4. LiveHK
             6, // 6. Veggie Quest
         );
         reference = references[video-1]
     } else if ( document.getElementById("pageIsAnimation") != undefined ){
-        references.push( // ADVERTISING PAGE LINKS
+        references.push( // ADVERTISING PAGE MEDIA AND LINKS
             3, // 3. OYYGC Animated MV
             2, // 2. Concept Apple Ad
-            1, // 1. Null Link
+            1, // 1. Placeholder
         );
         reference = references[video-1]
     } else if ( document.getElementById("pageIsFilm") != undefined ){
-        references.push( // FILM PAGE LINKS
+        references.push( // FILM PAGE MEDIA AND LINKS
             7, // 7. Rerunner Chase Scene
-            1, // 1. Null Link
-            1, // 1. Null Link
+            1, // 1. Placeholder
+            1, // 1. Placeholder
         );
         reference = references[video-1]
     } else if ( document.getElementById("pageIsOther") != undefined ){
-        references.push( // OTHER PAGE LINKS
+        references.push( // OTHER PAGE MEDIA AND LINKS
             8, // 8. Star Persona Video Essay
             9, // 9. HK Documentary
-            1, // 1. Null Link
+            1, // 1. Placeholder
         );
         reference = references[video-1]
         staticLinkedVideo(reference);
     } else if ( document.getElementById("pageIsPhotography") != undefined ){
-        references.push( // PHOTOGRAPHY PAGE LINKS
-            1, // 1. Null Link
-            1, // 1. Null Link
-            1, // 1. Null Link
+        references.push( // PHOTOGRAPHY PAGE MEDIA AND LINKS
+            1, // 1. Placeholder
+            1, // 1. Placeholder
+            1, // 1. Placeholder
         );
         reference = references[video-1]
     } else {
@@ -74,7 +74,7 @@ function linkedVideo(video, type){
 function staticLinkedVideo(video){
     const links = [];
     links.push(
-        "index.html",                   // 1. Null Link
+        "index.html",                   // 1. Placeholder Link
         "https://youtu.be/TJcj5AYzPAI", // 2. Concept Apple Ad
         "https://youtu.be/bEeUHc6P1r4", // 3. OYYGC Animated MV
         "https://youtu.be/IKzMFwDjH6M", // 4. LiveHK
