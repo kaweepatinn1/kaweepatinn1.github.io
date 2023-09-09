@@ -92,22 +92,22 @@ function setLogo(){
 	$("#mainLogo").css({ "transform": "translateY(" + translateYValue + "vw)" });
 }
 
-/*
 function downArrow(){
 	if (window.scrollY != 0){
-		let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
-		scrollInits.forEach((element) => {
-			element.classList.add("scrollAnimate");
-		})
+		let arrow = document.getElementById("downArrow1Parent");
+		arrow.classList.add("aos-animate");
+		//let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
+		//scrollInits.forEach((element) => {
+		//	element.classList.add("scrollAnimate");
+		//})
 	} else{
-		let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
-		scrollInits.forEach((element) => {
-			element.classList.remove("scrollAnimate");
-		})
+		//let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
+		//scrollInits.forEach((element) => {
+		//	element.classList.remove("scrollAnimate");
+		//})
 	}
 
 }
-*/
 
 ///*
 // Couldn't figure out how to get document's max scroll
@@ -130,7 +130,7 @@ function scrollCheck(){
 //*/
 $(window).scroll(function() {
 	setLogo();
-	// downArrow();
+	downArrow();
 	scrollCheck();
 });
 
