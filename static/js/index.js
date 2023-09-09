@@ -131,7 +131,7 @@ function scrollCheck(){
 $(window).scroll(function() {
 	setLogo();
 	// downArrow();
-	 scrollCheck();
+	scrollCheck();
 });
 
 var extramove
