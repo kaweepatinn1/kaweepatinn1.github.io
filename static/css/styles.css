@@ -346,3 +346,37 @@ hr {
 .iconTransform{
     transform: translateY(0vw);
 }
+
+.downArrow{
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    top: 49vw;
+    left: 47.5vw;
+}
+
+/*
+.scrollInit{
+    opacity: 1;
+    transform: translateY(0vw);
+    transition-duration: 0.75s;
+    transition-property: transform, opacity;
+  
+    &.scrollAnimate {
+      opacity: 0;
+      transform: translateY(5vw);
+    }
+  }
+  */
+
+[data-aos="out-down"]{
+    opacity: 1;
+    transform: translateY(0vw);
+    transition-duration: 1.5s;
+    transition-property: transform, opacity;
+  
+    &.aos-animate {
+      opacity: 0;
+      transform: translateY(2vw);
+    }
+}

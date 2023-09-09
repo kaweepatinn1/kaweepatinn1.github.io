@@ -92,8 +92,26 @@ function setLogo(){
 	$("#mainLogo").css({ "transform": "translateY(" + translateYValue + "vw)" });
 }
 
+/*
+function downArrow(){
+	if (window.scrollY != 0){
+		let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
+		scrollInits.forEach((element) => {
+			element.classList.add("scrollAnimate");
+		})
+	} else{
+		let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
+		scrollInits.forEach((element) => {
+			element.classList.remove("scrollAnimate");
+		})
+	}
+
+}
+*/
+
 $(window).scroll(function() {
 	setLogo();
+	// downArrow();
 });
 
 var extramove

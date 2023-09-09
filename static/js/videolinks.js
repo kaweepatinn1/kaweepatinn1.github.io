@@ -135,10 +135,8 @@ function loadLinks(){
             stop = true;
         }
     }
-    console.log(totalplus1);
     for (let i = 1; i < totalplus1 ; i++){
         toChange = "#\\$" + i;
-        console.log(toChange);
         $(toChange).attr('src', linkedVideo(i, 2));
         $(toChange).attr('poster', linkedVideo(i, 3));
     }
