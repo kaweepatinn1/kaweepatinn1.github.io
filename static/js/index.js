@@ -153,6 +153,7 @@ var navbar
 var video
 
 document.addEventListener("DOMContentLoaded", function() {
+	loadLogo();
 	navbar = document.getElementById("navbar");
 	video = document.getElementById("topVideo");
 	logo = document.getElementById("mainLogo");
@@ -202,8 +203,8 @@ window.onload = function() {
 	window.scrollTo(0, 0);
 	$('.loader').css('display','none');
 	extramove = 0;
-	loadLogo();
-	setTimeout(setLogo, 100);
 	sticky = navbar.offsetTop;
+	setLogo();
+	setTimeout(setLogo, 100);
   // Perform other initialization tasks, set up event handlers, etc.
 };

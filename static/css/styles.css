@@ -353,6 +353,7 @@ hr {
     height: 5vw;
     top: 49vw;
     left: 47.5vw;
+    z-index: 100;
 }
 
 /*
