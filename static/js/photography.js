@@ -1,4 +1,5 @@
 var boxes = [];
+var sizes = [[1,1,1,1],[1,1,1,1]];
 var numBoxes = 24;
 
 // Animation settings
@@ -99,6 +100,7 @@ function reorderTiles(shuffled) {
 // ====================================================================
 function createTile(num, prepend) {
   var add = prepend ? ["prependTo", "unshift"] : ["appendTo", "push"];
+  // use boxes to produce a box of right class size
   var tile = $("<div class='box'/>").text(num)[add[0]](container)[0];
 
   TweenLite.set(tile, { x: "+=0" });
