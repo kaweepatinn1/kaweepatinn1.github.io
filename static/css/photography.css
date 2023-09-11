@@ -15,27 +15,10 @@
     color: #9acd32;
     border-color: #9acd32;
   }
-  #container {
-    overflow: hidden;
-    clear: both;
-    width: 100vw;
-    position: relative;
-  }
-  #container .box {
-    display: inline-block;
-    width: 19vw;
-    height: 10vw;
-    margin: 0.5vw;
-    background: #9acd32;
-    text-align: center;
-    font-size: 20px;
-    line-height: 100px;
-    position: relative;
-  }
   .button {
     float: left;
-    width: 100px;
-    margin: 0px 5px 20px 5px;
+    width: 19vw;
+    margin: 0.1vw;
     padding: 10px 0px;
     font-size: 16px;
     background: #efefef;
@@ -48,8 +31,57 @@
   .button.spacer {
     background: #3a3a4d;
   }
+  .containerContainer{
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    overflow: hidden;
+    width: 99.5%;
+    position: relative;
+    margin: 0%;
+    padding: 0.25%;
+    height: 61.5vw;
+  }
+  .container .box {
+    display: inline-block;
+    /*
+    width: 11.8vw;
+    height: 11.8vw;
+    */
+    margin: 0.25vw;
+    background: #9acd32;
+    text-align: center;
+    font-size: 20px;
+    line-height: 100px;
+    position: absolute;
+  }
+  .container .fourbythree{
+    width: 48.7vw;
+    height: 36.4vw;
+  }
+  .container .twobythree{
+    width: 24.1vw;
+    height: 36.4vw;
+  }
+  .container .threebytwo{
+    width: 36.4vw;
+    height: 24.1vw;
+  }
+  .container .twobytwo{
+    width: 24.1vw;
+    height: 24.1vw;
+  }
+  .container .onebyone{
+    width: 11.8vw;
+    height: 11.8vw;
+  }
+  
   
 
-  #container{
+  .container{
     font-size: 1vw;
   }

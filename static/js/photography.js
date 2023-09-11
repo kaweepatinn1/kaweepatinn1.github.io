@@ -1,6 +1,12 @@
 var boxes = [];
-var sizes = [[1,1,1,1],[1,1,1,1]];
-var numBoxes = 24;
+var array = [
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+];
+var numBoxes = 40;
 
 // Animation settings
 var duration = 0.5; // length of time in secods for box to fade in
@@ -8,24 +14,24 @@ var delay = 0.03; // delay in secods before each new box appears
 
 var tiles = [];
 var ease = Back.easeOut.config(0.5);
-var container = $("#container")[0];
+var container = $("#container1")[0];
 
 $(document).ready(function () {
   init();
 
-  $("#shuffle").click(function () {
+  $("#shuffle1").click(function () {
     heightFromTop = window.scrollY;
     reorderTiles(true);
     window.scrollTo(0, heightFromTop);
   });
 
-  $("#reorder").click(function () {
+  $("#reorder1").click(function () {
     heightFromTop = window.scrollY;
     reorderTiles();
     window.scrollTo(0, heightFromTop);
   });
 
-  $("#reset").click(function () {
+  $("#reset1").click(function () {
     heightFromTop = window.scrollY;
     init();
     window.scrollTo(0, heightFromTop);
@@ -35,8 +41,9 @@ $(document).ready(function () {
 function init() {
   tiles = [];
   boxes = [];
-  $("#container").empty();
+  $("#container1").empty();
   createBoxes(numBoxes);
+  console.log(boxes);
   appendBoxes(boxes);
 }
 
@@ -101,16 +108,32 @@ function reorderTiles(shuffled) {
 function createTile(num, prepend) {
   var add = prepend ? ["prependTo", "unshift"] : ["appendTo", "push"];
   // use boxes to produce a box of right class size
-  var tile = $("<div class='box'/>").text(num)[add[0]](container)[0];
-
+  if (num == 1){
+    var tile = $("<div class='box fourbythree'/>").text(num)[add[0]](container)[0];
+  } else if (num == 2){
+    var tile = $("<div class='box twobythree'/>").text(num)[add[0]](container)[0];
+  } else if (num == 3){
+    var tile = $("<div class='box threebytwo'/>").text(num)[add[0]](container)[0];
+  } else if (num == 4 || num == 5){
+    var tile = $("<div class='box twobytwo'/>").text(num)[add[0]](container)[0];
+  } else {
+    var tile =  $("<div class='box onebyone'/>").text(num)[add[0]](container)[0];
+  }
+  indexX = 4;
+  indexY = 0;
+  offsetX = (indexX * 12.3) + 0.25;
+  offsetY = (indexY * 12.3) + 0.25;
+  $(tile).css({
+    left: offsetX + "vw",
+    top: offsetY + 0.25 + "vw",
+  });
   TweenLite.set(tile, { x: "+=0" });
 
   tiles[add[1]]({
-    transform: tile._gsTransform,
     element: tile,
     num: num,
-    x: tile.offsetLeft,
-    y: tile.offsetTop
+    x: offsetX,
+    y: offsetY
   });
 
   return tile;
