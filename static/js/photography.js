@@ -1,4 +1,11 @@
 var boxes = [];
+var emptyarray = [
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+];
 var array = [
   [0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0],
@@ -6,7 +13,24 @@ var array = [
   [0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0],
 ];
-var numBoxes = 40;
+var sizes = [
+  [4, 3],
+  [2, 3],
+  [3, 2],
+  [2, 2],
+  [2, 2],
+  [1, 1],
+  [1, 1],
+  [1, 1],
+  [1, 1],
+  [1, 1],
+  [1, 1],
+  [1, 1],
+  [1, 1],
+]
+var arrayX = array[0].length;
+var arrayY = array.length;
+var numBoxes = 13;
 
 // Animation settings
 var duration = 0.5; // length of time in secods for box to fade in
@@ -21,7 +45,9 @@ $(document).ready(function () {
 
   $("#shuffle1").click(function () {
     heightFromTop = window.scrollY;
-    reorderTiles(true);
+    // reorderTiles(true);
+    // init();
+    console.log(array);
     window.scrollTo(0, heightFromTop);
   });
 
@@ -41,6 +67,13 @@ $(document).ready(function () {
 function init() {
   tiles = [];
   boxes = [];
+  console.log(array);
+  array.forEach((secondDimension, indexY) => {
+    secondDimension.forEach((item, indexX) => {
+      array[indexY][indexX] = 0;
+    })
+  })
+  console.log(array);
   $("#container1").empty();
   createBoxes(numBoxes);
   console.log(boxes);
@@ -108,24 +141,92 @@ function reorderTiles(shuffled) {
 function createTile(num, prepend) {
   var add = prepend ? ["prependTo", "unshift"] : ["appendTo", "push"];
   // use boxes to produce a box of right class size
-  if (num == 1){
-    var tile = $("<div class='box fourbythree'/>").text(num)[add[0]](container)[0];
-  } else if (num == 2){
-    var tile = $("<div class='box twobythree'/>").text(num)[add[0]](container)[0];
-  } else if (num == 3){
-    var tile = $("<div class='box threebytwo'/>").text(num)[add[0]](container)[0];
-  } else if (num == 4 || num == 5){
-    var tile = $("<div class='box twobytwo'/>").text(num)[add[0]](container)[0];
-  } else {
-    var tile =  $("<div class='box onebyone'/>").text(num)[add[0]](container)[0];
+  var tile = $("<div class='box'/>").text(num)[add[0]](container)[0];
+  width = sizes[num-1][0];
+  height = sizes[num-1][1];
+  console.log("Placing block with size " + width + " and height " + height);
+
+  placed = false;
+  tryPosition = [0,0];
+
+  var empty = unusedBoxes();
+  var emptyTotalLength = empty.length;
+  var tries = 0;
+  console.log("TILE NUMBER " + num)
+  console.log("New placement attempt with array size remaining " + emptyTotalLength);
+  while (!placed && (tries < emptyTotalLength)){
+    canPlace = true;
+    index = Math.floor(Math.random() * empty.length);
+    tryPosition = empty[index];
+    if ((tryPosition[0] + width > arrayX || tryPosition[1] + height > arrayY)){ 
+    // check overflow
+    canPlace = false;
+    } 
+    // check restrictions
+      else if (num == 1 && tryPosition[1] == 1){
+      canPlace = false;
+    } else if (num == 2 && 
+      (tryPosition[1] == 1 && (tryPosition[0] == 1 || tryPosition[0] == 5))){
+      canPlace = false;
+    } else if (num == 2 && (tryPosition[1] == 1)){
+      array.forEach((arrays) => {
+        if (arrays[1] == 43 || arrays[5] == 43){
+          canPlace = false;
+        }
+      });
+      canPlace = false;
+    } else if (num == 3){
+      if //////////////////////////////////////////////////////////WORK HERE ON NEXT CONDITION
+    } else{ // if all the needed positions are empty
+      console.log(tryPosition);
+      for (let x = tryPosition[0]; x < tryPosition[0] + width; x++){
+        for (let y = tryPosition[1]; y < tryPosition[1] + height; y++){
+          console.log(y,x);
+          console.log(array[y][x]);
+          if (array[y][x] != 0){
+            canPlace = false;
+          }
+        }
+      }
+    }
+
+    if (canPlace){
+      placed = true;
+      console.log("Successful at " + tryPosition);
+      for (let x = tryPosition[0]; x < tryPosition[0] + width; x++){
+        for (let y = tryPosition[1]; y < tryPosition[1] + height; y++){
+          array[y][x] = 1;
+        }
+      }
+      array[tryPosition[1]][tryPosition[0]] = parseInt(width.toString() + height.toString());
+      console.log(array);
+    } else{
+      empty.splice(index, 1);
+      console.log("Failed at " + tryPosition)
+      tries++;
+    } 
   }
-  indexX = 4;
-  indexY = 0;
+  /*
+  console.log(!placed && (tries < empty.length));
+  console.log(placed);
+  console.log(tries < empty.length);
+  console.log(tries);
+  console.log(empty.length);
+  console.log(empty);
+  */
+  if (!(tries < arrayX * arrayY)){
+    console.log("ERROR: TRIED MORE THAN ARRAY AREA")
+  }
+  indexX = tryPosition[0];
+  indexY = tryPosition[1];
   offsetX = (indexX * 12.3) + 0.25;
   offsetY = (indexY * 12.3) + 0.25;
+  console.log( (11.3 * width) + 0.5 + "vw");
   $(tile).css({
+    width: (12.3 * width) - 0.5 + "vw",
+    height: (12.3 * height) - 0.5 + "vw",
     left: offsetX + "vw",
-    top: offsetY + 0.25 + "vw",
+    top: offsetY + "vw",
   });
   TweenLite.set(tile, { x: "+=0" });
 
@@ -138,6 +239,22 @@ function createTile(num, prepend) {
 
   return tile;
 }
+
+function unusedBoxes(){
+  console.log(array);
+  var emptyBoxes = [];
+  array.forEach((secondDimension, indexY) => {
+    secondDimension.forEach((item, indexX) => {
+      if (item == 0){
+        emptyBoxes.push([indexX,indexY]);
+      }
+    });
+  });
+  return emptyBoxes;
+}
+
+// 0 --> empty
+// 1 --> not empty
 
 //
 // SORT
@@ -166,7 +283,7 @@ function addBoxes(num) {
 
 function appendBoxes(collection, isShuffle) {
   var tl = new TimelineLite();
-
+  array = emptyarray;
   collection.forEach(function (num, i) {
     var tile = createTile(num);
 
@@ -185,7 +302,7 @@ function appendBoxes(collection, isShuffle) {
 
 function prependBoxes(collection) {
   var tl = new TimelineLite();
-
+  array = emptyarray;
   collection.reverse().forEach(function (num, index) {
     var tile = createTile(num, true);
 

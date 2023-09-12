@@ -132,7 +132,7 @@ $(window).scroll(function() {
 	setLogo();
 	downArrow();
 	scrollCheck();
-	console.log(document.documentElement.scrollHeight - window.innerHeight);
+	// console.log(document.documentElement.scrollHeight - window.innerHeight);
 });
 
 var extramove
