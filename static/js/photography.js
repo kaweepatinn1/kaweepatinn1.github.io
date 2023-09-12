@@ -47,7 +47,7 @@ $(document).ready(function () {
     heightFromTop = window.scrollY;
     // reorderTiles(true);
     // init();
-    console.log(array);
+    // console.log(array);
     window.scrollTo(0, heightFromTop);
   });
 
@@ -67,16 +67,15 @@ $(document).ready(function () {
 function init() {
   tiles = [];
   boxes = [];
-  console.log(array);
   array.forEach((secondDimension, indexY) => {
     secondDimension.forEach((item, indexX) => {
       array[indexY][indexX] = 0;
     })
   })
-  console.log(array);
+  // console.log(array);
   $("#container1").empty();
   createBoxes(numBoxes);
-  console.log(boxes);
+  // console.log(boxes);
   appendBoxes(boxes);
 }
 
@@ -87,7 +86,7 @@ function reorderTiles(shuffled) {
   var total = tiles.length;
 
   var i = total;
-  console.log(i);
+  // console.log(i);
   while (i--) {
     var tile = tiles[i];
 
@@ -144,7 +143,7 @@ function createTile(num, prepend) {
   var tile = $("<div class='box'/>").text(num)[add[0]](container)[0];
   width = sizes[num-1][0];
   height = sizes[num-1][1];
-  console.log("Placing block with size " + width + " and height " + height);
+  // console.log("Placing block with size " + width + " and height " + height);
 
   placed = false;
   tryPosition = [0,0];
@@ -152,8 +151,8 @@ function createTile(num, prepend) {
   var empty = unusedBoxes();
   var emptyTotalLength = empty.length;
   var tries = 0;
-  console.log("TILE NUMBER " + num)
-  console.log("New placement attempt with array size remaining " + emptyTotalLength);
+  // console.log("TILE NUMBER " + num)
+  // console.log("New placement attempt with array size remaining " + emptyTotalLength);
   while (!placed && (tries < emptyTotalLength)){
     canPlace = true;
     index = Math.floor(Math.random() * empty.length);
@@ -168,7 +167,7 @@ function createTile(num, prepend) {
     else if (num == 1 && tryPosition[1] == 1){
       canPlace = false;
     } 
-
+    
     else if (num == 2){
       if (tryPosition[1] == 1 && (tryPosition[0] == 1 || tryPosition[0] == 5)){
         canPlace = false;
@@ -181,18 +180,83 @@ function createTile(num, prepend) {
         canPlace = false;
       }
     }
-      
+    
     else if (num == 3){
-      if (true){}//////////////////////////////////////////////////////////WORK HERE ON NEXT CONDITION
+      array.forEach((arrays, indexY) => {
+        arrays.forEach((element, indexX) =>{
+          if (element == 43){
+            coords43 = [indexX, indexY];
+          } else if (element == 23){
+            coords23 = [indexX, indexY];
+          }
+        });
+      });
+      condition1 = (Math.abs(coords43[1] - coords23[1]) == 2); // if 23 Y and 43 Y are +-2
+      condition2 = (coords43[0] == 1 || coords43[0] == 3); // of 43 X is 1 or 3
+      if (condition1 && condition2){
+        if (coords23[0] == 5){
+          if (coords23[1] == 0){
+            if (tryPosition[0] == 1 && tryPosition[1] == 0){
+              canPlace = false;
+            }
+          } else if (coords23[1] == 2){
+            if (tryPosition[0] == 1 && tryPosition[1] == 3){
+              canPlace = false;
+            }
+          }
+        } else if (coords23[0] == 1){
+          if (coords23[1] == 0){
+            if (tryPosition[0] == 4 && tryPosition[1] == 0){
+              canPlace = false;
+            }
+          } else if (coords23[1] == 2){
+            if (tryPosition[0] == 4 && tryPosition[1] == 3){
+              canPlace = false;
+            }
+          }
+        }
+      }
     } 
+
+    else if (num == 4){
+      array.forEach((arrays, indexY) => {
+        arrays.forEach((element, indexX) =>{
+          if (element == 43){
+            coords43 = [indexX, indexY];
+          } else if (element == 23){
+            coords23 = [indexX, indexY];
+          } else if (element == 32){
+            coords32 = [indexX, indexY];
+          }
+        });
+      });
+      condition1 = (Math.abs(coords43[0] - coords23[0]) == 5); 
+      condition2 = (Math.abs(coords43[0] - coords23[0]) == 3); 
+      // 43 will never be at x1
+      if (condition1 || condition2){
+        if (coords43[1] == coords23[1]){
+          if (coords32[1] == 4){
+            canPlace = !(tryPosition[0] == 1);
+          } else if (coords32[1] == 1){
+            canPlace = !(tryPosition[0] == 5);
+          }
+        } else{
+          if (coords32[0] == 1 && coords23[0] == 5){
+            canPlace = !(tryPosition[0] == 5);
+          } else if (coords32[0] == 4 && coords23[0] == 1){
+            canPlace = !(tryPosition[0] == 1);
+          }
+        }
+      }
+    }
 
     // checks if all the needed positions are empty
     if (canPlace){
-      console.log(tryPosition);
+      // console.log(tryPosition);
       for (let x = tryPosition[0]; x < tryPosition[0] + width; x++){
         for (let y = tryPosition[1]; y < tryPosition[1] + height; y++){
-          console.log(y,x);
-          console.log(array[y][x]);
+          // console.log(y,x);
+          // console.log(array[y][x]);
           if (array[y][x] != 0){
             canPlace = false;
           }
@@ -200,19 +264,21 @@ function createTile(num, prepend) {
       }
     }
     
+    
+
     if (canPlace){
       placed = true;
-      console.log("Successful at " + tryPosition);
+      // console.log("Successful at " + tryPosition);
       for (let x = tryPosition[0]; x < tryPosition[0] + width; x++){
         for (let y = tryPosition[1]; y < tryPosition[1] + height; y++){
           array[y][x] = 1;
         }
       }
       array[tryPosition[1]][tryPosition[0]] = parseInt(width.toString() + height.toString());
-      console.log(array);
+      // console.log(array);
     } else{
       empty.splice(index, 1);
-      console.log("Failed at " + tryPosition)
+      // console.log("Failed at " + tryPosition)
       tries++;
     } 
   }
@@ -229,12 +295,14 @@ function createTile(num, prepend) {
   }
   indexX = tryPosition[0];
   indexY = tryPosition[1];
-  offsetX = (indexX * 12.3) + 0.25;
-  offsetY = (indexY * 12.3) + 0.25;
-  console.log( (11.3 * width) + 0.5 + "vw");
+  unitsize = 12.355;
+  offsetX = (indexX * unitsize) + 0.25;
+  console.log(offsetX);
+  offsetY = (indexY * unitsize) + 0.25;
+  console.log( (unitsize * width) - 0.5 + "vw");
   $(tile).css({
-    width: (12.3 * width) - 0.5 + "vw",
-    height: (12.3 * height) - 0.5 + "vw",
+    width: (unitsize * width) - 0.5 + "vw",
+    height: (unitsize * height) - 0.5 + "vw",
     left: offsetX + "vw",
     top: offsetY + "vw",
   });
@@ -244,14 +312,15 @@ function createTile(num, prepend) {
     element: tile,
     num: num,
     x: offsetX,
-    y: offsetY
+    y: offsetY,
+    valid: canPlace
   });
 
   return tile;
 }
 
 function unusedBoxes(){
-  console.log(array);
+  // console.log(array);
   var emptyBoxes = [];
   array.forEach((secondDimension, indexY) => {
     secondDimension.forEach((item, indexX) => {
@@ -292,22 +361,41 @@ function addBoxes(num) {
 }
 
 function appendBoxes(collection, isShuffle) {
-  var tl = new TimelineLite();
-  array = emptyarray;
-  collection.forEach(function (num, i) {
-    var tile = createTile(num);
+  var error = true;
+  while (error){
+    error = false;
+    var tl = new TimelineLite();
+    array.forEach((secondDimension, indexY) => {
+      secondDimension.forEach((item, indexX) => {
+        array[indexY][indexX] = 0;
+      })
+    })
+    // console.log(array);
+    $("#container1").empty();
+    tiles = [];
+    collection.forEach(function (num, i) {
+      var tile = createTile(num);
+      
+      tl.from(
+        tile,
+        duration,
+        {
+          opacity: 0,
+          scale: 0,
+          ease: Sine.easeIn
+        },
+        "-=" + (duration - delay)
+      );
+    });
+    tiles.forEach((tileItem) => {
+      if (!tileItem.valid){
+        error = true;
+        // added error checking to foolproof code
+      }
+    })
+  }
+ 
 
-    tl.from(
-      tile,
-      duration,
-      {
-        opacity: 0,
-        scale: 0,
-        ease: Sine.easeIn
-      },
-      "-=" + (duration - delay)
-    );
-  });
 }
 
 function prependBoxes(collection) {
