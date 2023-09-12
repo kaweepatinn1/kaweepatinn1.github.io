@@ -297,9 +297,9 @@ function createTile(num, prepend) {
   indexY = tryPosition[1];
   unitsize = 12.355;
   offsetX = (indexX * unitsize) + 0.25;
-  console.log(offsetX);
+  // console.log(offsetX);
   offsetY = (indexY * unitsize) + 0.25;
-  console.log( (unitsize * width) - 0.5 + "vw");
+  // console.log( (unitsize * width) - 0.5 + "vw");
   $(tile).css({
     width: (unitsize * width) - 0.5 + "vw",
     height: (unitsize * height) - 0.5 + "vw",
