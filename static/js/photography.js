@@ -163,6 +163,8 @@ function createTile(num, prepend) {
     canPlace = false;
     } 
     // check restrictions
+
+    // SPLIT RESTRICTIONS INTO NUM. ADD ALL CONDITIONS INTO MAIN, OR ELSE ELSE IF WILL TRIGGER.
       else if (num == 1 && tryPosition[1] == 1){
       canPlace = false;
     } else if (num == 2 && 
@@ -176,7 +178,7 @@ function createTile(num, prepend) {
       });
       canPlace = false;
     } else if (num == 3){
-      if //////////////////////////////////////////////////////////WORK HERE ON NEXT CONDITION
+      if (true){}//////////////////////////////////////////////////////////WORK HERE ON NEXT CONDITION
     } else{ // if all the needed positions are empty
       console.log(tryPosition);
       for (let x = tryPosition[0]; x < tryPosition[0] + width; x++){
