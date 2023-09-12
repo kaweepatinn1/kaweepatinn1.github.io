@@ -59,29 +59,6 @@
     line-height: 100px;
     position: absolute;
   }
-  .container .fourbythree{
-    width: 48.7vw;
-    height: 36.4vw;
-  }
-  .container .twobythree{
-    width: 24.1vw;
-    height: 36.4vw;
-  }
-  .container .threebytwo{
-    width: 36.4vw;
-    height: 24.1vw;
-  }
-  .container .twobytwo{
-    width: 24.1vw;
-    height: 24.1vw;
-  }
-  .container .onebyone{
-    width: 11.8vw;
-    height: 11.8vw;
-  }
-  
-  
-
   .container{
     font-size: 1vw;
   }
