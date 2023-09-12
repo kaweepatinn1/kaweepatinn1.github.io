@@ -51,12 +51,6 @@ $(document).ready(function () {
     window.scrollTo(0, heightFromTop);
   });
 
-  $("#reorder1").click(function () {
-    heightFromTop = window.scrollY;
-    reorderTiles();
-    window.scrollTo(0, heightFromTop);
-  });
-
   $("#reset1").click(function () {
     heightFromTop = window.scrollY;
     init();
@@ -144,7 +138,7 @@ function reorderTiles(shuffled) {
 // CREATE TILE
 // ====================================================================
 function createTile(num, prepend) {
-  var add = prepend ? ["prependTo", "unshift"] : ["appendTo", "push"];
+  var add = ["appendTo", "push"];
   // use boxes to produce a box of right class size
   var tile = $("<div class='box'/>").text(num)[add[0]](container)[0];
   width = sizes[num-1][0];
@@ -401,26 +395,6 @@ function appendBoxes(collection, isNew) {
   }
  
 
-}
-
-function prependBoxes(collection) {
-  var tl = new TimelineLite();
-  array = emptyarray;
-  collection.reverse().forEach(function (num, index) {
-    var tile = createTile(num, true);
-
-    tl.from(
-      tile,
-      duration,
-      {
-        opacity: 0,
-        scale: 0,
-        ease: Sine.easeIn,
-        delay: -(delay * (index + 1))
-      },
-      "-=" + (duration - delay)
-    );
-  });
 }
 
 function shuffle(array) {
