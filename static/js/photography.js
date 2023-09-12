@@ -45,7 +45,7 @@ $(document).ready(function () {
 
   $("#shuffle1").click(function () {
     heightFromTop = window.scrollY;
-    // reorderTiles(true);
+    reorderTiles(true);
     // init();
     // console.log(array);
     window.scrollTo(0, heightFromTop);
@@ -76,7 +76,7 @@ function init() {
   $("#container1").empty();
   createBoxes(numBoxes);
   // console.log(boxes);
-  appendBoxes(boxes);
+  appendBoxes(boxes, true);
 }
 
 //
@@ -95,17 +95,23 @@ function reorderTiles(shuffled) {
 
     container.removeChild(tile.element);
   }
-
-  shuffled ? shuffle(tiles) : tiles.sort(sortOrder);
-
+  oldtiles = tiles;
+  appendBoxes(boxes);
+  // console.log(oldtiles);
+  // console.log(tiles);
+  indexesList = [];
+  for (var i = 0; i < total; i++){
+    indexesList.push(i);
+  }
+  tilesLeft = shuffle(indexesList);
   for (var i = 0; i < total; i++) {
-    var tile = tiles[i];
+    k = indexesList[i];
+    var tile = tiles[k];
+    var oldtile = oldtiles[k];
     //console.log(tile);
 
-    var lastX = tile.x;
-    var lastY = tile.y;
-
-    container.appendChild(tile.element);
+    var lastX = oldtile.x;
+    var lastY = oldtile.y;
 
     tile.x = tile.element.offsetLeft;
     tile.y = tile.element.offsetTop;
@@ -121,7 +127,7 @@ function reorderTiles(shuffled) {
 
     TweenLite.fromTo(
       tile.element,
-      Math.sqrt((numBoxes-i)/10) * (numBoxes + i) / numBoxes,
+      Math.sqrt((numBoxes*1.6-i)/10) * (numBoxes + i) / numBoxes,
       { x: dx, y: dy },
       {
         x: 0,
@@ -332,9 +338,6 @@ function unusedBoxes(){
   return emptyBoxes;
 }
 
-// 0 --> empty
-// 1 --> not empty
-
 //
 // SORT
 // ====================================================================
@@ -360,7 +363,7 @@ function addBoxes(num) {
   return newBoxes;
 }
 
-function appendBoxes(collection, isShuffle) {
+function appendBoxes(collection, isNew) {
   var error = true;
   while (error){
     error = false;
@@ -376,16 +379,18 @@ function appendBoxes(collection, isShuffle) {
     collection.forEach(function (num, i) {
       var tile = createTile(num);
       
-      tl.from(
-        tile,
-        duration,
-        {
-          opacity: 0,
-          scale: 0,
-          ease: Sine.easeIn
-        },
-        "-=" + (duration - delay)
-      );
+      if (isNew){
+        tl.from(
+          tile,
+          duration,
+          {
+            opacity: 0,
+            scale: 0,
+            ease: Sine.easeIn
+          },
+          "-=" + (duration - delay)
+        );
+      }
     });
     tiles.forEach((tileItem) => {
       if (!tileItem.valid){
