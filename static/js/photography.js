@@ -165,21 +165,29 @@ function createTile(num, prepend) {
     // check restrictions
 
     // SPLIT RESTRICTIONS INTO NUM. ADD ALL CONDITIONS INTO MAIN, OR ELSE ELSE IF WILL TRIGGER.
-      else if (num == 1 && tryPosition[1] == 1){
+    else if (num == 1 && tryPosition[1] == 1){
       canPlace = false;
-    } else if (num == 2 && 
-      (tryPosition[1] == 1 && (tryPosition[0] == 1 || tryPosition[0] == 5))){
-      canPlace = false;
-    } else if (num == 2 && (tryPosition[1] == 1)){
-      array.forEach((arrays) => {
-        if (arrays[1] == 43 || arrays[5] == 43){
-          canPlace = false;
-        }
-      });
-      canPlace = false;
-    } else if (num == 3){
+    } 
+
+    else if (num == 2){
+      if (tryPosition[1] == 1 && (tryPosition[0] == 1 || tryPosition[0] == 5)){
+        canPlace = false;
+      } else if (tryPosition[1] == 1){
+        array.forEach((arrays) => {
+          if (arrays[1] == 43 || arrays[5] == 43){
+            canPlace = false;
+          }
+        });
+        canPlace = false;
+      }
+    }
+      
+    else if (num == 3){
       if (true){}//////////////////////////////////////////////////////////WORK HERE ON NEXT CONDITION
-    } else{ // if all the needed positions are empty
+    } 
+
+    // checks if all the needed positions are empty
+    if (canPlace){
       console.log(tryPosition);
       for (let x = tryPosition[0]; x < tryPosition[0] + width; x++){
         for (let y = tryPosition[1]; y < tryPosition[1] + height; y++){
@@ -191,7 +199,7 @@ function createTile(num, prepend) {
         }
       }
     }
-
+    
     if (canPlace){
       placed = true;
       console.log("Successful at " + tryPosition);
