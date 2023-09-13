@@ -153,7 +153,19 @@ var sticky
 var navbar
 var video
 
+function displayLoaderText(){
+	$('.loadertext').css('opacity','1');
+	$('.loadertext').css('transform','translateY(0)');
+	setTimeout(displayLoaderText2, 100);
+}
+
+function displayLoaderText2(){
+	$('.loadertext2').css('opacity','1');
+	$('.loadertext2').css('transform','translateY(0)');
+}
+
 document.addEventListener("DOMContentLoaded", function() {
+	setTimeout(displayLoaderText, 2000);
 	navbar = document.getElementById("navbar");
 	video = document.getElementById("topVideo");
 	logo = document.getElementById("mainLogo");

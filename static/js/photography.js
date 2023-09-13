@@ -1,4 +1,5 @@
 var boxes = [];
+
 var emptyarray = [
   [0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0],
@@ -6,6 +7,7 @@ var emptyarray = [
   [0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0],
 ];
+
 var array = [
   [0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0],
@@ -13,6 +15,7 @@ var array = [
   [0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0],
 ];
+
 var sizes = [
   [4, 3],
   [2, 3],
@@ -28,6 +31,23 @@ var sizes = [
   [1, 1],
   [1, 1],
 ]
+
+const categories = [
+  "main",
+  "people"
+];
+
+const subcategories = [
+  "1by1",
+  "2by2",
+  "2by3",
+  "3by2",
+  "4by3"
+]
+
+const categoryImageCount = [];
+
+var globalInt = 0; // DO NOT TOUCH
 
 async function checkFilesInCategory(category, subcategory, index) {
   var numberString = index.toString();
@@ -91,23 +111,6 @@ function doesFileExist(url) {
     xhr.send();
   });
 }
-
-const categories = [
-  "landscape",
-  "people"
-];
-
-const subcategories = [
-  "1by1",
-  "2by2",
-  "2by3",
-  "3by2",
-  "4by3"
-]
-
-const categoryImageCount = [];
-
-var globalInt = 0;
 
 checkAllCategories()
   .then(function() {

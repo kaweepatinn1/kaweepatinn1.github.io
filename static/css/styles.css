@@ -369,6 +369,44 @@ hr {
   }
   */
 
+.loadertext{
+    position: absolute;
+    text-align: center;
+    width: 80vw;
+    top: 35vh;
+    left: 9vw;
+    font-size: 3vw;
+    transition-property: all;
+    transition-duration: 0.5s;
+    opacity: 0;
+    transform: translateY(-2vh);
+}
+
+.loadertext2{
+    position: absolute;
+    text-align: center;
+    width: 60vw;
+    top: 68vh;
+    left: 19vw;
+    font-size: 1.5vw;
+    transition-property: all;
+    transition-duration: 0.5s;
+    opacity: 0;
+    transform: translateY(2vh);
+}
+
+.pointerevents{
+    pointer-events: all;
+}
+
+.hoverdarken:hover{
+    filter: brightness(50%);
+}
+
+.hoverspaceout:hover{
+    letter-spacing: 0.1vw;
+}
+
 [data-aos="out-down"]{
     opacity: 1;
     transform: translateY(0vw);
