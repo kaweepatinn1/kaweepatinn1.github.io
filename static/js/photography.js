@@ -28,6 +28,98 @@ var sizes = [
   [1, 1],
   [1, 1],
 ]
+
+async function checkFilesInCategory(category, subcategory, index) {
+  var numberString = index.toString();
+  var numberLength = numberString.length;
+  var prepend = "";
+  for (let i = 0; i < 4 - numberLength; i++) {
+    prepend = prepend + "0";
+  }
+  var indexString = prepend + index;
+  var urlToCheck = "./static/assets/photography/" + category + "/" + subcategory + "/" + indexString + ".webp";
+  
+  try {
+    var result = await doesFileExist(urlToCheck);
+    // console.log("Got URL:", result);
+    if (!result) {
+      // console.log(index);
+      globalInt = index;
+      return;
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+    return;
+  }
+  
+  // Continue with the rest of your code here...
+
+  await checkFilesInCategory(category, subcategory, index + 1);
+}
+
+async function checkAllCategories() {
+  for (const category of categories) {
+    subcategoryCounts = [];
+    for (const subcategory of subcategories) {
+      subcategoryCount = 0;
+      await checkFilesInCategory(category, subcategory, 0);
+      subcategoryCount = globalInt;
+      // console.log(subcategoryCount);
+      subcategoryCounts.push(subcategoryCount);
+    }
+    categoryImageCount.push(subcategoryCounts);
+  }
+}
+
+function doesFileExist(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // console.log('File exists');
+        resolve(true);
+      } else {
+        // console.log('File does not exist');
+        resolve(false);
+      }
+    };
+    xhr.onerror = function() {
+      // Silently handle the error without logging it to the console
+      resolve(false);
+    };
+    xhr.send();
+  });
+}
+
+const categories = [
+  "landscape",
+  "people"
+];
+
+const subcategories = [
+  "1by1",
+  "2by2",
+  "2by3",
+  "3by2",
+  "4by3"
+]
+
+const categoryImageCount = [];
+
+var globalInt = 0;
+
+checkAllCategories()
+  .then(function() {
+    console.log("Please ignore above 404 errors.");
+    console.log(categoryImageCount);
+  })
+  .catch(function(error) {
+    console.error("An error occurred:", error);
+  }); 
+
+
+
 var arrayX = array[0].length;
 var arrayY = array.length;
 var numBoxes = 13;
@@ -161,9 +253,9 @@ function createTile(num, prepend) {
     // check overflow
     canPlace = false;
     } 
-    // check restrictions
 
-    // SPLIT RESTRICTIONS INTO NUM. ADD ALL CONDITIONS INTO MAIN, OR ELSE ELSE IF WILL TRIGGER.
+    // check restrictions
+    
     else if (num == 1 && tryPosition[1] == 1){
       canPlace = false;
     } 
