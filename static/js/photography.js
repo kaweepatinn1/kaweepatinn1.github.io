@@ -73,8 +73,8 @@ function intToStringPadding(index, padding){
 
 async function checkFilesInCategory(category, subcategory, index) {
   indexString = intToStringPadding(index, 4);
-  var urlToCheck = "./static/assets/photography/" + category + "/jpgs/" + 
-  subcategory + "/" + indexString + ".jpg";
+  var urlToCheck = "./static/assets/photography/" + category + "/webps/" + 
+  subcategory + "/" + indexString + ".webp";
   
   try {
     var result = await doesFileExist(urlToCheck);
@@ -154,12 +154,13 @@ checkAllCategories()
     init();
     window.scrollTo(0, heightFromTop);
   });
+  $('.loader').css('display','none');
   })
   .catch(function(error) {
     console.error("An error occurred:", error);
   }); 
 
-  $('.loader').css('display','none');
+  
 function reInitImages(index){
   imgsLeft[index] = [];
   for (let i = 0; i < categoryImageCount[index]; i++){
