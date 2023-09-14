@@ -78,7 +78,7 @@ function intToStringPadding(index, padding){
   return indexString
 }
 
-async function checkFilesInCategory(category, subcategory, index) {
+/* async function checkFilesInCategory(category, subcategory, index) {
   indexString = intToStringPadding(index, 4);
   var urlToCheck = "./static/assets/photography/" + category + "/webps/" + 
   subcategory + "/" + indexString + ".webp";
@@ -99,7 +99,7 @@ async function checkFilesInCategory(category, subcategory, index) {
   // Continue with the rest of your code here...
 
   await checkFilesInCategory(category, subcategory, index + 1);
-}
+} */
 
 async function checkAllCategories() {
   /*for (const category of categories) {
