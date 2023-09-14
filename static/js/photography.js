@@ -54,6 +54,13 @@ const imgsPerType = [
   1
 ]
 
+const categoryImageCounts = [
+  18, // 2by2
+  6, // 2by3
+  15, // 3by2
+  4 // 4by3
+]
+
 var categoryImageCount;
 
 var imgsLeft = [];
@@ -82,11 +89,11 @@ async function checkFilesInCategory(category, subcategory, index) {
     if (!result) {
       // console.log(index);
       globalInt = index;
-      return;
+      return index;
     }
   } catch (error) {
     console.error("An error occurred:", error);
-    return;
+    return 0;
   }
   
   // Continue with the rest of your code here...
@@ -95,18 +102,19 @@ async function checkFilesInCategory(category, subcategory, index) {
 }
 
 async function checkAllCategories() {
-  for (const category of categories) {
+  /*for (const category of categories) {
     subcategoryCounts = [];
     for (const subcategory of subcategories) {
       subcategoryCount = 0;
-      await checkFilesInCategory(category, subcategory, 0);
+      subCategoryCount = await checkFilesInCategory(category, subcategory, 0);
       subcategoryCount = globalInt;
       // console.log(subcategoryCount);
       subcategoryCounts.push(subcategoryCount);
     }
     categoryImageCount = subcategoryCounts;
 
-  }
+  }*/
+  categoryImageCount = categoryImageCounts;
 }
 
 function doesFileExist(url) {
