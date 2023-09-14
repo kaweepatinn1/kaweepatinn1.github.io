@@ -142,7 +142,7 @@ function doesFileExist(url) {
 
 checkAllCategories()
   .then(function() {
-    console.log("Please ignore above 404 errors.");
+    // console.log("Please ignore above 404 errors.");
     // console.log(categoryImageCount);
     categoryImageCount.forEach((amount, index) =>{
       reInitImages(index);
@@ -164,7 +164,6 @@ checkAllCategories()
     init();
     window.scrollTo(0, heightFromTop);
   });
-  $('.loader').css('display','none');
   })
   .catch(function(error) {
     console.error("An error occurred:", error);
