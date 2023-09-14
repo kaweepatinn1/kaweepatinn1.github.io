@@ -23,22 +23,22 @@ html, body {
     padding: 0;
     background-color: #000000;
     font-family: sans-serif;
-   -webkit-font-smoothing: antialiased; 
+   -webkit-font-smoothing: antialiased;
 }
 
 #logo{
     position: fixed;
-    width: 12vw;
+    width: 13vw;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    left: 44vw;
-    transform: translateY(-5.6vw);
+    left: 43.5vw;
+    transform: translateY(-6.05vw);
     transition-duration: 0.75s;
     transition-property: all;
 }
 #logo:hover{
-    transform: translateY(-1.5vw);
+    transform: translateY(-1.65vw);
 }
 
 body.loupe-active {
@@ -58,11 +58,11 @@ header {
     box-sizing: border-box;   
     z-index: 2;
 
-    -webkit-transition: all .2s ease-out;
-    -moz-transition: all .2s ease-out;
-    -ms-transition: all .2s ease-out;
-    -o-transition: all .2s ease-out;
-    transition: all .2s ease-out;
+    -webkit-transition: all .75s ease-out;
+    -moz-transition: all .75s ease-out;
+    -ms-transition: all .75s ease-out;
+    -o-transition: all .75s ease-out;
+    transition: all .75s ease-out;
 }
 
 .has-header header {
@@ -119,6 +119,8 @@ header p.title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition-duration: 0.75s;
+    transition-property: all; 
 }
 
 header p.author {
@@ -171,7 +173,7 @@ header a:hover {
 }
 
 .scrolled header.is-fixed p.title {
-    padding: 12px 0 0 2px;
+    top: 10px;
     font-size: 18px;
 }
 
