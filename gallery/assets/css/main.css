@@ -168,10 +168,6 @@ header a:hover {
     padding-top: 8px;
 }
 
-.scrolled header.is-fixed div.meta-right {
-
-}
-
 .scrolled header.is-fixed p.title {
     top: 10px;
     font-size: 18px;
