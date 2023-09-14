@@ -16,6 +16,8 @@ var array = [
   [0, 0, 0, 0, 0, 0, 0, 0],
 ];
 
+var lasttiles = [];
+
 var sizes = [
   [4, 3],
   [2, 3],
@@ -34,30 +36,43 @@ var sizes = [
 
 const categories = [
   "main",
-  "people"
 ];
 
 const subcategories = [
-  "1by1",
   "2by2",
   "2by3",
   "3by2",
   "4by3"
 ]
 
-const categoryImageCount = [];
+const imgsPerType = [
+  10,
+  1,
+  2,
+  1
+]
+
+var categoryImageCount;
+
+var imgsLeft = [];
 
 var globalInt = 0; // DO NOT TOUCH
 
-async function checkFilesInCategory(category, subcategory, index) {
+function intToStringPadding(index, padding){
   var numberString = index.toString();
   var numberLength = numberString.length;
   var prepend = "";
-  for (let i = 0; i < 4 - numberLength; i++) {
+  for (let i = 0; i < padding - numberLength; i++) {
     prepend = prepend + "0";
   }
   var indexString = prepend + index;
-  var urlToCheck = "./static/assets/photography/" + category + "/" + subcategory + "/" + indexString + ".webp";
+  return indexString
+}
+
+async function checkFilesInCategory(category, subcategory, index) {
+  indexString = intToStringPadding(index, 4);
+  var urlToCheck = "./static/assets/photography/" + category + "/" + 
+  subcategory + "/" + indexString + ".webp";
   
   try {
     var result = await doesFileExist(urlToCheck);
@@ -87,7 +102,8 @@ async function checkAllCategories() {
       // console.log(subcategoryCount);
       subcategoryCounts.push(subcategoryCount);
     }
-    categoryImageCount.push(subcategoryCounts);
+    categoryImageCount = subcategoryCounts;
+
   }
 }
 
@@ -115,28 +131,13 @@ function doesFileExist(url) {
 checkAllCategories()
   .then(function() {
     console.log("Please ignore above 404 errors.");
-    console.log(categoryImageCount);
-  })
-  .catch(function(error) {
-    console.error("An error occurred:", error);
-  }); 
-
-
-
-var arrayX = array[0].length;
-var arrayY = array.length;
-var numBoxes = 13;
-
-// Animation settings
-var duration = 0.5; // length of time in secods for box to fade in
-var delay = 0.03; // delay in secods before each new box appears
-
-var tiles = [];
-var ease = Back.easeOut.config(0.5);
-var container = $("#container1")[0];
-
-$(document).ready(function () {
-  init();
+    // console.log(categoryImageCount);
+    categoryImageCount.forEach((amount, index) =>{
+      reInitImages(index);
+    })
+    // console.log(imgsLeft);
+    // console.log(imgsLeft[1].length);
+    init();
 
   $("#shuffle1").click(function () {
     heightFromTop = window.scrollY;
@@ -151,7 +152,73 @@ $(document).ready(function () {
     init();
     window.scrollTo(0, heightFromTop);
   });
-});
+  })
+  .catch(function(error) {
+    console.error("An error occurred:", error);
+  }); 
+
+function reInitImages(index){
+  imgsLeft[index] = [];
+  for (let i = 0; i < categoryImageCount[index]; i++){
+    imgsLeft[index].push(i);
+  }
+}
+
+function getRandomImageSource(num){
+  var type;
+  if (num == 1){
+    // look in 4,3
+    type = 3;
+    if (imgsLeft[type].length < 1){
+      reInitImages(type);
+    }
+  } else if (num == 3){
+    // look in 3,2
+    type = 2;
+      if (num == 3){
+      if (imgsLeft[type].length < 1){
+        reInitImages(type);
+      }
+    }
+  } else if (num == 2){
+    // look in 2,3
+    type = 1;
+      if (imgsLeft[type].length < 2){
+        reInitImages(type);
+      }
+      //check if two spaces left
+  } else {
+    // look in 2,2
+    type = 0;
+    if (num == 4){
+      if (imgsLeft[type].length < 10){
+        reInitImages(type);
+      }
+    }
+  }
+
+  var indexChosen = Math.floor(Math.random() * imgsLeft[type].length);
+  var imgChosen = imgsLeft[type][indexChosen];
+  // console.log(imgChosen);
+  var indexString = intToStringPadding(imgChosen, 4);
+  toReturn = "./static/assets/photography/" + "main" + "/" + 
+  subcategories[type] + "/" + indexString + ".webp"
+  imgsLeft[type].splice(indexChosen, 1);
+  return toReturn;
+}
+
+var arrayX = array[0].length;
+var arrayY = array.length;
+var numBoxes = 13;
+
+// Animation settings
+var duration = 0.5; // length of time in secods for box to fade in
+var delay = 0.03; // delay in secods before each new box appears
+
+var tiles = [];
+var ease = Back.easeOut.config(0.5);
+var container = $("#container1")[0];
+var container2 = $("#container2")[0];
 
 function init() {
   tiles = [];
@@ -171,19 +238,12 @@ function init() {
 //
 // REORDER TILES
 // ====================================================================
-function reorderTiles(shuffled) {
+function reorderTiles() {
   var total = tiles.length;
-
+ //  console.log(tiles);
   var i = total;
   // console.log(i);
-  while (i--) {
-    var tile = tiles[i];
 
-    tile.x = tile.element.offsetLeft;
-    tile.y = tile.element.offsetTop;
-
-    container.removeChild(tile.element);
-  }
   oldtiles = tiles;
   appendBoxes(boxes);
   // console.log(oldtiles);
@@ -196,31 +256,47 @@ function reorderTiles(shuffled) {
   for (var i = 0; i < total; i++) {
     k = indexesList[i];
     var tile = tiles[k];
+    var tile2 = lasttiles[k];
+    // console.log(oldtiles);
     var oldtile = oldtiles[k];
-    //console.log(tile);
+    // console.log(tile);
+    // console.log(oldtile);
 
     var lastX = oldtile.x;
     var lastY = oldtile.y;
-
-    tile.x = tile.element.offsetLeft;
-    tile.y = tile.element.offsetTop;
-    //console.log(tile.transform.x);
-    //console.log(lastX);
-    //console.log(tile.x);
+    // tile.x = tile.element.offsetLeft;
+    // tile.y = tile.element.offsetTop;
+    // console.log(tile.transform.x);
+    // console.log(lastX);
+    // console.log(tile.x);
     var dx = lastX - tile.x; //tile.transform.x + lastX - tile.x
     var dy = lastY - tile.y; //tile.transform.y + lastY - tile.y
 
     //console.log(Math.sqrt(numBoxes));
     //console.log(-Math.sqrt((numBoxes-i)/10));
     //console.log(Math.sqrt(numBoxes/10)-Math.sqrt((numBoxes-i)/10));
-
+    // console.log(tile);
     TweenLite.fromTo(
       tile.element,
       Math.sqrt((numBoxes*1.6-i)/10) * (numBoxes + i) / numBoxes,
-      { x: dx, y: dy },
+      { x: dx + "vw", y: dy + "vw", scale: 0.99},
       {
         x: 0,
         y: 0,
+        scale: 1,
+        ease: "power1.inOut",
+        delay: Math.sqrt(numBoxes/10)-Math.sqrt((numBoxes-i)/10) ,
+        immediateRender: true
+      }
+    );
+    TweenLite.fromTo(
+      tile2.element,
+      Math.sqrt((numBoxes*1.6-i)/10) * (numBoxes + i) / numBoxes,
+      { x: 0 + "vw", y: 0 + "vw"},
+      {
+        x: 0 - dx + "vw",
+        y: 0 - dy + "vw",
+        opacity: 0,
         ease: "power1.inOut",
         delay: Math.sqrt(numBoxes/10)-Math.sqrt((numBoxes-i)/10) ,
         immediateRender: true
@@ -232,10 +308,16 @@ function reorderTiles(shuffled) {
 //
 // CREATE TILE
 // ====================================================================
-function createTile(num, prepend) {
+function createTile(num) {
   var add = ["appendTo", "push"];
   // use boxes to produce a box of right class size
-  var tile = $("<div class='box'/>").text(num)[add[0]](container)[0];
+  var source = getRandomImageSource(num);
+  var tile = $("<div class='box'/>")
+  .append($("<img>").attr("src", source)
+  .css({ width: "100%", height: "100%" })
+  .text(num)) // Add the image element inside the div
+  .appendTo(container);
+  
   width = sizes[num-1][0];
   height = sizes[num-1][1];
   // console.log("Placing block with size " + width + " and height " + height);
@@ -259,11 +341,11 @@ function createTile(num, prepend) {
 
     // check restrictions
     
-    else if (num == 1 && tryPosition[1] == 1){
+    else if (num == 1 && tryPosition[1] == 1){ // 4,3
       canPlace = false;
     } 
     
-    else if (num == 2){
+    else if (num == 2){ // 2,3
       if (tryPosition[1] == 1 && (tryPosition[0] == 1 || tryPosition[0] == 5)){
         canPlace = false;
       } else if (tryPosition[1] == 1){
@@ -276,7 +358,7 @@ function createTile(num, prepend) {
       }
     }
     
-    else if (num == 3){
+    else if (num == 3){ // 3,2
       array.forEach((arrays, indexY) => {
         arrays.forEach((element, indexX) =>{
           if (element == 43){
@@ -313,7 +395,7 @@ function createTile(num, prepend) {
       }
     } 
 
-    else if (num == 4){
+    else if (num == 4){ // 2,2
       array.forEach((arrays, indexY) => {
         arrays.forEach((element, indexX) =>{
           if (element == 43){
@@ -410,7 +492,8 @@ function createTile(num, prepend) {
     y: offsetY,
     valid: canPlace
   });
-
+  // console.log(tiles[num-1].x);
+  // console.log(tiles[num-1]);
   return tile;
 }
 
@@ -463,9 +546,13 @@ function appendBoxes(collection, isNew) {
       })
     })
     // console.log(array);
+    $("#container2").empty();
+    lasttiles = tiles;
+    console.log(lasttiles);
+    console.log($("#container1").children().appendTo(container2));
     $("#container1").empty();
     tiles = [];
-    collection.forEach(function (num, i) {
+    collection.forEach(function (num) {
       var tile = createTile(num);
       
       if (isNew){
@@ -488,8 +575,6 @@ function appendBoxes(collection, isNew) {
       }
     })
   }
- 
-
 }
 
 function shuffle(array) {

@@ -21,12 +21,8 @@
     margin: 0.1vw;
     padding: 10px 0px;
     font-size: 16px;
-    background: #efefef;
     color: #333;
     border: none;
-  }
-  .button:hover {
-    background: #d5d5d5;
   }
   .button.spacer {
     background: #3a3a4d;
@@ -43,8 +39,11 @@
     width: 99.5%;
     position: relative;
     margin: 0%;
-    padding: 0.25%;
+    padding: 0.25% 0.25% 0.50% 0.25%;
     height: 61.5vw;
+  }
+  #container2{
+    transform: translateY(-62.24vw);
   }
   .container .box {
     display: inline-block;
