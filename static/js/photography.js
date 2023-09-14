@@ -73,8 +73,8 @@ function intToStringPadding(index, padding){
 
 async function checkFilesInCategory(category, subcategory, index) {
   indexString = intToStringPadding(index, 4);
-  var urlToCheck = "./static/assets/photography/" + category + "/" + 
-  subcategory + "/" + indexString + ".webp";
+  var urlToCheck = "./static/assets/photography/" + category + "/jpgs/" + 
+  subcategory + "/" + indexString + ".jpg";
   
   try {
     var result = await doesFileExist(urlToCheck);
@@ -207,8 +207,8 @@ function getRandomImageSource(num){
   var imgChosen = imgsLeft[type][indexChosen];
   // console.log(imgChosen);
   var indexString = intToStringPadding(imgChosen, 4);
-  toReturn = "./static/assets/photography/" + "main" + "/" + 
-  subcategories[type] + "/" + indexString + ".webp"
+  toReturn = "./static/assets/photography/" + "main" + "/jpgs/" + 
+  subcategories[type] + "/" + indexString + ".jpg"
   lastimage[type] = indexChosen;
   imgsLeft[type].splice(indexChosen, 1);
   return toReturn;
