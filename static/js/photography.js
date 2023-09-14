@@ -18,6 +18,8 @@ var array = [
 
 var lasttiles = [];
 
+var lastimage = [];
+
 var sizes = [
   [4, 3],
   [2, 3],
@@ -157,6 +159,7 @@ checkAllCategories()
     console.error("An error occurred:", error);
   }); 
 
+  $('.loader').css('display','none');
 function reInitImages(index){
   imgsLeft[index] = [];
   for (let i = 0; i < categoryImageCount[index]; i++){
@@ -198,11 +201,15 @@ function getRandomImageSource(num){
   }
 
   var indexChosen = Math.floor(Math.random() * imgsLeft[type].length);
+  while (lastimage[type] = indexChosen && num < 5){
+    var indexChosen = Math.floor(Math.random() * imgsLeft[type].length);
+  }
   var imgChosen = imgsLeft[type][indexChosen];
   // console.log(imgChosen);
   var indexString = intToStringPadding(imgChosen, 4);
   toReturn = "./static/assets/photography/" + "main" + "/" + 
   subcategories[type] + "/" + indexString + ".webp"
+  lastimage[type] = indexChosen;
   imgsLeft[type].splice(indexChosen, 1);
   return toReturn;
 }

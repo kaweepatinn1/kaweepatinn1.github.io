@@ -214,7 +214,9 @@ window.onload = function() {
 		})
 	}
 	window.scrollTo(0, 0);
-	$('.loader').css('display','none');
+	if (document.getElementById("pageIsPhotography") == undefined){
+		$('.loader').css('display','none');
+	}
 	extramove = 0;
 	sticky = navbar.offsetTop;
 	setLogo();
