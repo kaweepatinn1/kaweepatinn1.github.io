@@ -20,13 +20,10 @@
   .container {
     overflow: hidden;
     width: 99.5%;
-    position: relative;
+    position: absolute;
     margin: 0%;
     padding: 0.25% 0.25% 0.50% 0.25%;
     height: 61.5vw;
-  }
-  #container2{
-    transform: translateY(-62.24vw);
   }
   .container .box {
     display: inline-block;

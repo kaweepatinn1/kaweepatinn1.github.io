@@ -407,6 +407,10 @@ hr {
     letter-spacing: 0.1vw;
 }
 
+.padding02vw{
+    padding: 0.2vw;
+}
+
 [data-aos="out-down"]{
     opacity: 1;
     transform: translateY(0vw);
