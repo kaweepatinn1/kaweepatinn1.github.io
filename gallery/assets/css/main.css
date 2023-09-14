@@ -26,6 +26,21 @@ html, body {
    -webkit-font-smoothing: antialiased; 
 }
 
+#logo{
+    position: fixed;
+    width: 12vw;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    left: 44vw;
+    transform: translateY(-5.6vw);
+    transition-duration: 0.75s;
+    transition-property: all;
+}
+#logo:hover{
+    transform: translateY(-1.5vw);
+}
+
 body.loupe-active {
     overflow: hidden;
 }

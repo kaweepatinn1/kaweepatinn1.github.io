@@ -8,6 +8,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Photography Gallery</title>
         <meta name="description" content="">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="static/js/earlyload.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">
@@ -19,8 +21,8 @@
             <div class="background"></div>
             <div class="meta-left">
                 <p id="galleryTitle" class="title">Photography Gallery</p>
-                                <p id="galleryAuthor" class="author">by <a id="galleryAuthorURL" href="https://nanomotions.org" target="_blank">Nanomotions</a></p>
-                            </div>
+                <p id="galleryAuthor" class="author">by <a id="galleryAuthorURL" href="https://nanomotions.org" target="_blank">Nanomotions</a></p>
+            </div>
             <div class="meta-right">
                 <p class="extra" id="galleryExtra">contact@nanomotions.org</p>
             </div>
@@ -51,6 +53,13 @@
                 </div>
             </div>
         </header>
+        <a href="../photography.html">
+        <div id="loadNavCenterButton">
+            <button type="button" id="logo" class="gap default">
+                <img src="../static/assets/logos/logoCAM1k.webp" class="" onclick="location.href='./index.html'" alt="Logo" id = "mainLogo" height="auto" width = "100%">⠀
+            </button>
+        </div>
+        </a>
                 <div id="thumbnailContainer">
             <div class="thumbnails thumbnail-size-md"></div>
         </div>
@@ -156,7 +165,8 @@
                          {"id": "13363", "exportFilename": "0052", "title": "1/30 sec at f / 4.5", "caption" : "Canon EOS M50m2 - EF-M15-45mm f/3.5-6.3 IS STM"},
                          {"id": "13578", "exportFilename": "0054", "title": "1/30 sec at f / 4.0", "caption" : "Canon EOS M50m2 - EF-M15-45mm f/3.5-6.3 IS STM"},
                                     ]        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="static/js/index.js"></script>
+        <script src="static/js/animations.js"></script>
         <script>window.jQuery || document.write('<script src="assets/js/libs/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="assets/js/main.js"></script>
     </body>
