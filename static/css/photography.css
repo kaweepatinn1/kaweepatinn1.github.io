@@ -43,3 +43,8 @@
   .container{
     font-size: 1vw;
   }
+  .viewgrid{
+    font-size: 3vw;
+    left: 10vw;
+    width: 80vw;
+  }

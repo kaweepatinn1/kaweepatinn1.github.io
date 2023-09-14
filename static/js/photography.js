@@ -140,6 +140,21 @@ function doesFileExist(url) {
   });
 }
 
+function shuffleTiles(){
+  heightFromTop = window.scrollY;
+  reorderTiles(true);
+  // init();
+  // console.log(array);
+  window.scrollTo(0, heightFromTop);
+  setTimeout(shuffleTiles, 5000);
+}
+
+function resetTiles(){
+  heightFromTop = window.scrollY;
+  init();
+  window.scrollTo(0, heightFromTop);
+}
+
 checkAllCategories()
   .then(function() {
     // console.log("Please ignore above 404 errors.");
@@ -151,20 +166,17 @@ checkAllCategories()
     // console.log(imgsLeft[1].length);
     init();
 
-  $("#shuffle1").click(function () {
-    heightFromTop = window.scrollY;
-    reorderTiles(true);
-    // init();
-    // console.log(array);
-    window.scrollTo(0, heightFromTop);
-  });
+    setTimeout(shuffleTiles, 2000);
+    /*
+    $("#shuffle1").click(function () {
+      shuffleTiles();
+    });
 
-  $("#reset1").click(function () {
-    heightFromTop = window.scrollY;
-    init();
-    window.scrollTo(0, heightFromTop);
-  });
-  })
+    $("#reset1").click(function () {
+      resetTiles();
+    });
+    */
+  }) 
   .catch(function(error) {
     console.error("An error occurred:", error);
   }); 
