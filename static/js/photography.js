@@ -115,6 +115,8 @@ async function checkAllCategories() {
 
   }*/
   categoryImageCount = categoryImageCounts;
+  // at this point i am just providing the imagecounts because
+  // trying to get them takes too long.
 }
 
 function doesFileExist(url) {
