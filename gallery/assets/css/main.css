@@ -1,0 +1,767 @@
+::-moz-selection {
+    text-shadow: none;
+}
+
+::selection {
+    text-shadow: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.scrollbar-measure {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    font-family: sans-serif;
+   -webkit-font-smoothing: antialiased; 
+}
+
+body.loupe-active {
+    overflow: hidden;
+}
+
+header {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0 6px 0 0;
+    width: 100%;
+    height: 114px;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;   
+    z-index: 2;
+
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+.has-header header {
+    display: block;
+}
+
+header.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header div.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 114px;
+    background-color: #000000;
+    opacity: .9;
+}
+
+header div.meta-left {
+    position: static;
+    width: 50%;
+    float: left;
+    padding-left: 20px;
+    padding-top: 20px;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+header div.meta-right {
+    position: static;
+    width: 50%;
+    float: right;
+    padding-right: 6px;
+    padding-top: 6px;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+header p.title {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    text-align: left;
+    font-weight: bold;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+header p.author {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+header p.extra {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+header a {
+    color: inherit;
+}
+
+header a:hover {
+    opacity: .75;
+}
+
+.scrolled header.is-fixed {
+    height: 80px;
+    padding: 0px 6px 0 0;
+    overflow: hidden;
+}
+
+.scrolled header.is-fixed div.meta-left {
+    padding-top: 8px;
+}
+
+.scrolled header.is-fixed div.meta-right {
+
+}
+
+.scrolled header.is-fixed p.title {
+    padding: 12px 0 0 2px;
+    font-size: 18px;
+}
+
+.scrolled header.is-fixed p.author {
+    margin: .25em 0 0 0;
+}
+
+#buttonFullscreen {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#pageNav {
+    display: block;
+    float: right;
+    font-size: 12px;
+}
+
+#pageNav div.count {
+    padding-top: 1px;
+}
+
+#pageCountCurrent,
+#pageCountTotal {
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#buttonPrevPage {
+    position: relative;
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#buttonPrevPage.disabled {
+    opacity: .5;
+    cursor: inherit;
+}
+
+#svgIconPrevPage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+}
+
+#pageNav div.count {
+    float: left;
+}
+
+#buttonNextPage {
+    position: relative;
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#buttonNextPage.disabled {
+    opacity: .5;
+    cursor: inherit;
+}
+
+#svgIconNextPage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+}
+
+.fullscreen #buttonFullscreen {
+    display: block;
+}
+
+#buttonFullscreen div.icon {
+    position: absolute;
+    top: 12px;
+    left: 11px;
+    width: 18px;
+    height: 16px;
+}
+
+#svgIconFullscreen {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 18px;
+    height: 16px;
+}
+
+#thumbnailContainer {
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.has-header #thumbnailContainer {
+    position: relative;
+    width: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+div.thumbnails {
+    overflow: hidden;
+    margin: 0 auto;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;  
+}
+
+div.thumbnail {
+    position: relative;
+    display:block;
+    float: left;
+    width: 20%;
+    height: 20%;
+    padding-bottom: 20%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-size: cover;
+    background-position: 50% 50%;
+
+   -webkit-transition: all .1s ease-in;
+   -moz-transition: all .1s ease-in;
+   -ms-transition: all .1s ease-in;
+   -o-transition: all .1s ease-in;
+    transition: all .1s ease-in; 
+}
+
+div.thumbnail:hover {
+   -moz-box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);  
+   -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);   
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);
+
+   -webkit-transition: all .1s ease-out;
+   -moz-transition: all .1s ease-out;
+   -ms-transition: all .1s ease-out;
+   -o-transition: all .1s ease-out;
+    transition: all .1s ease-out;  
+}
+
+.thumbnail-size-sm div.thumbnail {
+    width: 12.5%;
+    height: 12.5%;
+    padding-bottom: 12.5%;
+}
+
+.thumbnail-size-md div.thumbnail {
+    width: 20%;
+    height: 20%;
+    padding-bottom: 20%;
+}
+
+.thumbnail-size-lg div.thumbnail {
+    width: 25%;
+    height: 25%;
+    padding-bottom: 25%;
+}
+
+div.thumbnail div.image-container {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+div.thumbnail div.image-container div.image {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+    text-align: center;
+}
+
+div.thumbnail img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-style: solid;
+}
+
+#loupeContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 45px 45px 100px 45px;
+    width: 100%;
+    height: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 2;
+    font-size: 12px;
+    text-align: center;
+}
+
+#loupeContainer div.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#loupeContainer div.image-container {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+#loupeContainer div.corners {
+    position: relative;
+    display: inline-block;
+}
+
+#loupeContainer div.image-container div.image {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#loupeContainer img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#loupeContainer ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height: 45px;
+}
+
+#loupeContainer div.info-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#loupeContainer div.side-navigation {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 45px 0px 100px 0px;
+   -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+#loupeContainer div.side-navigation div.hotspot {
+    position: relative;
+    width: 25%;
+    height: 100%;
+
+   -webkit-user-select: none;   
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -o-user-select: none;
+    user-select: none;
+}
+
+#loupeContainer div.side-navigation div.hotspot.over {
+    cursor: pointer;
+}
+
+#loupeMeta p {
+    margin: 0;
+    padding: 0;
+}
+
+#loupeMeta p.title {
+    margin: 0 auto 5px auto;
+    padding: 0;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#loupeMeta p.caption {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 80%;
+    height: 48px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+#hotspotPrevLoupe {
+    float: left;
+}
+
+#hotspotPrevLoupe.disabled {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+#hotspotNextLoupe {
+    float: right;
+}
+
+#hotspotNextLoupe.disabled {
+    display: none;
+}
+
+#loupeContainer div.side-navigation div.button {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+#buttonPrevSideLoupe {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    opacity: 0;
+}
+
+#hotspotPrevLoupe.over #buttonPrevSideLoupe {
+    opacity: 1;
+}
+
+#svgIconPrevSideLoupe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+
+#buttonNextSideLoupe {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    opacity: 0;
+}
+
+#hotspotNextLoupe.over #buttonNextSideLoupe {
+    opacity: 1;
+}
+
+#svgIconNextSideLoupe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+
+#loupeContainer li {
+    display: block;
+    float: left;
+}
+
+#countCurrent,
+#countTotal {
+    font-weight: bold;
+}
+
+#buttonPrev {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+   -webkit-user-select: none;   
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -o-user-select: none;
+    user-select: none; 
+}
+
+#buttonPrev.disabled {
+    opacity: .5;
+    cursor: inherit;
+}
+
+#svgIconPrevLoupe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+}
+
+#buttonNext {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+   -webkit-user-select: none;   
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -o-user-select: none;
+    user-select: none;
+}
+
+#buttonNext.disabled {
+    opacity: .5;
+    cursor: inherit;
+}
+
+#svgIconNextLoupe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+}
+
+#loupeCloseButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+#svgIconLoupeClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+}
+
+#svgIconLoupeClose .shape-x{
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+}
+
+.custom-colorable {
+    fill: #a0a0a0;
+}
+
+@media screen and (max-width: 768px) {
+
+    header p.title {
+        font-size: 18px;
+    }
+
+    .thumbnail-size-sm div.thumbnail {
+        width: 20%;
+        height: 20%;
+        padding-bottom: 20%;
+    }
+
+    .thumbnail-size-md div.thumbnail {
+        width: 25%;
+        height: 25%;
+        padding-bottom: 25%;
+    }
+
+    .thumbnail-size-lg div.thumbnail {
+        width: 50%;
+        height: 50%;
+        padding-bottom: 50%;
+    }
+
+}
+
+@media screen and (max-width: 568px) {
+
+    header {
+        padding-bottom: 20px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    header div.meta-left {
+        padding: 20px 20px 0px 20px;
+        width: 100%;
+    }
+
+    header div.meta-right {
+        padding: 20px 20px 0 20px;
+        width: 100%;
+    }
+
+    header p.author {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+    }
+
+    header p.extra {
+        position: relative;
+        bottom: inherit;
+        right: inherit;
+        width: 100%;
+        text-align: left;
+        white-space: normal;
+        overflow: visible;
+    }
+
+    .scrolled header.is-fixed {
+        padding-bottom: 20px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .scrolled header.is-fixed p.title {
+        padding: 12px 0 0 2px;
+        font-size: 18px;
+    }
+
+    .scrolled header.is-fixed p.author {
+        margin-top: .5em;
+    }
+
+    header ul.gallery-meta {
+        display: none;
+    }
+
+    #pageNav {
+        display: inline-block;
+        float: none;
+    }
+
+    .fullscreen #buttonFullscreen {
+        display: none;
+    }
+
+    #thumbnailContainer {
+        padding: 5px;
+    }
+
+    div.thumbnail {
+        border: 5px solid #000000;
+    }
+
+    .thumbnail-size-sm div.thumbnail {
+        width: 33.3333%;
+        height: 33.3333%;
+        padding-bottom: 33.3333%;
+    }
+
+    .thumbnail-size-md div.thumbnail {
+        width: 50%;
+        height: 50%;
+        padding-bottom: 50%;
+    }
+
+    .thumbnail-size-lg div.thumbnail {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 100%;
+    }
+
+}

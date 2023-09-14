@@ -165,7 +165,7 @@ function displayLoaderText2(){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-	setTimeout(displayLoaderText, 2000);
+	setTimeout(displayLoaderText, 5000);
 	navbar = document.getElementById("navbar");
 	video = document.getElementById("topVideo");
 	logo = document.getElementById("mainLogo");
