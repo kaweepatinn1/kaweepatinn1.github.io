@@ -45,3 +45,6 @@
     left: 10vw;
     width: 80vw;
   }
+  .movedown{
+    transform: translateY(59.85vw);
+  }
