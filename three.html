@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Three.js TypeScript Tutorials by Sean Bradley : https://sbcode.net/threejs</title>
+        <style>
+            body {
+                overflow-x: hidden;
+                margin: 0px;
+                font-family: monospace;
+                color: white;
+            }
+
+            canvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            main {
+                width: 100vw;
+                height: 200vw;
+                z-index: 99;
+                position: absolute;
+                justify-content: center;
+                text-align: center;
+                pointer-events: none;
+                font-size: 5vh;
+            }
+
+            section {
+                min-height: 100vh;
+                padding: 20px;
+                font-size: 4vh;
+            }
+
+            #scrollProgress {
+                position: fixed;
+                bottom: 10px;
+                left: 10px;
+                z-index: 99;
+                font-size: 3vh;
+            }
+        </style>
+    </head>
+
+    <body>
+        <span id="scrollProgress"></span>
+        <main>
+            <h1>Animate on Scroll</h1>
+            <section>
+                <h2>Begin scrolling to see things change</h2>
+            </section>
+            <section>
+                <h2>Changing Objects Position</h2>
+                <p>The cubes position is now changing</p>
+            </section>
+
+            <section>
+                <h2>Changing Objects Rotation</h2>
+                <p>The cubes rotation is now changing</p>
+            </section>
+
+            <section>
+                <h2>Changing Camera Position</h2>
+                <p>The camera position is now changing</p>
+            </section>
+
+            <section>
+                <h2>You are at the bottom</h2>
+                <p>The cube will now be auto rotating</p>
+                <p>
+                    Now you can scroll back to the top to reverse the animation
+                </p>
+            </section>
+        </main>
+        <script type="module" src="bundle.js"></script>
+    </body>
+</html>
