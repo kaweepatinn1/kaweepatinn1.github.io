@@ -223,7 +223,7 @@ function getRandomImageSource(num){
   }
 
   var indexChosen = Math.floor(Math.random() * imgsLeft[type].length);
-  while (lastimage[type] = indexChosen && num < 5){
+  while (lastimage[type] == indexChosen && num < 5){
     var indexChosen = Math.floor(Math.random() * imgsLeft[type].length);
   }
   var imgChosen = imgsLeft[type][indexChosen];
@@ -577,8 +577,9 @@ function appendBoxes(collection, isNew) {
     // console.log(array);
     $("#container2").empty();
     lasttiles = tiles;
-    console.log(lasttiles);
-    console.log($("#container1").children().appendTo(container2));
+    // console.log(lasttiles);
+    // console.log($("#container1").children().appendTo(container2));
+    $("#container1").children().appendTo(container2);
     $("#container1").empty();
     tiles = [];
     collection.forEach(function (num) {
