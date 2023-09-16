@@ -3,9 +3,17 @@
     font-size: 10vw;
     line-height: 10vw;
     text-align: center;
+    width: 50vw;
     z-index: 2;
-    left: -7vw;
+    left: -10.2vw;
     top: 11vw;
+    transition-property: all;
+    transition-duration: 0.75s;
+}
+
+.titlelarge:hover{
+    opacity: 0.6;
+    letter-spacing: 0.5vw;
 }
 
 .portrait{
@@ -77,6 +85,8 @@
 
 .small{
     font-size: 1vw;
+    width: 30vw;
+    text-align: center;
     transition-property: letter-spacing opacity;
 }
 
@@ -92,12 +102,16 @@
 }
 
 .vwdown1{
-    transform: translate(9vw,1.2vw);
+    transform: translate(-0.8vw,1.2vw);
 }
 
 #splitter{
     transform: translate(-5vw,2vw);
-    transition-property: none;
+    transition-property: opacity;
+}
+
+#splitter:hover{
+    opacity:0.5;
 }
 
 iframe{
