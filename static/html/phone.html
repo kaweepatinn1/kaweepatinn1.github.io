@@ -4,21 +4,29 @@
 		<title>three.js webgl - animation - keyframes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../fonts/fontfaces.css">
 	</head>
     <style>
         #container{
             padding:0;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -9999;
+            
         }
         body{
             padding:0;
             margin:0;
+            cursor: url("../cursors/3dcursor.png") 9 11, auto;
         }
     </style>
 	<body>
-
 		<div id="container"></div>
-
 		<!-- Import maps polyfill -->
 		<!-- Remove this when import maps will be widely supported -->
 		<script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
@@ -61,11 +69,14 @@
 			const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 100 );
 			camera.position.set( 23.126, 10.665, -32.648 );
             camera.fov = 24.42;
+            camera.far = 10000;
             camera.updateProjectionMatrix();
 
 			const controls = new OrbitControls( camera, renderer.domElement );
 			controls.target.set( 0, 0.5, 0 );
             controls.autoRotate = true;
+            controls.autoRotateSpeed = -2;
+            controls.maxDistance = 100;
 			controls.update();
 			controls.enablePan = false;
 			controls.enableDamping = true;
@@ -110,8 +121,6 @@
 				const delta = clock.getDelta();
 
 				mixer.update( delta );
-
-                
 
 				controls.update();
 

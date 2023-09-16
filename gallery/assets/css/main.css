@@ -318,9 +318,9 @@ div.thumbnail {
 }
 
 div.thumbnail:hover {
-   -moz-box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);  
-   -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);   
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);
+   -moz-box-shadow: inset 0 0 100px rgba(0, 0, 0, .6);  
+   -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .6);   
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .6);
 
    -webkit-transition: all .1s ease-out;
    -moz-transition: all .1s ease-out;

@@ -72,3 +72,7 @@ a:active {
 .lightOn{
 	cursor: url("../cursors/mooncursor.png") 11 11, auto;
 }
+
+.threeD{
+    cursor: url("../cursors/3dcursor.png") 10 12, auto;
+}
