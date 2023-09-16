@@ -341,7 +341,6 @@ hr {
     width: 80%;
     z-index: -1;
     pointer-events: none;
-    top: -6vw;
 }
 
 .iconTransform{

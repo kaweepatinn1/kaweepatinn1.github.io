@@ -15,7 +15,7 @@ $(document).mouseover(function(item){
             var toChange = "#\\" + hoveringNav + "Child";
             $(toChange).css('transform', 'translateY(0.15vw)');
             var toChange = "#\\" + hoveringNav + "ChildLogo";
-            $(toChange).css('transform', 'rotate(180deg) rotateY(90deg) translateY(0.5vw)');
+            $(toChange).css('transform', 'rotate(180deg) rotateY(90deg) translateY(6.5vw)');
             wasHoveringNav = false;
         }
     }
@@ -118,7 +118,7 @@ $(document).mouseover(function(item){
             var toChange = "#\\" + ID + "Child";
             $(toChange).css('transform', 'translateY(-0.5vw)');
             var toChange = "#\\" + ID + "ChildLogo";
-            $(toChange).css('transform', 'rotate(180deg) rotateY(0deg) translateY(-4vw)');
+            $(toChange).css('transform', 'rotate(180deg) rotateY(0deg) translateY(2vw)');
         }
 
         if (type == "$"){

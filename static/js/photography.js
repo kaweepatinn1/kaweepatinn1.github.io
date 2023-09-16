@@ -140,14 +140,33 @@ function doesFileExist(url) {
   });
 }
 
+var active = true;
+var shuffling = true;
+
 function shuffleTiles(){
   heightFromTop = window.scrollY;
   reorderTiles(true);
   // init();
   // console.log(array);
   window.scrollTo(0, heightFromTop);
-  setTimeout(shuffleTiles, 5000);
+  if (active){
+    setTimeout(shuffleTiles, 5000);
+    shuffling = true;
+  } else{
+    shuffling = false;
+  }
 }
+
+document.addEventListener("visibilitychange", event => {
+  if (document.visibilityState === "visible") {
+    active = true;
+  } else {
+    active = false;
+    if (!shuffling){
+      shuffleTiles();
+    }
+  }
+})
 
 function resetTiles(){
   heightFromTop = window.scrollY;
