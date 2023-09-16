@@ -50,7 +50,7 @@ const subcategories = [
 const imgsPerType = [
   10,
   1,
-  2,
+  1,
   1
 ]
 
@@ -149,7 +149,7 @@ function shuffleTiles(){
     reorderTiles(true);
     // init();
     // console.log(array);
-    console.log("shuffle");
+    // console.log("shuffle");
     window.scrollTo(0, heightFromTop);
     setTimeout(shuffleTiles, 5000);
     shuffling = true;
@@ -161,13 +161,13 @@ function shuffleTiles(){
 document.addEventListener("visibilitychange", event => {
   if (document.visibilityState === "visible") {
     active = true;
-    console.log(active);
+    // console.log(active);
     if (!shuffling){
       shuffleTiles();
     }
   } else {
     active = false;
-    console.log(active);
+    // console.log(active);
   }
 })
 
@@ -205,10 +205,12 @@ checkAllCategories()
 
   
 function reInitImages(index){
+  // console.log("going to reinit")
   imgsLeft[index] = [];
   for (let i = 0; i < categoryImageCount[index]; i++){
     imgsLeft[index].push(i);
   }
+  // console.log(imgsLeft);
 }
 
 function getRandomImageSource(num){
@@ -230,7 +232,7 @@ function getRandomImageSource(num){
   } else if (num == 2){
     // look in 2,3
     type = 1;
-      if (imgsLeft[type].length < 2){
+      if (imgsLeft[type].length < 1){
         reInitImages(type);
       }
       //check if two spaces left
@@ -243,17 +245,24 @@ function getRandomImageSource(num){
       }
     }
   }
-
+  // console.log(type);
   var indexChosen = Math.floor(Math.random() * imgsLeft[type].length);
-  while (lastimage[type] == indexChosen && num < 5){
+  // console.log(indexChosen);
+  // console.log(lastimage[type]);
+  // console.log(imgsLeft[type]);
+  loopCancel = 0;
+  while (lastimage[type] == imgsLeft[type][indexChosen] && num < 5 && loopCancel < 10){
     var indexChosen = Math.floor(Math.random() * imgsLeft[type].length);
+    loopCancel++; // safeguard to stop the loop if it is trying more than ten times
+    // console.log(indexChosen);
   }
   var imgChosen = imgsLeft[type][indexChosen];
   // console.log(imgChosen);
   var indexString = intToStringPadding(imgChosen, 4);
+  // console.log(indexString);
   toReturn = "./static/assets/photography/" + "main" + "/jpgs/" + 
   subcategories[type] + "/" + indexString + ".jpg"
-  lastimage[type] = indexChosen;
+  lastimage[type] = imgChosen;
   imgsLeft[type].splice(indexChosen, 1);
   return toReturn;
 }
