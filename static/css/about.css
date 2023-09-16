@@ -103,7 +103,7 @@
 }
 
 .vwdown1{
-    transform: translate(-0.8vw,1.2vw);
+    transform: translate(-0.9vw,1.2vw);
 }
 
 #splitter{
@@ -120,7 +120,7 @@ iframe{
 }
 
 .paddingtop{
-    padding: 3vw;
+    padding: 2.75vw;
 }
 
 .gridtitle{
