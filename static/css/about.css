@@ -77,6 +77,7 @@
 
 .small{
     font-size: 1vw;
+    transition-property: letter-spacing opacity;
 }
 
 .small:hover{
@@ -91,7 +92,7 @@
 }
 
 .vwdown1{
-    transform: translateY(1vw);
+    transform: translate(9vw,1.2vw);
 }
 
 #splitter{
