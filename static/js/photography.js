@@ -144,12 +144,13 @@ var active = true;
 var shuffling = true;
 
 function shuffleTiles(){
-  heightFromTop = window.scrollY;
-  reorderTiles(true);
-  // init();
-  // console.log(array);
-  window.scrollTo(0, heightFromTop);
   if (active){
+    heightFromTop = window.scrollY;
+    reorderTiles(true);
+    // init();
+    // console.log(array);
+    console.log("shuffle");
+    window.scrollTo(0, heightFromTop);
     setTimeout(shuffleTiles, 5000);
     shuffling = true;
   } else{
@@ -160,11 +161,13 @@ function shuffleTiles(){
 document.addEventListener("visibilitychange", event => {
   if (document.visibilityState === "visible") {
     active = true;
-  } else {
-    active = false;
+    console.log(active);
     if (!shuffling){
       shuffleTiles();
     }
+  } else {
+    active = false;
+    console.log(active);
   }
 })
 
