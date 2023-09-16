@@ -66,7 +66,8 @@
 
 .grid-left-container-about {
     display: grid;
-    grid-template-columns: 30vw 50vw;
+    grid-template-columns: 30vw 45vw;
+    padding-right:10vw;
     justify-content: center;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -116,4 +117,25 @@
 
 iframe{
     display:block;
+}
+
+.paddingtop{
+    padding: 3vw;
+}
+
+.gridtitle{
+    font-size: 2vw;
+    padding: 0vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    transition-property: all;
+    transition-duration: 0.75s;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    z-index:2;
+}
+
+.smallergap{
+    font-size: 0.9vw;
 }

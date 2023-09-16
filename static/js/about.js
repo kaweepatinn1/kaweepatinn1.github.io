@@ -11,7 +11,6 @@ document.body.onscroll = () => {
 
 var ctx = document.createElement('canvas').getContext('2d');
 var img = new Image;
-console.log(img);
 /* Discontinued
 img.onload = function(){
   // Make the canvas the same size as the image
