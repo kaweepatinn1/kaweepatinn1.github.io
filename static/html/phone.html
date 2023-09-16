@@ -10,8 +10,6 @@
     <style>
         #container{
             padding:0;
-            width: 100vw;
-            height: 100vh;
             display: block;
             position: fixed;
             top: 0;
@@ -22,7 +20,7 @@
         body{
             padding:0;
             margin:0;
-            cursor: url("../cursors/3dcursor.png") 9 11, auto;
+            cursor: url("../cursors/3dcursor.png") 10 12, auto;
         }
     </style>
 	<body>
@@ -69,6 +67,7 @@
 			const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 100 );
 			camera.position.set( 23.126, 10.665, -32.648 );
             camera.fov = 24.42;
+            camera.zoom = 1.1;
             camera.far = 10000;
             camera.updateProjectionMatrix();
 
@@ -89,7 +88,7 @@
 			loader.load( '/static/models/phone.glb', function ( gltf ) {
 
 				const model = gltf.scene;
-				model.position.set( 1, 1, 0 );
+				model.position.set( 0, 1, 0 );
 				model.scale.set( 1, 1, 1 );
 				scene.add( model );
 
