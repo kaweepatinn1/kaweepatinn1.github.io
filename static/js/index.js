@@ -139,12 +139,14 @@ function blackOut(){
 }
 
 function updateSound(){
-	// console.log(proxToCorner);
-	// console.log("scrollpercent" + scrollPercent);
-	var campfireVolume = (0.25 + (xPer / 1.3)) * (0.1 + (yPer / 1.12)) * (scrollPercent);
-	
-	// console.log(campfireVolume);
-	campfireaudio.volume = campfireVolume * 0.6;
+	if (document.getElementById("pageIsAbout") != undefined){
+		// console.log(proxToCorner);
+		// console.log("scrollpercent" + scrollPercent);
+		var campfireVolume = (0.25 + (xPer / 1.3)) * (0.1 + (yPer / 1.12)) * (scrollPercent);
+		
+		// console.log(campfireVolume);
+		campfireaudio.volume = campfireVolume * 0.6;
+	}
 }
 
 document.addEventListener('mousemove', (e) => {
@@ -288,6 +290,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				el.classList.add("paddingtop");
 			})
 		} else {
+			console.log("hi");
 			navbar.classList.remove("sticky");
 			content.forEach((el) => {
 				el.classList.remove("paddingtop");
@@ -304,6 +307,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 window.onload = function() {
 	// Code to be executed after the entire page, including CSS, has been loaded
+	
+	if (document.getElementById("pageIs404") != undefined){
+		const element = document.getElementById("downArrow1Parent");
+		element.remove();
+	}
 	loadLogo();
 	navbar = document.getElementById("navbar");
 	video = document.getElementById("topVideo");
@@ -340,16 +348,18 @@ document.addEventListener('mousemove', (e) => {
 })
 
 function bindIFrameMousemove(iframe){ // allows the mouse pos to be taken while in iframe
-    iframe.contentWindow.addEventListener('mousemove', function(event) {
-        var clRect = iframe.getBoundingClientRect();
-        var evt = new CustomEvent('mousemove', {bubbles: true, cancelable: false});
+    if (document.getElementById("pageIsAbout") != undefined){
+		iframe.contentWindow.addEventListener('mousemove', function(event) {
+			var clRect = iframe.getBoundingClientRect();
+			var evt = new CustomEvent('mousemove', {bubbles: true, cancelable: false});
 
-        evt.clientX = event.clientX + clRect.left;
-        evt.clientY = event.clientY + clRect.top;
+			evt.clientX = event.clientX + clRect.left;
+			evt.clientY = event.clientY + clRect.top;
 
-        // console.log(evt);
-        iframe.dispatchEvent(evt);
-    });
+			// console.log(evt);
+			iframe.dispatchEvent(evt);
+		});
+	}
 };
 
 bindIFrameMousemove(document.getElementById('phoneframe'));

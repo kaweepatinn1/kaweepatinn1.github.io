@@ -465,3 +465,27 @@ hr {
     justify-content: flex-end;
     align-items: flex-end;
 }
+
+.full{
+    height: 79vh;
+    padding-top: 15.5vh;
+    position: relative;
+    left: 20vw;
+    width: 62vw;
+    display: inline-grid;
+    align-items: center;
+    align-content: center;
+}
+
+.transitioneffects{
+    transition-duration: 0.75s;
+    transition-property: all;
+}
+
+.error{
+    padding: 0vw 3vw 0vw 3vw;
+}
+
+.error:hover{
+    padding: 0vw 0vw 0vw 0vw;
+}
