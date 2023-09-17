@@ -1,16 +1,7 @@
-document.body.onscroll = () => {
-    //calculate the current scroll progress as a percentage
-    scrollPercent =
-        ((document.documentElement.scrollTop || document.body.scrollTop) /
-            ((document.documentElement.scrollHeight ||
-                document.body.scrollHeight) -
-                document.documentElement.clientHeight)) *
-        100;
-    // console.log(scrollPercent);
-}
-
 var ctx = document.createElement('canvas').getContext('2d');
 var img = new Image;
+
+
 /* Discontinued
 img.onload = function(){
   // Make the canvas the same size as the image

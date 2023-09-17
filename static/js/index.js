@@ -1,62 +1,157 @@
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
+var xPer = 0;
+var yPer = 0;
+var scrollPercent = 0.1;
+var campfireVolume = 0;
+var blackout = false;
+var light = new Audio("static/assets/lightswitch/Switch.mp3");
+var breaklight = new Audio("static/assets/lightswitch/Breaker.mp3");
+if (document.getElementById("pageIsAbout") != undefined){
+	var campfireaudio = new Audio("static/assets/lightswitch/CampfireAudio.mp3");
+	campfireaudio.loop = true;
+}
 
 function changeMode() {
   let element = document.body;
   let button = document.getElementById("!0CHover");
   let content = document.getElementById("!0CHoverChild");
-  if (content && content.src.includes("lightswitchlight.png")) {
-	// dark mode --> light mode
-    content.src = "./static/assets/lightswitchdark.png";
-    element.className = "light-mode";
-    button.className = "lightOn";
-	let linksPurp = Array.from(document.getElementsByClassName("purplink"));
-	linksPurp.forEach((link) => {
-		link.classList.add("darkpurplink");
-		link.classList.remove("purplink");
-	})
-	let linksBlue = Array.from(document.getElementsByClassName("bluelink"));
-	linksBlue.forEach((link) => {
-		link.classList.add("darkbluelink");
-		link.classList.remove("bluelink");
-	})
-	let linksDarkElement = Array.from(document.getElementsByClassName("dark-mode-element"));
-	linksDarkElement.forEach((link) => {
-		link.classList.add("light-mode-element");
-		link.classList.remove("dark-mode-element");
-	})
-	let borderDarkElement = Array.from(document.getElementsByClassName("bordered"));
-	borderDarkElement.forEach((border) => {
-		border.classList.add("bordered-black");
-		border.classList.remove("bordered");
-	})
-  } else { // light mode --> dark mode
-    content.src = "./static/assets/lightswitchlight.png";
-    element.className = "dark-mode";
-    button.className = "lightOff";
-	let linksDarkPurp = Array.from(document.getElementsByClassName("darkpurplink"));
-	linksDarkPurp.forEach((link) => {
-		link.classList.add("purplink");
-		link.classList.remove("darkpurplink");
-	})
-	let linksDarkBlue = Array.from(document.getElementsByClassName("darkbluelink"));
-	linksDarkBlue.forEach((link) => {
-		link.classList.add("bluelink");
-		link.classList.remove("darkbluelink");
-	})
-	let linksDarkElement = Array.from(document.getElementsByClassName("light-mode-element"));
-	linksDarkElement.forEach((link) => {
-		link.classList.add("dark-mode-element");
-		link.classList.remove("light-mode-element");
-	})
-	let borderLightElement = Array.from(document.getElementsByClassName("bordered-black"));
-	borderLightElement.forEach((border) => {
-		border.classList.add("bordered");
-		border.classList.remove("bordered-black");
-	})
-  }
+  if (!blackout){
+	if (content && content.src.includes("lightswitchlight.png")) {
+		// dark mode --> light mode
+		var toPlay = light.cloneNode(true);
+		toPlay.volume = 1.0;
+		toPlay.play()
+		content.src = "./static/assets/lightswitchdark.png";
+		element.className = "light-mode";
+		button.classList.add("lightOn");
+		button.classList.remove("lightOff");
+		let linksPurp = Array.from(document.getElementsByClassName("purplink"));
+		linksPurp.forEach((link) => {
+			link.classList.add("darkpurplink");
+			link.classList.remove("purplink");
+		})
+		let linksBlue = Array.from(document.getElementsByClassName("bluelink"));
+		linksBlue.forEach((link) => {
+			link.classList.add("darkbluelink");
+			link.classList.remove("bluelink");
+		})
+		let linksDarkElement = Array.from(document.getElementsByClassName("dark-mode-element"));
+		linksDarkElement.forEach((link) => {
+			link.classList.add("light-mode-element");
+			link.classList.remove("dark-mode-element");
+		})
+		let borderDarkElement = Array.from(document.getElementsByClassName("bordered"));
+		borderDarkElement.forEach((border) => {
+			border.classList.add("bordered-black");
+			border.classList.remove("bordered");
+		})
+		let logoElement = Array.from(document.getElementsByClassName("clientlogo"));
+		logoElement.forEach((logo) => {
+			logo.classList.add("clientlogolight");
+		})
+	} else { // light mode --> dark mode
+		spotlightTrigger();
+		if(blackout){
+			var toPlay = breaklight.cloneNode(true);
+			toPlay.volume = 0.8;
+			toPlay.play()
+			button.classList.add("disabledswitch");
+		} else{
+			var toPlay = light.cloneNode(true);
+			toPlay.volume = 1.0;
+			toPlay.play()
+		}
+		content.src = "./static/assets/lightswitchlight.png";
+		element.className = "dark-mode";
+		button.classList.add("lightOff");
+		button.classList.remove("lightOn");
+		let linksDarkPurp = Array.from(document.getElementsByClassName("darkpurplink"));
+		linksDarkPurp.forEach((link) => {
+			link.classList.add("purplink");
+			link.classList.remove("darkpurplink");
+		})
+		let linksDarkBlue = Array.from(document.getElementsByClassName("darkbluelink"));
+		linksDarkBlue.forEach((link) => {
+			link.classList.add("bluelink");
+			link.classList.remove("darkbluelink");
+		})
+		let linksDarkElement = Array.from(document.getElementsByClassName("light-mode-element"));
+		linksDarkElement.forEach((link) => {
+			link.classList.add("dark-mode-element");
+			link.classList.remove("light-mode-element");
+		})
+		let borderLightElement = Array.from(document.getElementsByClassName("bordered-black"));
+		borderLightElement.forEach((border) => {
+			border.classList.add("bordered");
+			border.classList.remove("bordered-black");
+		})
+		let logoLightElement = Array.from(document.getElementsByClassName("clientlogolight"));
+		logoLightElement.forEach((logo) => {
+			logo.classList.remove("clientlogolight");
+		})
+	  }
+  	} else{
+		var toPlay = breaklight.cloneNode(true);
+		toPlay.volume = 0.8;
+		toPlay.play()
+	}
 }
+
+var triggeredRecently = false;
+var recentTriggers = 0;
+
+function spotlightTrigger(){
+    if (triggeredRecently){
+        recentTriggers++;
+        // console.log(recentTriggers);
+        triggeredRecently = true
+        setTimeout(releaseTrigger.bind(null, recentTriggers), 2000);
+    } else{
+        recentTriggers = 1;
+        triggeredRecently = true
+        setTimeout(releaseTrigger.bind(null, recentTriggers), 2000);
+    }
+	if (recentTriggers == 3){
+		blackOut();
+	}
+}
+
+function releaseTrigger(lastTrigger){
+    if (lastTrigger == recentTriggers){
+        // console.log("Reset!");
+        triggeredRecently = false;
+    }
+}
+
+function blackOut(){
+	var darkness = document.getElementById("blackout");
+	blackout = true;
+	if ( document.getElementById("pageIsAbout") != undefined ){
+		var content = document.getElementById("hiddenvideo");
+		content.play();
+		content.classList.add("showblackout");
+		campfireaudio.volume = campfireVolume * 0.6;
+		campfireaudio.play();
+	}
+	darkness.classList.add("showblackout");
+}
+
+function updateSound(){
+	// console.log(proxToCorner);
+	// console.log("scrollpercent" + scrollPercent);
+	var campfireVolume = (0.25 + (xPer / 1.3)) * (0.1 + (yPer / 1.12)) * (scrollPercent);
+	
+	// console.log(campfireVolume);
+	campfireaudio.volume = campfireVolume * 0.6;
+}
+
+document.addEventListener('mousemove', (e) => {
+	let x = e.clientX - (document.documentElement.clientWidth * 1.5);
+	let y = e.clientY - (document.documentElement.clientHeight * 1.5);
+	shadow.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+  })
 
 function setLogo(){
 	// Calculate the distance between the element and the top of the page
@@ -132,6 +227,12 @@ $(window).scroll(function() {
 	setLogo();
 	downArrow();
 	scrollCheck();
+	var $this = $(this),
+        $body = $('body');
+	var scrollTotal = 0.1 + Math.min(($this.scrollTop() / ($body.height() - $this.height())));
+    scrollPercent = Math.min(scrollTotal, 1);
+	// console.log("scroll calc" + scrollPercent);
+	updateSound();
 	// console.log(document.documentElement.scrollHeight - window.innerHeight);
 });
 
@@ -224,3 +325,31 @@ window.onload = function() {
 	setTimeout(setLogo, 100);
   // Perform other initialization tasks, set up event handlers, etc.
 };
+
+const shadow = document.querySelector('#blackout');
+
+document.addEventListener('mousemove', (e) => {
+  let x = e.clientX;
+  let y = e.clientY;
+  xPer = Math.min((x / document.documentElement.clientWidth) + 0.14, 1);
+  yPer = Math.min((y / document.documentElement.clientHeight) + 0.16, 1);
+  let xShadow = x - (document.documentElement.clientWidth * 1.5);
+  let yShadow =  y - (document.documentElement.clientHeight * 1.5);
+  shadow.style.transform = 'translate(' + xShadow + 'px, ' + yShadow + 'px)';
+  updateSound();
+})
+
+function bindIFrameMousemove(iframe){ // allows the mouse pos to be taken while in iframe
+    iframe.contentWindow.addEventListener('mousemove', function(event) {
+        var clRect = iframe.getBoundingClientRect();
+        var evt = new CustomEvent('mousemove', {bubbles: true, cancelable: false});
+
+        evt.clientX = event.clientX + clRect.left;
+        evt.clientY = event.clientY + clRect.top;
+
+        // console.log(evt);
+        iframe.dispatchEvent(evt);
+    });
+};
+
+bindIFrameMousemove(document.getElementById('phoneframe'));

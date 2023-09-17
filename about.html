@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="static/css/about.css">
   <link rel="stylesheet" href="static/fonts/fontfaces.css">
   <script src="static/js/jquery-3.7.1.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>-->
   <script src="static/js/earlyload.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -45,6 +46,7 @@
 </head>
 
 <body>
+  <div id="blackout"></div>
   <div class="loader" style="pointer-events: none;">
     <div class="loader-inner">
       <div class="loader-line-wrap">
@@ -92,8 +94,8 @@
     <div class="grid-left-container-about"> 
       <div data-aos="fade-right" data-aos-offset="100" data-aos-delay="0">
         <div class="small caption redhatbold vwdown1">> This is an interactive panel <</div>
-        <div class="vwup1">
-          <iframe src="/static/html/phone.html" width="100%" height="100%" style="border:solid; border-color:white; border-radius: 3vw 3vw;"></iframe>
+        <div id="draggable" class="vwup1">
+          <iframe id="phoneframe" src="/static/html/phone.html" width="100%" height="100%" style="border:solid; border-color:white; border-radius: 3vw 3vw;"></iframe>
         </div>
       </div>
       <div class="paddingtop">
@@ -159,7 +161,12 @@
       </div>
     </div>
   </div>
-  <footer class="footer footerMargin">
+  <div class="eastereggvideo">
+    <video id="hiddenvideo" loop="" muted="muted" playsinline
+      src="static/assets/lightswitch/CampfireVideo.mp4">
+    </video>
+  </div>
+  <footer class="footer">
     <p onclick="window.open('https://github.com/kaweepatinn1/kaweepatinn1.github.io')" class="redhatregular footertext github">
       &copy; Nanomotions <script>document.write(new Date().getFullYear())</script>
     </p>

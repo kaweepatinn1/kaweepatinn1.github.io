@@ -5,7 +5,6 @@
     text-align: center;
     width: 50vw;
     z-index: 2;
-    left: -10.2vw;
     top: 11vw;
     transition-property: all;
     transition-duration: 0.75s;
@@ -35,7 +34,7 @@
     width: 25vw;
     overflow: hidden;
     z-index: 1;
-    left: 27.2vw;
+    left: 37.2vw;
 }
 
 .titlearea{
@@ -57,17 +56,16 @@
 .centerimg1{
     position:relative;
     display:flex;
-    left:24vw;
+    left:34vw;
 }
 
 .mainarea{
-    margin:0 0 10vw 10vw;
+    margin:0 10 0vw 10vw;
 }
 
 .grid-left-container-about {
     display: grid;
     grid-template-columns: 30vw 45vw;
-    padding-right:10vw;
     justify-content: center;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -107,7 +105,7 @@
 }
 
 #splitter{
-    transform: translate(-5vw,2vw);
+    transform: translateY(2vw);
     transition-property: opacity;
 }
 
@@ -152,7 +150,7 @@ iframe{
     font-size: 10vw;
     line-height: 10vw;
     text-align: center;
-    width: 80vw;
+    width: 100vw;
     z-index: 2;
     transition-property: all;
     transition-duration: 0.75s;
@@ -166,7 +164,6 @@ iframe{
 .logo-grid {
     display: grid;
     grid-template-columns: 20vw 20vw 20vw;
-    padding-right: 10vw;
     padding-top:2vw;
     justify-content: center;
     overflow-x: hidden;
@@ -193,4 +190,8 @@ iframe{
 .clientlogo:hover{
     opacity:0.6;
     transform: scale(0.8);
+}
+
+.clientlogolight{
+    filter: invert();
 }

@@ -426,3 +426,42 @@ hr {
       transform: translateY(2vw);
     }
 }
+
+.disabledswitch{
+    background-color:#B00;
+}
+
+.disabledswitch:hover{
+    background-color:#800;
+}
+
+#blackout {
+    position: fixed;
+    opacity: 0;
+    width: 200vw;
+    height: 200vh;
+    left: 49%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-image: radial-gradient(circle at center, transparent, #000 10%);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+#blackout.showblackout{
+    opacity: 1;
+}
+
+#hiddenvideo{
+    opacity: 0;
+}
+
+#hiddenvideo.showblackout{
+    opacity: 1;
+}
+
+.eastereggvideo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
