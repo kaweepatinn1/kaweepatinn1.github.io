@@ -131,11 +131,34 @@ iframe{
     justify-content: center;
     transition-property: all;
     transition-duration: 0.75s;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
     z-index:2;
+}
+
+.gridtitle:hover{
+    opacity: 0.6;
+    letter-spacing: 0.1vw;
+    padding-left:0vw;
+    padding-right:0vw;
 }
 
 .smallergap{
     font-size: 0.9vw;
+}
+
+.subtitlelarge{
+    position: relative;
+    font-size: 10vw;
+    line-height: 10vw;
+    text-align: center;
+    width: 80vw;
+    z-index: 2;
+    transition-property: all;
+    transition-duration: 0.75s;
+}
+
+.subtitlelarge:hover{
+    opacity: 0.6;
+    letter-spacing: 0.5vw;
 }

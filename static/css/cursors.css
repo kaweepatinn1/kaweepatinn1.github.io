@@ -61,6 +61,10 @@ a:active {
     cursor: url("../cursors/instagramcursor.png") 9 12, auto;
 }
 
+.github{
+    cursor: url("../cursors/githubcursor.png") 10 10, auto;
+}
+
 .linkedin{
     cursor: url("../cursors/linkedincursor.png") 9 12, auto;
 }
