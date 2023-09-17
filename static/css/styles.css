@@ -440,8 +440,8 @@ hr {
     opacity: 0;
     width: 200vw;
     height: 200vh;
-    left: 49%;
-    top: 50%;
+    left: 49.3%;
+    top: 48.8%;
     transform: translateX(-50%) translateY(-50%);
     background-image: radial-gradient(circle at center, transparent, #000 10%);
     pointer-events: none;
