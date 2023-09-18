@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				el.classList.add("paddingtop");
 			})
 		} else {
-			console.log("hi");
+			// console.log("hi");
 			navbar.classList.remove("sticky");
 			content.forEach((el) => {
 				el.classList.remove("paddingtop");
