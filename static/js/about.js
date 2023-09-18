@@ -1,6 +1,13 @@
 var ctx = document.createElement('canvas').getContext('2d');
 var img = new Image;
 
+function displayPhone(){
+  var threeFrame = document.getElementById("phoneframe");
+  console.log(threeFrame);
+  threeFrame.setAttribute('src', '/static/html/phone.html');
+}
+
+//
 
 /* Discontinued
 img.onload = function(){

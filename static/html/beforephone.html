@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.156.1/examples/jsm/"
+              }
+            }
+		</script>
+        <script src="../js/jquery-3.7.1.js"></script>
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../fonts/fontfaces.css">
+        <style>
+            body{
+                background-color: black;
+                cursor: url("../cursors/3dcursor.png") 10 12, auto;
+            }
+            .main{
+                font-size: 6vw;
+                color:white;
+                display: inline-flexbox;
+                justify-content: center;
+                padding-top:50%;
+                align-items: center;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="full" class="main redhatbold" onclick="parent.displayPhone()">
+            Click anywhere on this panel to load the interactive phone animation.<br><br>This <i style="color:red;">may</i> lag your browser.
+        </div>
+    </body>
+</html>
