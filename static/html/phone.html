@@ -15,6 +15,7 @@
             top: 0;
             left: 0;
             z-index: -9999;
+			transform: scale(2) translate(12.5vw, 12.5vh);
             
         }
         body{
@@ -55,7 +56,7 @@
 
 			const renderer = new THREE.WebGLRenderer( { antialias: true } );
 			renderer.setPixelRatio( window.devicePixelRatio );
-			renderer.setSize( window.innerWidth, window.innerHeight );
+			renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
 			container.appendChild( renderer.domElement );
 
 			const pmremGenerator = new THREE.PMREMGenerator( renderer );
@@ -108,7 +109,7 @@
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
 
 			};
 
