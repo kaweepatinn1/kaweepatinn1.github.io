@@ -10,8 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
             videos.forEach((video) => {
                 video.setAttribute('src', ''); //remove video srcs
 	    })
-        title = document.getElementById("mainTitleID");
-        title.setAttribute('data-aos-offset', '0'); // fix title not showing on mobile devices
+        if ( document.getElementById("pageIsIndex") != undefined ){
+            title = document.getElementById("mainTitleID");
+            title.setAttribute('data-aos-offset', '0'); // fix title not showing on mobile devices
+        }
     }
     var w = window.innerWidth;
     var h = window.innerHeight;

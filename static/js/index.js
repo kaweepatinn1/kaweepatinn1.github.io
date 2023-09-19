@@ -362,8 +362,9 @@ function bindIFrameMousemove(iframe){ // allows the mouse pos to be taken while 
 		});
 	}
 };
-
-document.querySelector("iframe").addEventListener( "load", function(e) {
-	var iframe = document.getElementById('phoneframe');
-	bindIFrameMousemove(iframe)
-});
+if ( document.getElementById("pageIsAbout") != undefined ){
+	document.querySelector("iframe").addEventListener( "load", function(e) {
+		var iframe = document.getElementById('phoneframe');
+		bindIFrameMousemove(iframe)
+	});
+}
