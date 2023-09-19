@@ -23,5 +23,4 @@ function loadLogo(){
         console("ERROR: NO LOGO SELECTOR ELEMENT");
         loadNavEmpty();
     }
-    
 }
