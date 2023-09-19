@@ -142,7 +142,7 @@ function updateSound(){
 	if (document.getElementById("pageIsAbout") != undefined){
 		// console.log(proxToCorner);
 		// console.log("scrollpercent" + scrollPercent);
-		var campfireVolume = (0.25 + (xPer / 1.3)) * (0.1 + (yPer / 1.12)) * (scrollPercent);
+		var campfireVolume = (0.25 + (xPer / 1.3)) * (0.1 + (yPer / 1.12)) * (scrollPercent * Math.max(scrollPercent, 0.5) * Math.max(scrollPercent, 0.8));
 		
 		// console.log(campfireVolume);
 		campfireaudio.volume = campfireVolume * 0.6;
