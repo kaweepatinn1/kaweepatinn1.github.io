@@ -25,12 +25,9 @@
 
 .imagecontainer{
     position: relative;
-    align-items: flex-end;
     background-color: #b5cbe3;
     border-radius: 50%;
-    display: flex;
     height: 25vw;
-    justify-content: center;
     width: 25vw;
     overflow: hidden;
     z-index: 1;
@@ -60,7 +57,7 @@
 }
 
 .mainarea{
-    margin:0 10 0vw 10vw;
+    margin:0vw;
 }
 
 .grid-left-container-about {
