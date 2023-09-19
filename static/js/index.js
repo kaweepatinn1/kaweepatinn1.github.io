@@ -348,11 +348,12 @@ document.addEventListener('mousemove', (e) => {
 })
 
 function bindIFrameMousemove(iframe){ // allows the mouse pos to be taken while in iframe
+	console.log('hi');
     if (document.getElementById("pageIsAbout") != undefined){
 		iframe.contentWindow.addEventListener('mousemove', function(event) {
 			var clRect = iframe.getBoundingClientRect();
 			var evt = new CustomEvent('mousemove', {bubbles: true, cancelable: false});
-
+			
 			evt.clientX = event.clientX + clRect.left;
 			evt.clientY = event.clientY + clRect.top;
 
@@ -362,4 +363,7 @@ function bindIFrameMousemove(iframe){ // allows the mouse pos to be taken while 
 	}
 };
 
-bindIFrameMousemove(document.getElementById('phoneframe'));
+document.querySelector("iframe").addEventListener( "load", function(e) {
+	var iframe = document.getElementById('phoneframe');
+	bindIFrameMousemove(iframe)
+});
