@@ -393,6 +393,7 @@ div.thumbnail img {
     z-index: 2;
     font-size: 12px;
     text-align: center;
+    z-index: 1000;
 }
 
 #loupeContainer div.background {
