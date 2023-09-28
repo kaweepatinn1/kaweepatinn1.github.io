@@ -149,12 +149,6 @@ function updateSound(){
 	}
 }
 
-document.addEventListener('mousemove', (e) => {
-	let x = e.clientX - (document.documentElement.clientWidth * 1.5);
-	let y = e.clientY - (document.documentElement.clientHeight * 1.5);
-	shadow.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-  })
-
 function setLogo(){
 	// Calculate the distance between the element and the top of the page
 	var distanceFromTop = sticky - window.scrollY;
@@ -190,20 +184,21 @@ function setLogo(){
 }
 
 function downArrow(){
-	if (window.scrollY != 0){
-		let arrow = document.getElementById("downArrow1Parent");
-		arrow.classList.add("aos-animate");
-		//let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
-		//scrollInits.forEach((element) => {
-		//	element.classList.add("scrollAnimate");
-		//})
-	} else{
-		//let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
-		//scrollInits.forEach((element) => {
-		//	element.classList.remove("scrollAnimate");
-		//})
+	if(document.getElementById("pageIsGallery") == undefined){
+		if (window.scrollY != 0){
+			let arrow = document.getElementById("downArrow1Parent");
+			arrow.classList.add("aos-animate");
+			//let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
+			//scrollInits.forEach((element) => {
+			//	element.classList.add("scrollAnimate");
+			//})
+		} else{
+			//let scrollInits = Array.from(document.getElementsByClassName("scrollInit"));
+			//scrollInits.forEach((element) => {
+			//	element.classList.remove("scrollAnimate");
+			//})
+		}
 	}
-
 }
 
 ///*
@@ -337,14 +332,17 @@ window.onload = function() {
 const shadow = document.querySelector('#blackout');
 
 document.addEventListener('mousemove', (e) => {
-  let x = e.clientX;
-  let y = e.clientY;
-  xPer = Math.min((x / document.documentElement.clientWidth) + 0.14, 1);
-  yPer = Math.min((y / document.documentElement.clientHeight) + 0.16, 1);
-  let xShadow = x - (document.documentElement.clientWidth * 1.5);
-  let yShadow =  y - (document.documentElement.clientHeight * 1.5);
-  shadow.style.transform = 'translate(' + xShadow + 'px, ' + yShadow + 'px)';
-  updateSound();
+	if(document.getElementById("pageIsGallery") == undefined){
+		let x = e.clientX;
+		let y = e.clientY;
+		xPer = Math.min((x / document.documentElement.clientWidth) + 0.14, 1);
+		yPer = Math.min((y / document.documentElement.clientHeight) + 0.16, 1);
+		let xShadow = x - (document.documentElement.clientWidth * 1.5);
+		let yShadow =  y - (document.documentElement.clientHeight * 1.5);
+		shadow.style.transform = 'translate(' + xShadow + 'px, ' + yShadow + 'px)';
+		updateSound();
+
+	}
 })
 
 function bindIFrameMousemove(iframe){ // allows the mouse pos to be taken while in iframe
