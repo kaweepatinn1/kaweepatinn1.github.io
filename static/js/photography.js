@@ -260,8 +260,8 @@ function getRandomImageSource(num){
   // console.log(imgChosen);
   var indexString = intToStringPadding(imgChosen, 4);
   // console.log(indexString);
-  toReturn = "../static/assets/photography/" + "main" + "/jpgs/" + 
-  subcategories[type] + "/" + indexString + ".jpg"
+  toReturn = "../static/assets/photography/" + "main" + "/webps/" + 
+  subcategories[type] + "/" + indexString + ".webp"
   lastimage[type] = imgChosen;
   imgsLeft[type].splice(indexChosen, 1);
   return toReturn;
