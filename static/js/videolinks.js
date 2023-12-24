@@ -12,7 +12,7 @@ function linkedVideo(video, type){
         references.push( // INDEX PAGE MEDIA AND LINKS
             2, // 2. Concept Apple Ad
             3, // 3. OYYGC Animated MV
-            4, // 4. Three Years of Animating
+            7, // 7. Rerunner Chase Scene
         );
         reference = references[video-1]
     } else if ( document.getElementById("pageIsAbout") != undefined ){
