@@ -4,7 +4,7 @@ var img = new Image;
 function displayPhone(){
   var threeFrame = document.getElementById("phoneframe");
   // console.log(threeFrame);
-  threeFrame.setAttribute('src', '/static/html/phone.html');
+  threeFrame.setAttribute('src', '../static/html/phone.html');
 }
 
 //

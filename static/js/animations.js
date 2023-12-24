@@ -36,7 +36,7 @@ $(document).mouseover(function(item){
                 }
             }
             for(let i = 1; i < totalplus1; i++){
-                var right = hovering.substr(2, 3);
+                var right = hovering.substring(2, 3);
                 var TrueID = hovering.substring(hovering.indexOf("?") + 2);
                 if (right == ".R."){ //if a right element, pass the .'s through the escape key
                     var TrueIDnoR = (TrueID.substring(TrueID.indexOf(".") + 3));

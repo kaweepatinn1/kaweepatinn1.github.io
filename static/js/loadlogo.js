@@ -19,8 +19,10 @@ function loadLogo(){
     } else if ( document.getElementById("pageIsPhotography") != undefined ){
         $("#downArrow1").attr('stroke-width', "0");
         loadNavPhotographyButton();
+    } else if ( document.getElementById("pageIsGallery") != undefined ){
+        
     } else {
-        console("ERROR: NO LOGO SELECTOR ELEMENT");
+        console.log("ERROR: NO LOGO SELECTOR ELEMENT");
         loadNavEmpty();
     }
 }

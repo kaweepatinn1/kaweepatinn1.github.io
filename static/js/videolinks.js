@@ -97,28 +97,28 @@ function staticEmbed(videoIndex, isVideo){
     const videoEmbeds = [];
     if (isVideo){
         videoEmbeds.push(
-            "./static/assets/Placeholder.mp4",              // 1. Placeholder Item
-            "./static/assets/AppleAd.mp4",                  // 2. Concept Apple Ad
-            "./static/assets/OYYGC.mp4",                    // 3. OYYGC Animated MV
-            "./static/assets/LiveHK.mp4",                   // 4. LiveHK
+            "../static/assets/Placeholder.mp4",              // 1. Placeholder Item
+            "../static/assets/AppleAd.mp4",                  // 2. Concept Apple Ad
+            "../static/assets/OYYGC.mp4",                    // 3. OYYGC Animated MV
+            "../static/assets/LiveHK.mp4",                   // 4. LiveHK
             "No Embed",                                     // 5. Three Years of Animating
-            "./static/assets/VeggieQuest.mp4",              // 6. Veggie Quest
-            "./static/assets/Rerunner.mp4",                 // 7. Rerunner Chase Scene
-            "./static/assets/StarPersonaVideoEssay.mp4",    // 8. Star Persona Video Essay
-            "./static/assets/TheSecondSet.mp4",             // 9. HK Documentary
+            "../static/assets/VeggieQuest.mp4",              // 6. Veggie Quest
+            "../static/assets/Rerunner.mp4",                 // 7. Rerunner Chase Scene
+            "../static/assets/StarPersonaVideoEssay.mp4",    // 8. Star Persona Video Essay
+            "../static/assets/TheSecondSet.mp4",             // 9. HK Documentary
             );
         return(videoEmbeds[videoIndex-1]);
     } else{
         videoEmbeds.push(
-            "./static/assets/Placeholder.webp",              // 1. Placeholder Item
-            "./static/assets/AppleAd.webp",                  // 2. Concept Apple Ad
-            "./static/assets/OYYGC.webp",                    // 3. OYYGC Animated MV
-            "./static/assets/LiveHK.webp",                   // 4. LiveHK
+            "../static/assets/Placeholder.webp",              // 1. Placeholder Item
+            "../static/assets/AppleAd.webp",                  // 2. Concept Apple Ad
+            "../static/assets/OYYGC.webp",                    // 3. OYYGC Animated MV
+            "../static/assets/LiveHK.webp",                   // 4. LiveHK
             "No Embed",                                      // 5. Three Years of Animating
-            "./static/assets/VeggieQuest.webp",              // 6. Veggie Quest
-            "./static/assets/Rerunner.webp",                 // 7. Rerunner Chase Scene
-            "./static/assets/StarPersonaVideoEssay.webp",    // 8. Star Persona Video Essay
-            "./static/assets/TheSecondSet.webp",             // 9. HK Documentary
+            "../static/assets/VeggieQuest.webp",              // 6. Veggie Quest
+            "../static/assets/Rerunner.webp",                 // 7. Rerunner Chase Scene
+            "../static/assets/StarPersonaVideoEssay.webp",    // 8. Star Persona Video Essay
+            "../static/assets/TheSecondSet.webp",             // 9. HK Documentary
             );
         return(videoEmbeds[videoIndex-1]);
     }

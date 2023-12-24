@@ -9,7 +9,7 @@ var blackout = false;
 var light = new Audio("../static/assets/lightswitch/Switch.mp3");
 var breaklight = new Audio("../static/assets/lightswitch/Breaker.mp3");
 if (document.getElementById("pageIsAbout") != undefined){
-	var campfireaudio = new Audio("static/assets/lightswitch/CampfireAudio.mp3");
+	var campfireaudio = new Audio("../static/assets/lightswitch/CampfireAudio.mp3");
 	campfireaudio.loop = true;
 }
 
@@ -23,7 +23,7 @@ function changeMode() {
 		var toPlay = light.cloneNode(true);
 		toPlay.volume = 1.0;
 		toPlay.play()
-		content.src = "./static/assets/lightswitchdark.png";
+		content.src = "../static/assets/lightswitchdark.png";
 		element.className = "light-mode";
 		button.classList.add("lightOn");
 		button.classList.remove("lightOff");
@@ -63,7 +63,7 @@ function changeMode() {
 			toPlay.volume = 1.0;
 			toPlay.play()
 		}
-		content.src = "./static/assets/lightswitchlight.png";
+		content.src = "../static/assets/lightswitchlight.png";
 		element.className = "dark-mode";
 		button.classList.add("lightOff");
 		button.classList.remove("lightOn");
@@ -310,7 +310,7 @@ window.onload = function() {
 	loadLogo();
 	navbar = document.getElementById("navbar");
 	video = document.getElementById("topVideo");
-	if (video == undefined){
+	if (video == undefined && document.getElementById("pageIsGallery") == undefined){
 		var content = Array.from(document.getElementsByClassName("content"));
 		navbar.classList.add("sticky");
 		content.forEach((el) => {
@@ -323,9 +323,11 @@ window.onload = function() {
 	// }
 	$('.loader').css('display','none');
 	extramove = 0;
-	sticky = navbar.offsetTop;
-	setLogo();
-	setTimeout(setLogo, 100);
+	if(document.getElementById("pageIsGallery") == undefined){
+		sticky = navbar.offsetTop;
+		setLogo();
+		setTimeout(setLogo, 100);
+	}
   // Perform other initialization tasks, set up event handlers, etc.
 };
 

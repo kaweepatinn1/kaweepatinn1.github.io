@@ -80,7 +80,7 @@ function intToStringPadding(index, padding){
 
 /* async function checkFilesInCategory(category, subcategory, index) {
   indexString = intToStringPadding(index, 4);
-  var urlToCheck = "./static/assets/photography/" + category + "/webps/" + 
+  var urlToCheck = "../static/assets/photography/" + category + "/webps/" + 
   subcategory + "/" + indexString + ".webp";
   
   try {
@@ -260,7 +260,7 @@ function getRandomImageSource(num){
   // console.log(imgChosen);
   var indexString = intToStringPadding(imgChosen, 4);
   // console.log(indexString);
-  toReturn = "./static/assets/photography/" + "main" + "/jpgs/" + 
+  toReturn = "../static/assets/photography/" + "main" + "/jpgs/" + 
   subcategories[type] + "/" + indexString + ".jpg"
   lastimage[type] = imgChosen;
   imgsLeft[type].splice(indexChosen, 1);
