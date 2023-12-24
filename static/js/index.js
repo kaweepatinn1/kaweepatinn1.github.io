@@ -279,18 +279,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			var currentFrame = Math.min(frameToPlay,225);
 			seekToFrame(currentFrame, 60);
 		}
-		if ((window.scrollY >= sticky && !window.mobileCheck())) {
-			navbar.classList.add("sticky");
-			content.forEach((el) => {
-				el.classList.add("paddingtop");
-			})
-		} else {
-			// console.log("hi");
-			navbar.classList.remove("sticky");
-			content.forEach((el) => {
-				el.classList.remove("paddingtop");
-			})
-    }
   }
 	window.addEventListener("scroll", function() {
 		if  (video != undefined){
@@ -302,7 +290,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 window.onload = function() {
 	// Code to be executed after the entire page, including CSS, has been loaded
-	
+	if ((window.scrollY >= sticky && !window.mobileCheck())) {
+		navbar.classList.add("sticky");
+		content.forEach((el) => {
+			el.classList.add("paddingtop");
+		})
+	} else {
+		// console.log("hi");
+		navbar.classList.remove("sticky");
+		content.forEach((el) => {
+			el.classList.remove("paddingtop");
+		})
+	}
+
 	if (document.getElementById("pageIs404") != undefined){
 		const element = document.getElementById("downArrow1Parent");
 		element.remove();
@@ -348,7 +348,7 @@ document.addEventListener('mousemove', (e) => {
 })
 
 function bindIFrameMousemove(iframe){ // allows the mouse pos to be taken while in iframe
-	console.log('hi');
+	// console.log('hi');
     if (document.getElementById("pageIsAbout") != undefined){
 		iframe.contentWindow.addEventListener('mousemove', function(event) {
 			var clRect = iframe.getBoundingClientRect();
