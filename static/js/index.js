@@ -274,34 +274,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	if ((window.scrollY >= sticky && !window.mobileCheck()) && navbar != null) {
 		navbar.classList.add("sticky");
-		content.forEach((el) => {
-			el.classList.add("paddingtop");
-		})
+		// content.forEach((el) => {
+		// 	el.classList.add("paddingtop");
+		// })
 	} else {
 		// console.log("hi");
 		navbar = document.getElementById("navbar");
 		if (navbar != null){
 			navbar.classList.remove("sticky");
 		}
-		content.forEach((el) => {
-			el.classList.remove("paddingtop");
-		})
+		// content.forEach((el) => {
+		// 	el.classList.remove("paddingtop");
+		// })
 	}
 
-	function stickyGiver() {
-		if (video != undefined){
-			var content = Array.from(document.getElementsByClassName("content"));
-			var frameToPlay = Math.round((window.scrollY/sticky)*225);
-			var currentFrame = Math.min(frameToPlay,225);
-			seekToFrame(currentFrame, 60);
-		}
-  }
-	window.addEventListener("scroll", function() {
-		if  (video != undefined){
-			stickyGiver();
-			video.pause();
-		}
-	});
+// 	function stickyGiver() {
+// 		if (video != undefined){
+// 			var content = Array.from(document.getElementsByClassName("content"));
+// 			var frameToPlay = Math.round((window.scrollY/sticky)*225);
+// 			var currentFrame = Math.min(frameToPlay,225);
+// 			seekToFrame(currentFrame, 60);
+// 		}
+//   }
+// 	window.addEventListener("scroll", function() {
+// 		if  (video != undefined){
+// 			stickyGiver();
+// 			video.pause();
+// 		}
+// 	});
 });
 
 window.onload = function() {
