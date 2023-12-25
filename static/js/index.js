@@ -272,6 +272,22 @@ document.addEventListener("DOMContentLoaded", function() {
 		video.currentTime = timeInSeconds;
 	}
 
+	if ((window.scrollY >= sticky && !window.mobileCheck()) && navbar != null) {
+		navbar.classList.add("sticky");
+		content.forEach((el) => {
+			el.classList.add("paddingtop");
+		})
+	} else {
+		// console.log("hi");
+		navbar = document.getElementById("navbar");
+		if (navbar != null){
+			navbar.classList.remove("sticky");
+		}
+		content.forEach((el) => {
+			el.classList.remove("paddingtop");
+		})
+	}
+
 	function stickyGiver() {
 		if (video != undefined){
 			var content = Array.from(document.getElementsByClassName("content"));
@@ -290,18 +306,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 window.onload = function() {
 	// Code to be executed after the entire page, including CSS, has been loaded
-	if ((window.scrollY >= sticky && !window.mobileCheck())) {
-		navbar.classList.add("sticky");
-		content.forEach((el) => {
-			el.classList.add("paddingtop");
-		})
-	} else {
-		// console.log("hi");
-		navbar.classList.remove("sticky");
-		content.forEach((el) => {
-			el.classList.remove("paddingtop");
-		})
-	}
 
 	if (document.getElementById("pageIs404") != undefined){
 		const element = document.getElementById("downArrow1Parent");
