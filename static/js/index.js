@@ -316,7 +316,9 @@ window.onload = function() {
 	video = document.getElementById("topVideo");
 	if (video == undefined && document.getElementById("pageIsGallery") == undefined){
 		var content = Array.from(document.getElementsByClassName("content"));
-		navbar.classList.add("sticky");
+		if (navbar != null){
+			navbar.classList.add("sticky");
+		}
 		content.forEach((el) => {
 			el.classList.add("paddingtop");
 		})
@@ -328,7 +330,9 @@ window.onload = function() {
 	$('.loader').css('display','none');
 	extramove = 0;
 	if(document.getElementById("pageIsGallery") == undefined){
-		sticky = navbar.offsetTop;
+		if (navbar != null){
+			sticky = navbar.offsetTop;
+		}
 		setLogo();
 		setTimeout(setLogo, 100);
 	}
