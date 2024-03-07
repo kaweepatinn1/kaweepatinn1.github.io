@@ -12,7 +12,7 @@ function linkedVideo(video, type){
         references.push( // INDEX PAGE MEDIA AND LINKS
             2, // 2. Concept Apple Ad
             3, // 3. OYYGC Animated MV
-            7, // 7. Rerunner Chase Scene
+            10, // 10. Severed Links Trailer
         );
         reference = references[video-1]
     } else if ( document.getElementById("pageIsAbout") != undefined ){
@@ -38,8 +38,8 @@ function linkedVideo(video, type){
         reference = references[video-1]
     } else if ( document.getElementById("pageIsFilm") != undefined ){
         references.push( // FILM PAGE MEDIA AND LINKS
+            10, // 10. Severed Links Trailer
             7, // 7. Rerunner Chase Scene
-            1, // 1. Placeholder
             1, // 1. Placeholder
         );
         reference = references[video-1]
@@ -83,6 +83,7 @@ function staticLinkedVideo(video){
         "https://youtu.be/AnKIrmk5WU8", // 7. Rerunner Chase Scene
         "https://youtu.be/N9OdA1MlEvY", // 8. Star Persona Video Essay
         "https://youtu.be/B_J5w6NZO6c", // 9. HK Documentary
+        "https://youtu.be/IywtsJUDcAQ", // 10. Severed Links Trailer
         );
     if (video != -1){
         window.open(links[video-1]);
@@ -106,6 +107,7 @@ function staticEmbed(videoIndex, isVideo){
             "../static/assets/Rerunner.mp4",                 // 7. Rerunner Chase Scene
             "../static/assets/StarPersonaVideoEssay.mp4",    // 8. Star Persona Video Essay
             "../static/assets/TheSecondSet.mp4",             // 9. HK Documentary
+            "../static/assets/SeveredLinksTrailer.mp4",      // 10. Severed Links Trailer
             );
         return(videoEmbeds[videoIndex-1]);
     } else{
@@ -119,6 +121,7 @@ function staticEmbed(videoIndex, isVideo){
             "../static/assets/Rerunner.webp",                 // 7. Rerunner Chase Scene
             "../static/assets/StarPersonaVideoEssay.webp",    // 8. Star Persona Video Essay
             "../static/assets/TheSecondSet.webp",             // 9. HK Documentary
+            "../static/assets/SeveredLinksTrailer.webp",       // 10. Severed Links Trailer
             );
         return(videoEmbeds[videoIndex-1]);
     }
