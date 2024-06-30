@@ -55,9 +55,9 @@ const imgsPerType = [
 ]
 
 const categoryImageCounts = [
-  19, // 2by2
-  6, // 2by3
-  23, // 3by2
+  10, // 2by2
+  5, // 2by3
+  22, // 3by2
   4 // 4by3
 ]
 
